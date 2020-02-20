@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       this.metroPanelMF = new MetroFramework.Controls.MetroPanel();
       this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
       this.metroLabelRole = new MetroFramework.Controls.MetroLabel();
@@ -118,11 +119,14 @@
       // mlBack
       // 
       this.mlBack.Cursor = System.Windows.Forms.Cursors.Default;
-      this.mlBack.Location = new System.Drawing.Point(102, 27);
+      this.mlBack.Image = ((System.Drawing.Image)(resources.GetObject("mlBack.Image")));
+      this.mlBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.mlBack.Location = new System.Drawing.Point(119, 24);
       this.mlBack.Name = "mlBack";
-      this.mlBack.Size = new System.Drawing.Size(75, 23);
+      this.mlBack.Size = new System.Drawing.Size(91, 27);
       this.mlBack.TabIndex = 1;
-      this.mlBack.Text = "Volver";
+      this.mlBack.Text = "      Volver";
+      this.mlBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.mlBack.UseSelectable = true;
       this.mlBack.Click += new System.EventHandler(this.mlBack_Click);
       // 

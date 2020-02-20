@@ -28,6 +28,9 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
       this.btnCrearCliente = new MetroFramework.Controls.MetroButton();
       this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
       this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -36,7 +39,16 @@
       this.textBoxDato = new MetroFramework.Controls.MetroTextBox();
       this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
       this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-      this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+      this.textBoxCUIT = new MetroFramework.Controls.MetroTextBox();
+      this.mgClientes = new MetroFramework.Controls.MetroGrid();
+      this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.razonSocialCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.apellidoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.nombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.direccionCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.telefonoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.emailCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      ((System.ComponentModel.ISupportInitialize)(this.mgClientes)).BeginInit();
       this.SuspendLayout();
       // 
       // btnCrearCliente
@@ -82,6 +94,7 @@
       this.btnBuscar.Theme = MetroFramework.MetroThemeStyle.Light;
       this.btnBuscar.UseSelectable = true;
       this.btnBuscar.UseStyleColors = true;
+      this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
       // 
       // btnLimpiar
       // 
@@ -94,6 +107,7 @@
       this.btnLimpiar.Theme = MetroFramework.MetroThemeStyle.Light;
       this.btnLimpiar.UseSelectable = true;
       this.btnLimpiar.UseStyleColors = true;
+      this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
       // 
       // textBoxDato
       // 
@@ -101,7 +115,7 @@
       // 
       // 
       this.textBoxDato.CustomButton.Image = null;
-      this.textBoxDato.CustomButton.Location = new System.Drawing.Point(297, 1);
+      this.textBoxDato.CustomButton.Location = new System.Drawing.Point(353, 1);
       this.textBoxDato.CustomButton.Name = "";
       this.textBoxDato.CustomButton.Size = new System.Drawing.Size(23, 23);
       this.textBoxDato.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -154,41 +168,136 @@
       this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
       this.metroPanel1.VerticalScrollbarSize = 10;
       // 
-      // metroTextBox1
+      // textBoxCUIT
       // 
       // 
       // 
       // 
-      this.metroTextBox1.CustomButton.Image = null;
-      this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(353, 1);
-      this.metroTextBox1.CustomButton.Name = "";
-      this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(23, 23);
-      this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-      this.metroTextBox1.CustomButton.TabIndex = 1;
-      this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-      this.metroTextBox1.CustomButton.UseSelectable = true;
-      this.metroTextBox1.CustomButton.Visible = false;
-      this.metroTextBox1.Lines = new string[0];
-      this.metroTextBox1.Location = new System.Drawing.Point(498, 128);
-      this.metroTextBox1.MaxLength = 32767;
-      this.metroTextBox1.Name = "metroTextBox1";
-      this.metroTextBox1.PasswordChar = '\0';
-      this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-      this.metroTextBox1.SelectedText = "";
-      this.metroTextBox1.SelectionLength = 0;
-      this.metroTextBox1.SelectionStart = 0;
-      this.metroTextBox1.ShortcutsEnabled = true;
-      this.metroTextBox1.Size = new System.Drawing.Size(377, 25);
-      this.metroTextBox1.TabIndex = 7;
-      this.metroTextBox1.UseSelectable = true;
-      this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-      this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+      this.textBoxCUIT.CustomButton.Image = null;
+      this.textBoxCUIT.CustomButton.Location = new System.Drawing.Point(353, 1);
+      this.textBoxCUIT.CustomButton.Name = "";
+      this.textBoxCUIT.CustomButton.Size = new System.Drawing.Size(23, 23);
+      this.textBoxCUIT.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+      this.textBoxCUIT.CustomButton.TabIndex = 1;
+      this.textBoxCUIT.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+      this.textBoxCUIT.CustomButton.UseSelectable = true;
+      this.textBoxCUIT.CustomButton.Visible = false;
+      this.textBoxCUIT.Lines = new string[0];
+      this.textBoxCUIT.Location = new System.Drawing.Point(498, 128);
+      this.textBoxCUIT.MaxLength = 32767;
+      this.textBoxCUIT.Name = "textBoxCUIT";
+      this.textBoxCUIT.PasswordChar = '\0';
+      this.textBoxCUIT.ScrollBars = System.Windows.Forms.ScrollBars.None;
+      this.textBoxCUIT.SelectedText = "";
+      this.textBoxCUIT.SelectionLength = 0;
+      this.textBoxCUIT.SelectionStart = 0;
+      this.textBoxCUIT.ShortcutsEnabled = true;
+      this.textBoxCUIT.Size = new System.Drawing.Size(377, 25);
+      this.textBoxCUIT.TabIndex = 7;
+      this.textBoxCUIT.UseSelectable = true;
+      this.textBoxCUIT.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+      this.textBoxCUIT.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+      // 
+      // mgClientes
+      // 
+      this.mgClientes.AllowUserToResizeRows = false;
+      this.mgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+      this.mgClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.mgClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.mgClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+      this.mgClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.mgClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      this.mgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.mgClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCliente,
+            this.razonSocialCliente,
+            this.apellidoCliente,
+            this.nombreCliente,
+            this.direccionCliente,
+            this.telefonoCliente,
+            this.emailCliente});
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+      this.mgClientes.DefaultCellStyle = dataGridViewCellStyle2;
+      this.mgClientes.EnableHeadersVisualStyles = false;
+      this.mgClientes.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      this.mgClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.mgClientes.Location = new System.Drawing.Point(100, 213);
+      this.mgClientes.Name = "mgClientes";
+      this.mgClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+      dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.mgClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+      this.mgClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+      this.mgClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+      this.mgClientes.Size = new System.Drawing.Size(774, 425);
+      this.mgClientes.TabIndex = 8;
+      // 
+      // idCliente
+      // 
+      this.idCliente.DataPropertyName = "idCliente";
+      this.idCliente.HeaderText = "CUIT";
+      this.idCliente.Name = "idCliente";
+      // 
+      // razonSocialCliente
+      // 
+      this.razonSocialCliente.DataPropertyName = "razonSocialCliente";
+      this.razonSocialCliente.HeaderText = "R. Social";
+      this.razonSocialCliente.Name = "razonSocialCliente";
+      // 
+      // apellidoCliente
+      // 
+      this.apellidoCliente.DataPropertyName = "apellidoCliente";
+      this.apellidoCliente.HeaderText = "Apellido";
+      this.apellidoCliente.Name = "apellidoCliente";
+      // 
+      // nombreCliente
+      // 
+      this.nombreCliente.DataPropertyName = "nombreCliente";
+      this.nombreCliente.HeaderText = "Nombre";
+      this.nombreCliente.Name = "nombreCliente";
+      // 
+      // direccionCliente
+      // 
+      this.direccionCliente.DataPropertyName = "direccionCliente";
+      this.direccionCliente.HeaderText = "Dirección";
+      this.direccionCliente.Name = "direccionCliente";
+      // 
+      // telefonoCliente
+      // 
+      this.telefonoCliente.DataPropertyName = "telefonoCliente";
+      this.telefonoCliente.HeaderText = "Teléfono";
+      this.telefonoCliente.Name = "telefonoCliente";
+      // 
+      // emailCliente
+      // 
+      this.emailCliente.DataPropertyName = "emailCliente";
+      this.emailCliente.HeaderText = "E-Mail";
+      this.emailCliente.Name = "emailCliente";
       // 
       // ucCliente
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.metroTextBox1);
+      this.Controls.Add(this.mgClientes);
+      this.Controls.Add(this.textBoxCUIT);
       this.Controls.Add(this.metroPanel1);
       this.Controls.Add(this.metroLabel3);
       this.Controls.Add(this.metroLabel2);
@@ -202,6 +311,7 @@
       this.Style = MetroFramework.MetroColorStyle.Blue;
       this.Theme = MetroFramework.MetroThemeStyle.Light;
       this.UseStyleColors = true;
+      ((System.ComponentModel.ISupportInitialize)(this.mgClientes)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -217,6 +327,14 @@
     private MetroFramework.Controls.MetroTextBox textBoxDato;
     private MetroFramework.Controls.MetroLabel metroLabel3;
     private MetroFramework.Controls.MetroPanel metroPanel1;
-    private MetroFramework.Controls.MetroTextBox metroTextBox1;
+    private MetroFramework.Controls.MetroTextBox textBoxCUIT;
+    private MetroFramework.Controls.MetroGrid mgClientes;
+    private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
+    private System.Windows.Forms.DataGridViewTextBoxColumn razonSocialCliente;
+    private System.Windows.Forms.DataGridViewTextBoxColumn apellidoCliente;
+    private System.Windows.Forms.DataGridViewTextBoxColumn nombreCliente;
+    private System.Windows.Forms.DataGridViewTextBoxColumn direccionCliente;
+    private System.Windows.Forms.DataGridViewTextBoxColumn telefonoCliente;
+    private System.Windows.Forms.DataGridViewTextBoxColumn emailCliente;
   }
 }
