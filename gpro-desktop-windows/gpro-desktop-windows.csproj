@@ -81,16 +81,16 @@
     <Compile Include="Models\UserResponse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsersControls\ucCliente.cs">
+    <Compile Include="UserControls\ucCliente.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UsersControls\ucCliente.Designer.cs">
+    <Compile Include="UserControls\ucCliente.Designer.cs">
       <DependentUpon>ucCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsersControls\ucDashboard.cs">
+    <Compile Include="UserControls\ucDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UsersControls\ucDashboard.Designer.cs">
+    <Compile Include="UserControls\ucDashboard.Designer.cs">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\HttpUtils.cs" />
@@ -112,10 +112,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UsersControls\ucCliente.resx">
+    <EmbeddedResource Include="UserControls\ucCliente.resx">
       <DependentUpon>ucCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UsersControls\ucDashboard.resx">
+    <EmbeddedResource Include="UserControls\ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
