@@ -43,7 +43,7 @@ namespace gpro_desktop_windows.UsersControls
         e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
         DataGridViewButtonCell cellButtonEditar = this.mgClientes.Rows[e.RowIndex].Cells["Editar"] as DataGridViewButtonCell;
-        Icon icoEditar = new Icon(Environment.CurrentDirectory + @"\\editar.ico");
+        Icon icoEditar = Properties.Resources.editar;
         e.Graphics.DrawIcon(icoEditar, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
 
         this.mgClientes.Rows[e.RowIndex].Height = icoEditar.Height + 8;
@@ -57,7 +57,7 @@ namespace gpro_desktop_windows.UsersControls
         e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
         DataGridViewButtonCell cellButtonVer = this.mgClientes.Rows[e.RowIndex].Cells["Editar"] as DataGridViewButtonCell;
-        Icon icoVer = new Icon(Environment.CurrentDirectory + @"\\ver.ico");
+        Icon icoVer = Properties.Resources.ver;
         e.Graphics.DrawIcon(icoVer, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
 
         this.mgClientes.Rows[e.RowIndex].Height = icoVer.Height + 8;
