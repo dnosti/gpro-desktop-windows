@@ -40,5 +40,15 @@ namespace gpro_desktop_windows.Utils
 
       return response;
     }
+
+    public static HttpResponseMessage putCliente(HttpClient client, Cliente payload)
+    {
+      string stringData = JsonConvert.SerializeObject(payload);
+      var contentData = new StringContent(stringData, Encoding.UTF8, "application/json");
+
+      HttpResponseMessage response = client.PutAsync("/cliente/update/", contentData).Result;
+
+      return response;
+    }
   }
 }

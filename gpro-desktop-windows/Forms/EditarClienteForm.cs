@@ -1,19 +1,28 @@
-﻿using System;
+﻿using gpro_desktop_windows.Models;
+using gpro_desktop_windows.Utils;
+using MetroFramework;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Net.Http;
-using System.Windows.Forms;
-using gpro_desktop_windows.Models;
-using gpro_desktop_windows.Utils;
+using System.Text;
 using System.Text.RegularExpressions;
-using MetroFramework;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace gpro_desktop_windows.Forms
 {
-  public partial class CrearClienteForm : MetroFramework.Forms.MetroForm
+  public partial class EditarClienteForm : MetroFramework.Forms.MetroForm
   {
-    public CrearClienteForm()
+    private string id = "";
+
+    public EditarClienteForm(string id)
     {
       InitializeComponent();
+      this.id = id;
     }
 
     private void btnCancelar_Click(object sender, EventArgs e)
@@ -25,7 +34,7 @@ namespace gpro_desktop_windows.Forms
     {
       BorrarMensajeError();
       if (ValidarCampos())
-        postCliente();
+        putCliente();
     }
 
     private bool ValidarCampos()
@@ -97,10 +106,11 @@ namespace gpro_desktop_windows.Forms
       errorProvider1.SetError(textBoxEMail, "");
     }
 
-    private void postCliente()
+    private void putCliente()
     {
       Cliente clienteRequest = new Cliente()
       {
+        Id = int.Parse(id),
         IdCliente = Int64.Parse(textBoxidCliente.Text),
         RazonSocialCliente = textBoxRSocial.Text,
         ApellidoCliente = textBoxApellido.Text,
@@ -111,16 +121,16 @@ namespace gpro_desktop_windows.Forms
       };
 
       HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.postCliente(client, clienteRequest);
+      HttpResponseMessage response = HttpUtils.putCliente(client, clienteRequest);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
       var responseMessage = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(stringCR);
 
       if (response.IsSuccessStatusCode)
       {
-        MessageBox.Show("Cliente creado con éxito!", "Wooh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        foreach (TextBox textBox in Controls.OfType<TextBox>())
-          textBox.Clear();
+        DialogResult result = MessageBox.Show("Cliente actualizado con éxito!", "Wooh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        if (result == DialogResult.OK)
+          this.Close();
       }
       else
       {
@@ -129,4 +139,3 @@ namespace gpro_desktop_windows.Forms
     }
   }
 }
-

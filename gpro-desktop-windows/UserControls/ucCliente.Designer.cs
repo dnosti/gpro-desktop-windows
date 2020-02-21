@@ -41,6 +41,7 @@
       this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
       this.textBoxCUIT = new MetroFramework.Controls.MetroTextBox();
       this.mgClientes = new MetroFramework.Controls.MetroGrid();
+      this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.razonSocialCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.apellidoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -216,6 +217,7 @@
       this.mgClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.mgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.mgClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.idCliente,
             this.razonSocialCliente,
             this.apellidoCliente,
@@ -249,6 +251,15 @@
       this.mgClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.mgClientes.Size = new System.Drawing.Size(774, 425);
       this.mgClientes.TabIndex = 8;
+      this.mgClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mgClientes_CellClick);
+      this.mgClientes.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.mgClientes_CellPainting);
+      // 
+      // Id
+      // 
+      this.Id.DataPropertyName = "id";
+      this.Id.HeaderText = "Id";
+      this.Id.Name = "Id";
+      this.Id.Visible = false;
       // 
       // idCliente
       // 
@@ -259,7 +270,7 @@
       // razonSocialCliente
       // 
       this.razonSocialCliente.DataPropertyName = "razonSocialCliente";
-      this.razonSocialCliente.HeaderText = "R. Social";
+      this.razonSocialCliente.HeaderText = "Razón Social";
       this.razonSocialCliente.Name = "razonSocialCliente";
       // 
       // apellidoCliente
@@ -279,18 +290,21 @@
       this.direccionCliente.DataPropertyName = "direccionCliente";
       this.direccionCliente.HeaderText = "Dirección";
       this.direccionCliente.Name = "direccionCliente";
+      this.direccionCliente.Visible = false;
       // 
       // telefonoCliente
       // 
       this.telefonoCliente.DataPropertyName = "telefonoCliente";
       this.telefonoCliente.HeaderText = "Teléfono";
       this.telefonoCliente.Name = "telefonoCliente";
+      this.telefonoCliente.Visible = false;
       // 
       // emailCliente
       // 
       this.emailCliente.DataPropertyName = "emailCliente";
       this.emailCliente.HeaderText = "E-Mail";
       this.emailCliente.Name = "emailCliente";
+      this.emailCliente.Visible = false;
       // 
       // ucCliente
       // 
@@ -328,7 +342,8 @@
     private MetroFramework.Controls.MetroLabel metroLabel3;
     private MetroFramework.Controls.MetroPanel metroPanel1;
     private MetroFramework.Controls.MetroTextBox textBoxCUIT;
-    private MetroFramework.Controls.MetroGrid mgClientes;
+    public MetroFramework.Controls.MetroGrid mgClientes;
+    private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
     private System.Windows.Forms.DataGridViewTextBoxColumn razonSocialCliente;
     private System.Windows.Forms.DataGridViewTextBoxColumn apellidoCliente;

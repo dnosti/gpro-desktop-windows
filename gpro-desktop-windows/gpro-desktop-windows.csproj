@@ -64,6 +64,18 @@
     <Compile Include="Forms\CrearClienteForm.Designer.cs">
       <DependentUpon>CrearClienteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditarClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditarClienteForm.Designer.cs">
+      <DependentUpon>EditarClienteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VerClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VerClienteForm.Designer.cs">
+      <DependentUpon>VerClienteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,12 @@
     <Compile Include="Utils\HttpUtils.cs" />
     <EmbeddedResource Include="Forms\CrearClienteForm.resx">
       <DependentUpon>CrearClienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditarClienteForm.resx">
+      <DependentUpon>EditarClienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VerClienteForm.resx">
+      <DependentUpon>VerClienteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
