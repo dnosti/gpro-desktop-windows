@@ -27,7 +27,7 @@ namespace gpro_desktop_windows.Forms
 
     private void btnCancelar_Click(object sender, EventArgs e)
     {
-      this.Close();
+      this.Dispose();
     }
 
     private void btnConfirmar_Click(object sender, EventArgs e)
@@ -130,11 +130,11 @@ namespace gpro_desktop_windows.Forms
       {
         DialogResult result = MessageBox.Show("Cliente actualizado con éxito!", "Wooh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         if (result == DialogResult.OK)
-          this.Close();
+          this.Dispose();
       }
       else
       {
-        MessageBox.Show((string)responseMessage.message, "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show(this,(string)responseMessage.message, "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
   }

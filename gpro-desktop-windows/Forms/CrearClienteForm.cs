@@ -18,7 +18,7 @@ namespace gpro_desktop_windows.Forms
 
     private void btnCancelar_Click(object sender, EventArgs e)
     {
-      this.Close();
+      this.Dispose();
     }
 
     private void btnConfirmar_Click(object sender, EventArgs e)

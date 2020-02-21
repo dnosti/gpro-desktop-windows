@@ -81,7 +81,7 @@ namespace gpro_desktop_windows.UsersControls
         editarClienteForm.textBoxDomicilio.Text = editarCliente.Cells["direccionCliente"].Value.ToString();
         editarClienteForm.textBoxTelefono.Text = editarCliente.Cells["telefonoCliente"].Value.ToString();
         editarClienteForm.textBoxEMail.Text = editarCliente.Cells["emailCliente"].Value.ToString();
-        editarClienteForm.Show();
+        editarClienteForm.ShowDialog();
       }
       if (e.ColumnIndex >= 0 && this.mgClientes.Columns[e.ColumnIndex].Name == "Ver" && e.RowIndex >= 0)
       {
@@ -101,7 +101,7 @@ namespace gpro_desktop_windows.UsersControls
     private void btnCrearCliente_Click(object sender, EventArgs e)
     {
       CrearClienteForm crearClienteForm = new CrearClienteForm();
-      crearClienteForm.Show();
+      crearClienteForm.ShowDialog();
     }
 
     private void btnLimpiar_Click(object sender, EventArgs e)
@@ -120,7 +120,7 @@ namespace gpro_desktop_windows.UsersControls
 
       if (string.IsNullOrEmpty(textBoxDato.Text) && string.IsNullOrEmpty(textBoxCUIT.Text))
       {
-        MetroMessageBox.Show(this,"Complete el formulario para realizar la búsqueda.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        MessageBox.Show(this,"Complete el formulario para realizar la búsqueda.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         return;
       }
 
@@ -135,7 +135,7 @@ namespace gpro_desktop_windows.UsersControls
         payload = textBoxCUIT.Text;
         if (!payload.All(char.IsDigit))
         {
-          MetroMessageBox.Show(this,"En CUIT solo ingrese números.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+          MessageBox.Show(this,"En CUIT solo ingrese números.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
           return;
         }
         getbycuit = true;
@@ -165,7 +165,7 @@ namespace gpro_desktop_windows.UsersControls
       }
       else
       {
-        MetroMessageBox.Show(this,"No se encontró el cliente.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show(this,"No se encontró el cliente.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         textBoxDato.Clear(); textBoxCUIT.Clear();
       }
     }
