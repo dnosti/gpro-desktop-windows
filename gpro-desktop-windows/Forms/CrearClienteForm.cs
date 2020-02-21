@@ -25,7 +25,14 @@ namespace gpro_desktop_windows.Forms
     {
       BorrarMensajeError();
       if (ValidarCampos())
-        postCliente();
+      {
+        DialogResult result = MessageBox.Show("¿Está seguro de crear un nuevo cliente?", "Crear Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        if (result == DialogResult.Yes)
+        {
+          postCliente();
+        }
+      }
+
     }
 
     private bool ValidarCampos()

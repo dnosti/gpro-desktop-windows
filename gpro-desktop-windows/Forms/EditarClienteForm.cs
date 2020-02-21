@@ -34,7 +34,13 @@ namespace gpro_desktop_windows.Forms
     {
       BorrarMensajeError();
       if (ValidarCampos())
-        putCliente();
+      {
+        DialogResult result = MessageBox.Show("¿Está seguro de actualizar los datos?", "Editar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        if (result == DialogResult.Yes)
+        {
+          putCliente();
+        }
+      }
     }
 
     private bool ValidarCampos()
@@ -134,7 +140,7 @@ namespace gpro_desktop_windows.Forms
       }
       else
       {
-        MessageBox.Show(this,(string)responseMessage.message, "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show(this, (string)responseMessage.message, "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
   }
