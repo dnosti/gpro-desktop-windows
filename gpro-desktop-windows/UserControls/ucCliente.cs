@@ -69,7 +69,7 @@ namespace gpro_desktop_windows.UsersControls
 
     private void mgClientes_CellClick(object sender, DataGridViewCellEventArgs e)
     {
-      if (this.mgClientes.Columns[e.ColumnIndex].Name == "Editar")
+      if (e.ColumnIndex >= 0 && this.mgClientes.Columns[e.ColumnIndex].Name == "Editar" && e.RowIndex >= 0)
       {
         string Id = mgClientes.Rows[e.RowIndex].Cells["Id"].Value.ToString();
         EditarClienteForm editarClienteForm = new EditarClienteForm(Id);
@@ -83,7 +83,7 @@ namespace gpro_desktop_windows.UsersControls
         editarClienteForm.textBoxEMail.Text = editarCliente.Cells["emailCliente"].Value.ToString();
         editarClienteForm.Show();
       }
-      if (this.mgClientes.Columns[e.ColumnIndex].Name == "Ver")
+      if (e.ColumnIndex >= 0 && this.mgClientes.Columns[e.ColumnIndex].Name == "Ver" && e.RowIndex >= 0)
       {
         VerClienteForm verClienteForm = new VerClienteForm();
         DataGridViewRow verCliente = mgClientes.Rows[e.RowIndex];
