@@ -83,6 +83,9 @@ namespace gpro_desktop_windows.UsersControls
         editarClienteForm.textBoxTelefono.Text = editarCliente.Cells["telefonoCliente"].Value.ToString();
         editarClienteForm.textBoxEMail.Text = editarCliente.Cells["emailCliente"].Value.ToString();
         editarClienteForm.ShowDialog();
+        string cuit = editarClienteForm.cuit;
+        if (!string.IsNullOrEmpty(cuit))
+          buscarCliente("/cliente/cuit/", cuit, true);
       }
       if (e.ColumnIndex >= 0 && this.mgClientes.Columns[e.ColumnIndex].Name == "Ver" && e.RowIndex >= 0)
       {

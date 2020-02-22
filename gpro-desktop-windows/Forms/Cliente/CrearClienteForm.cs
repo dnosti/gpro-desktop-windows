@@ -28,9 +28,7 @@ namespace gpro_desktop_windows.Forms
       {
         DialogResult result = MessageBox.Show("¿Está seguro de crear un nuevo cliente?", "Crear Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         if (result == DialogResult.Yes)
-        {
           postCliente();
-        }
       }
 
     }

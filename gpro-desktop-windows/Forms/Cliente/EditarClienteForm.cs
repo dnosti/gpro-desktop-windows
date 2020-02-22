@@ -20,6 +20,8 @@ namespace gpro_desktop_windows.Forms
   {
     private string id = "";
 
+    public string cuit { get; set; }
+
     public EditarClienteForm(string id)
     {
       InitializeComponent();
@@ -38,9 +40,7 @@ namespace gpro_desktop_windows.Forms
       {
         DialogResult result = MessageBox.Show("¿Está seguro de actualizar los datos?", "Editar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         if (result == DialogResult.Yes)
-        {
           putCliente();
-        }
       }
     }
 
@@ -137,6 +137,7 @@ namespace gpro_desktop_windows.Forms
       {
         DialogResult result = MessageBox.Show("Cliente actualizado con éxito!", "Wooh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         if (result == DialogResult.OK)
+          cuit = clienteRequest.IdCliente.ToString();
           this.Dispose();
       }
       else
