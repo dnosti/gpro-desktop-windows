@@ -233,11 +233,13 @@
       dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
       dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
       this.mgClientes.DefaultCellStyle = dataGridViewCellStyle2;
+      this.mgClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
       this.mgClientes.EnableHeadersVisualStyles = false;
       this.mgClientes.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
       this.mgClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
       this.mgClientes.Location = new System.Drawing.Point(100, 213);
       this.mgClientes.Name = "mgClientes";
+      this.mgClientes.ReadOnly = true;
       this.mgClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
       dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -259,6 +261,7 @@
       this.Id.DataPropertyName = "id";
       this.Id.HeaderText = "Id";
       this.Id.Name = "Id";
+      this.Id.ReadOnly = true;
       this.Id.Visible = false;
       // 
       // idCliente
@@ -266,30 +269,35 @@
       this.idCliente.DataPropertyName = "idCliente";
       this.idCliente.HeaderText = "CUIT";
       this.idCliente.Name = "idCliente";
+      this.idCliente.ReadOnly = true;
       // 
       // razonSocialCliente
       // 
       this.razonSocialCliente.DataPropertyName = "razonSocialCliente";
       this.razonSocialCliente.HeaderText = "Razón Social";
       this.razonSocialCliente.Name = "razonSocialCliente";
+      this.razonSocialCliente.ReadOnly = true;
       // 
       // apellidoCliente
       // 
       this.apellidoCliente.DataPropertyName = "apellidoCliente";
       this.apellidoCliente.HeaderText = "Apellido";
       this.apellidoCliente.Name = "apellidoCliente";
+      this.apellidoCliente.ReadOnly = true;
       // 
       // nombreCliente
       // 
       this.nombreCliente.DataPropertyName = "nombreCliente";
       this.nombreCliente.HeaderText = "Nombre";
       this.nombreCliente.Name = "nombreCliente";
+      this.nombreCliente.ReadOnly = true;
       // 
       // direccionCliente
       // 
       this.direccionCliente.DataPropertyName = "direccionCliente";
       this.direccionCliente.HeaderText = "Dirección";
       this.direccionCliente.Name = "direccionCliente";
+      this.direccionCliente.ReadOnly = true;
       this.direccionCliente.Visible = false;
       // 
       // telefonoCliente
@@ -297,6 +305,7 @@
       this.telefonoCliente.DataPropertyName = "telefonoCliente";
       this.telefonoCliente.HeaderText = "Teléfono";
       this.telefonoCliente.Name = "telefonoCliente";
+      this.telefonoCliente.ReadOnly = true;
       this.telefonoCliente.Visible = false;
       // 
       // emailCliente
@@ -304,6 +313,7 @@
       this.emailCliente.DataPropertyName = "emailCliente";
       this.emailCliente.HeaderText = "E-Mail";
       this.emailCliente.Name = "emailCliente";
+      this.emailCliente.ReadOnly = true;
       this.emailCliente.Visible = false;
       // 
       // ucCliente

@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using gpro_desktop_windows.Forms;
 using gpro_desktop_windows.Models;
 using System.Net.Http;
 using gpro_desktop_windows.Utils;
 using Newtonsoft.Json;
 using MetroFramework;
+using gpro_desktop_windows.Forms;
+
 
 namespace gpro_desktop_windows.UsersControls
 {
@@ -115,8 +116,6 @@ namespace gpro_desktop_windows.UsersControls
       string path = "";
       string payload = "";
       bool getbycuit = false;
-      Cliente clienteResponse = null;
-      List<Cliente> clienteResponses = null;
 
       if (string.IsNullOrEmpty(textBoxDato.Text) && string.IsNullOrEmpty(textBoxCUIT.Text))
       {
@@ -128,6 +127,7 @@ namespace gpro_desktop_windows.UsersControls
       {
         path = "/cliente/dato/";
         payload = textBoxDato.Text;
+        buscarCliente(path, payload, getbycuit);
       }
       else
       {
@@ -135,11 +135,18 @@ namespace gpro_desktop_windows.UsersControls
         payload = textBoxCUIT.Text;
         if (!payload.All(char.IsDigit))
         {
-          MessageBox.Show(this,"En CUIT solo ingrese números.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+          MessageBox.Show("En CUIT solo ingrese números.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
           return;
         }
         getbycuit = true;
+        buscarCliente(path, payload, getbycuit);
       }
+    }
+
+    private void buscarCliente(string path, string payload, bool getbycuit)
+    {
+      Cliente clienteResponse = null;
+      List<Cliente> clienteResponses = null;
 
       HttpClient client = HttpUtils.configHttpClient();
       HttpResponseMessage response = HttpUtils.getCliente(client, path, payload);
@@ -165,7 +172,7 @@ namespace gpro_desktop_windows.UsersControls
       }
       else
       {
-        MessageBox.Show(this,"No se encontró el cliente.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show("No se encontró el cliente.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         textBoxDato.Clear(); textBoxCUIT.Clear();
       }
     }
