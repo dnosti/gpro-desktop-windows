@@ -35,6 +35,7 @@ namespace gpro_desktop_windows.UsersControls
       btnVer.Name = "Ver";
       mgClientes.Columns.Add(btnVer);
       mgClientes.Columns[9].HeaderText = "";
+
     }
 
     private void mgClientes_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -50,6 +51,9 @@ namespace gpro_desktop_windows.UsersControls
         this.mgClientes.Rows[e.RowIndex].Height = icoEditar.Height + 8;
         this.mgClientes.Columns[e.ColumnIndex].Width = icoEditar.Width + 8;
 
+        DataGridViewCell cell = this.mgClientes.Rows[e.RowIndex].Cells[e.ColumnIndex];
+        cell.ToolTipText = "Editar";
+
         e.Handled = true;
       }
 
@@ -63,6 +67,9 @@ namespace gpro_desktop_windows.UsersControls
 
         this.mgClientes.Rows[e.RowIndex].Height = icoVer.Height + 8;
         this.mgClientes.Columns[e.ColumnIndex].Width = icoVer.Width + 8;
+
+        DataGridViewCell cell = this.mgClientes.Rows[e.RowIndex].Cells[e.ColumnIndex];
+        cell.ToolTipText = "Ver";
 
         e.Handled = true;
       }
@@ -181,3 +188,5 @@ namespace gpro_desktop_windows.UsersControls
     }
   }
 }
+
+
