@@ -152,12 +152,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icono.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Image1.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\editar.ico" />
   </ItemGroup>
   <ItemGroup>
