@@ -6,6 +6,7 @@ using gpro_desktop_windows.Models;
 using gpro_desktop_windows.Utils;
 using System.Text.RegularExpressions;
 using MetroFramework;
+using MetroFramework.Controls;
 
 namespace gpro_desktop_windows.Forms
 {
@@ -124,7 +125,7 @@ namespace gpro_desktop_windows.Forms
       if (response.IsSuccessStatusCode)
       {
         MessageBox.Show("Cliente creado con éxito!", "Wooh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        foreach (TextBox textBox in Controls.OfType<TextBox>())
+        foreach (MetroTextBox textBox in Controls.OfType<MetroTextBox>())
           textBox.Clear();
       }
       else

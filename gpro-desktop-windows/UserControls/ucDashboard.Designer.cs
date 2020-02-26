@@ -30,7 +30,7 @@
     {
       this.mtClientes = new MetroFramework.Controls.MetroTile();
       this.metroTile1 = new MetroFramework.Controls.MetroTile();
-      this.metroTile2 = new MetroFramework.Controls.MetroTile();
+      this.mtEmpleados = new MetroFramework.Controls.MetroTile();
       this.metroTile3 = new MetroFramework.Controls.MetroTile();
       this.metroTile4 = new MetroFramework.Controls.MetroTile();
       this.metroTile5 = new MetroFramework.Controls.MetroTile();
@@ -61,16 +61,17 @@
       this.metroTile1.Text = "Lorem Ipsum";
       this.metroTile1.UseSelectable = true;
       // 
-      // metroTile2
+      // mtEmpleados
       // 
-      this.metroTile2.ActiveControl = null;
-      this.metroTile2.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.metroTile2.Location = new System.Drawing.Point(252, 66);
-      this.metroTile2.Name = "metroTile2";
-      this.metroTile2.Size = new System.Drawing.Size(130, 119);
-      this.metroTile2.TabIndex = 0;
-      this.metroTile2.Text = "Lorem Ipsum";
-      this.metroTile2.UseSelectable = true;
+      this.mtEmpleados.ActiveControl = null;
+      this.mtEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.mtEmpleados.Location = new System.Drawing.Point(252, 66);
+      this.mtEmpleados.Name = "mtEmpleados";
+      this.mtEmpleados.Size = new System.Drawing.Size(130, 119);
+      this.mtEmpleados.TabIndex = 0;
+      this.mtEmpleados.Text = "Empleados";
+      this.mtEmpleados.UseSelectable = true;
+      this.mtEmpleados.Click += new System.EventHandler(this.mtEmpleados_Click);
       // 
       // metroTile3
       // 
@@ -141,7 +142,7 @@
       this.Controls.Add(this.metroTile4);
       this.Controls.Add(this.metroTile1);
       this.Controls.Add(this.metroTile5);
-      this.Controls.Add(this.metroTile2);
+      this.Controls.Add(this.mtEmpleados);
       this.Controls.Add(this.mtClientes);
       this.Name = "ucDashboard";
       this.Size = new System.Drawing.Size(900, 742);
@@ -153,7 +154,7 @@
 
     private MetroFramework.Controls.MetroTile mtClientes;
     private MetroFramework.Controls.MetroTile metroTile1;
-    private MetroFramework.Controls.MetroTile metroTile2;
+    private MetroFramework.Controls.MetroTile mtEmpleados;
     private MetroFramework.Controls.MetroTile metroTile3;
     private MetroFramework.Controls.MetroTile metroTile4;
     private MetroFramework.Controls.MetroTile metroTile5;

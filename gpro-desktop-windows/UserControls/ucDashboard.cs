@@ -28,5 +28,17 @@ namespace gpro_desktop_windows.UsersControls
       MainForm.Instance.MetroContainer.Controls["ucCliente"].BringToFront();
       MainForm.Instance.MetroBack.Visible = true;
     }
+
+    private void mtEmpleados_Click(object sender, EventArgs e)
+    {
+      if (!MainForm.Instance.MetroContainer.Controls.ContainsKey("ucEmpleados"))
+      {
+        ucEmpleado uc = new ucEmpleado();
+        uc.Dock = DockStyle.Fill;
+        MainForm.Instance.MetroContainer.Controls.Add(uc);
+      }
+      MainForm.Instance.MetroContainer.Controls["ucEmpleado"].BringToFront();
+      MainForm.Instance.MetroBack.Visible = true;
+    }
   }
 }

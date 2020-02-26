@@ -136,9 +136,10 @@ namespace gpro_desktop_windows.Forms
       if (response.IsSuccessStatusCode)
       {
         DialogResult result = MessageBox.Show("Cliente actualizado con éxito!", "Wooh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        if (result == DialogResult.OK)
+        if (result == DialogResult.OK) { 
           cuit = clienteRequest.IdCliente.ToString();
           this.Dispose();
+        }
       }
       else
       {

@@ -25,6 +25,8 @@ namespace gpro_desktop_windows.Utils
       return client;
     }
 
+    /* Clientes */
+
     public static HttpResponseMessage getCliente(HttpClient client, string path, string payload)
     {
       HttpResponseMessage response = client.GetAsync(path + payload).Result;
@@ -47,6 +49,35 @@ namespace gpro_desktop_windows.Utils
       var contentData = new StringContent(stringData, Encoding.UTF8, "application/json");
 
       HttpResponseMessage response = client.PutAsync("/cliente/update/", contentData).Result;
+
+      return response;
+    }
+
+
+    /* Empleados */
+
+    public static HttpResponseMessage getEmpleado(HttpClient client, string path, string payload)
+    {
+      HttpResponseMessage response = client.GetAsync(path + payload).Result;
+      return response;
+    }
+
+    public static HttpResponseMessage postEmpleado(HttpClient client, Empleado payload)
+    {
+      string stringData = JsonConvert.SerializeObject(payload);
+      var contentData = new StringContent(stringData, Encoding.UTF8, "application/json");
+
+      HttpResponseMessage response = client.PostAsync("/empleado/new/", contentData).Result;
+
+      return response;
+    }
+
+    public static HttpResponseMessage putEmpleado(HttpClient client, Empleado payload)
+    {
+      string stringData = JsonConvert.SerializeObject(payload);
+      var contentData = new StringContent(stringData, Encoding.UTF8, "application/json");
+
+      HttpResponseMessage response = client.PutAsync("/empleado/update/", contentData).Result;
 
       return response;
     }
