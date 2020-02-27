@@ -1,6 +1,6 @@
 ﻿namespace gpro_desktop_windows.UsersControls
 {
-  partial class ucCliente
+  partial class ucClientes
   {
     /// <summary> 
     /// Variable del diseñador necesaria.
@@ -330,7 +330,7 @@
       this.Controls.Add(this.btnBuscar);
       this.Controls.Add(this.btnCrearCliente);
       this.Controls.Add(this.textBoxDato);
-      this.Name = "ucCliente";
+      this.Name = "ucClientes";
       this.Size = new System.Drawing.Size(900, 742);
       this.Style = MetroFramework.MetroColorStyle.Blue;
       this.Theme = MetroFramework.MetroThemeStyle.Light;

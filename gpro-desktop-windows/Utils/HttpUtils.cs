@@ -25,6 +25,7 @@ namespace gpro_desktop_windows.Utils
       return client;
     }
 
+
     /* Clientes */
 
     public static HttpResponseMessage getCliente(HttpClient client, string path, string payload)
@@ -62,6 +63,12 @@ namespace gpro_desktop_windows.Utils
       return response;
     }
 
+    public static HttpResponseMessage getEmpleados(HttpClient client, string path)
+    {
+      HttpResponseMessage response = client.GetAsync(path).Result;
+      return response;
+    }
+
     public static HttpResponseMessage postEmpleado(HttpClient client, Empleado payload)
     {
       string stringData = JsonConvert.SerializeObject(payload);
@@ -79,6 +86,34 @@ namespace gpro_desktop_windows.Utils
 
       HttpResponseMessage response = client.PutAsync("/empleado/update/", contentData).Result;
 
+      return response;
+    }
+
+
+    /* Usuarios */
+
+    public static HttpResponseMessage getUsuario(HttpClient client, string path, string payload)
+    {
+      HttpResponseMessage response = client.GetAsync(path + payload).Result;
+      return response;
+    }
+
+    public static HttpResponseMessage postUsuario(HttpClient client, UsuarioRequest payload)
+    {
+      string stringData = JsonConvert.SerializeObject(payload);
+      var contentData = new StringContent(stringData, Encoding.UTF8, "application/json");
+
+      HttpResponseMessage response = client.PostAsync("/usuarios/register/", contentData).Result;
+
+      return response;
+    }
+
+
+    /* Roles */
+
+    public static HttpResponseMessage getRoles(HttpClient client, string path)
+    {
+      HttpResponseMessage response = client.GetAsync(path).Result;
       return response;
     }
   }

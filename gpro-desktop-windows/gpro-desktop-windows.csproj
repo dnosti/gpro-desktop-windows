@@ -94,6 +94,18 @@
     <Compile Include="Forms\Empleado\VerEmpleadoForm.Designer.cs">
       <DependentUpon>VerEmpleadoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Usuario\CrearUsuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Usuario\CrearUsuarioForm.Designer.cs">
+      <DependentUpon>CrearUsuarioForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Usuario\VerUsuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Usuario\VerUsuarioForm.Designer.cs">
+      <DependentUpon>VerUsuarioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +118,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\UsuarioResponse.cs" />
+    <Compile Include="Models\UsuarioRequest.cs" />
     <Compile Include="Models\EmpleadoProyecto.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -113,23 +128,29 @@
     <Compile Include="Models\UserResponse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ucAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucAdmin.Designer.cs">
+      <DependentUpon>ucAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucUsuarios.Designer.cs">
+      <DependentUpon>ucUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucEmpleados.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\ucEmpleados.Designer.cs">
       <DependentUpon>ucEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ucCliente.cs">
+    <Compile Include="UserControls\ucClientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ucCliente.Designer.cs">
-      <DependentUpon>ucCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\ucDashboard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\ucDashboard.Designer.cs">
-      <DependentUpon>ucDashboard.cs</DependentUpon>
+    <Compile Include="UserControls\ucClientes.Designer.cs">
+      <DependentUpon>ucClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\HttpUtils.cs" />
     <EmbeddedResource Include="Forms\Cliente\CrearClienteForm.resx">
@@ -150,6 +171,12 @@
     <EmbeddedResource Include="Forms\Empleado\VerEmpleadoForm.resx">
       <DependentUpon>VerEmpleadoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Usuario\CrearUsuarioForm.resx">
+      <DependentUpon>CrearUsuarioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Usuario\VerUsuarioForm.resx">
+      <DependentUpon>VerUsuarioForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,14 +193,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\ucAdmin.resx">
+      <DependentUpon>ucAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucUsuarios.resx">
+      <DependentUpon>ucUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucEmpleados.resx">
       <DependentUpon>ucEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ucCliente.resx">
-      <DependentUpon>ucCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ucDashboard.resx">
-      <DependentUpon>ucDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\ucClientes.resx">
+      <DependentUpon>ucClientes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

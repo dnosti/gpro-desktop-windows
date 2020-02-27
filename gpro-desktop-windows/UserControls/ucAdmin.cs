@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using gpro_desktop_windows.Properties;
 
 namespace gpro_desktop_windows.UsersControls
 {
-  public partial class ucDashboard : MetroFramework.Controls.MetroUserControl
+  public partial class ucAdmin : MetroFramework.Controls.MetroUserControl
   {
-    public ucDashboard()
+    public ucAdmin()
     {
       InitializeComponent();
     }
@@ -21,11 +22,11 @@ namespace gpro_desktop_windows.UsersControls
     {
       if(!MainForm.Instance.MetroContainer.Controls.ContainsKey("ucClientes"))
       {
-        ucCliente uc = new ucCliente();
+        ucClientes uc = new ucClientes();
         uc.Dock = DockStyle.Fill;
         MainForm.Instance.MetroContainer.Controls.Add(uc);
       }
-      MainForm.Instance.MetroContainer.Controls["ucCliente"].BringToFront();
+      MainForm.Instance.MetroContainer.Controls["ucClientes"].BringToFront();
       MainForm.Instance.MetroBack.Visible = true;
     }
 
@@ -33,11 +34,23 @@ namespace gpro_desktop_windows.UsersControls
     {
       if (!MainForm.Instance.MetroContainer.Controls.ContainsKey("ucEmpleados"))
       {
-        ucEmpleado uc = new ucEmpleado();
+        ucEmpleados uc = new ucEmpleados();
         uc.Dock = DockStyle.Fill;
         MainForm.Instance.MetroContainer.Controls.Add(uc);
       }
-      MainForm.Instance.MetroContainer.Controls["ucEmpleado"].BringToFront();
+      MainForm.Instance.MetroContainer.Controls["ucEmpleados"].BringToFront();
+      MainForm.Instance.MetroBack.Visible = true;
+    }
+
+    private void mtUsuarios_Click(object sender, EventArgs e)
+    {
+      if (!MainForm.Instance.MetroContainer.Controls.ContainsKey("ucUsuarios"))
+      {
+        ucUsuarios uc = new ucUsuarios();
+        uc.Dock = DockStyle.Fill;
+        MainForm.Instance.MetroContainer.Controls.Add(uc);
+      }
+      MainForm.Instance.MetroContainer.Controls["ucUsuarios"].BringToFront();
       MainForm.Instance.MetroBack.Visible = true;
     }
   }

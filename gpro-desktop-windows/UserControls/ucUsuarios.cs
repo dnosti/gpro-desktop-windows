@@ -17,58 +17,58 @@ using gpro_desktop_windows.Forms;
 
 namespace gpro_desktop_windows.UsersControls
 {
-  public partial class ucEmpleados : MetroFramework.Controls.MetroUserControl
+  public partial class ucUsuarios : MetroFramework.Controls.MetroUserControl
   {
-    public ucEmpleados()
+    public ucUsuarios()
     {
       InitializeComponent();
-      mgEmpleados.Visible = false;
+      mgUsuarios.Visible = false;
 
       /* Botón Editar en DataGrid */
       DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn();
       btnEditar.Name = "Editar";
-      mgEmpleados.Columns.Add(btnEditar);
-      mgEmpleados.Columns[10].HeaderText = "";
+      mgUsuarios.Columns.Add(btnEditar);
+      mgUsuarios.Columns[7].HeaderText = "";
 
       /* Botón Ver en DataGrid */
       DataGridViewButtonColumn btnVer = new DataGridViewButtonColumn();
       btnVer.Name = "Ver";
-      mgEmpleados.Columns.Add(btnVer);
-      mgEmpleados.Columns[11].HeaderText = "";
+      mgUsuarios.Columns.Add(btnVer);
+      mgUsuarios.Columns[8].HeaderText = "";
 
     }
 
     private void mgEmpleados_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
     {
-      if (e.ColumnIndex >= 0 && this.mgEmpleados.Columns[e.ColumnIndex].Name == "Editar" && e.RowIndex >= 0)
+      if (e.ColumnIndex >= 0 && this.mgUsuarios.Columns[e.ColumnIndex].Name == "Editar" && e.RowIndex >= 0)
       {
         e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-        DataGridViewButtonCell cellButtonEditar = this.mgEmpleados.Rows[e.RowIndex].Cells["Editar"] as DataGridViewButtonCell;
+        DataGridViewButtonCell cellButtonEditar = this.mgUsuarios.Rows[e.RowIndex].Cells["Editar"] as DataGridViewButtonCell;
         Icon icoEditar = Properties.Resources.editar;
         e.Graphics.DrawIcon(icoEditar, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
 
-        this.mgEmpleados.Rows[e.RowIndex].Height = icoEditar.Height + 8;
-        this.mgEmpleados.Columns[e.ColumnIndex].Width = icoEditar.Width + 8;
+        this.mgUsuarios.Rows[e.RowIndex].Height = icoEditar.Height + 8;
+        this.mgUsuarios.Columns[e.ColumnIndex].Width = icoEditar.Width + 8;
 
-        DataGridViewCell cell = this.mgEmpleados.Rows[e.RowIndex].Cells[e.ColumnIndex];
+        DataGridViewCell cell = this.mgUsuarios.Rows[e.RowIndex].Cells[e.ColumnIndex];
         cell.ToolTipText = "Editar";
 
         e.Handled = true;
       }
 
-      if (e.ColumnIndex >= 0 && this.mgEmpleados.Columns[e.ColumnIndex].Name == "Ver" && e.RowIndex >= 0)
+      if (e.ColumnIndex >= 0 && this.mgUsuarios.Columns[e.ColumnIndex].Name == "Ver" && e.RowIndex >= 0)
       {
         e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-        DataGridViewButtonCell cellButtonVer = this.mgEmpleados.Rows[e.RowIndex].Cells["Editar"] as DataGridViewButtonCell;
+        DataGridViewButtonCell cellButtonVer = this.mgUsuarios.Rows[e.RowIndex].Cells["Editar"] as DataGridViewButtonCell;
         Icon icoVer = Properties.Resources.ver;
         e.Graphics.DrawIcon(icoVer, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
 
-        this.mgEmpleados.Rows[e.RowIndex].Height = icoVer.Height + 8;
-        this.mgEmpleados.Columns[e.ColumnIndex].Width = icoVer.Width + 8;
+        this.mgUsuarios.Rows[e.RowIndex].Height = icoVer.Height + 8;
+        this.mgUsuarios.Columns[e.ColumnIndex].Width = icoVer.Width + 8;
 
-        DataGridViewCell cell = this.mgEmpleados.Rows[e.RowIndex].Cells[e.ColumnIndex];
+        DataGridViewCell cell = this.mgUsuarios.Rows[e.RowIndex].Cells[e.ColumnIndex];
         cell.ToolTipText = "Ver";
 
         e.Handled = true;
@@ -77,11 +77,11 @@ namespace gpro_desktop_windows.UsersControls
 
     private void mgEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
     {
-      if (e.ColumnIndex >= 0 && this.mgEmpleados.Columns[e.ColumnIndex].Name == "Editar" && e.RowIndex >= 0)
+      if (e.ColumnIndex >= 0 && this.mgUsuarios.Columns[e.ColumnIndex].Name == "Editar" && e.RowIndex >= 0)
       {
-        string IdEmpleado = mgEmpleados.Rows[e.RowIndex].Cells["IdEmpleado"].Value.ToString();
+        string IdEmpleado = mgUsuarios.Rows[e.RowIndex].Cells["IdEmpleado"].Value.ToString();
         EditarEmpleadoForm editarEmpleadoForm = new EditarEmpleadoForm(IdEmpleado);
-        DataGridViewRow editarEmpleado = mgEmpleados.Rows[e.RowIndex];
+        DataGridViewRow editarEmpleado = mgUsuarios.Rows[e.RowIndex];
         editarEmpleadoForm.textBoxApellidoEmpl.Text = editarEmpleado.Cells["apellidoEmpleado"].Value.ToString();
         editarEmpleadoForm.textBoxNombreEmpl.Text = editarEmpleado.Cells["nombreEmpleado"].Value.ToString();
         editarEmpleadoForm.textBoxFechaIngEmpl.Text = editarEmpleado.Cells["fechaIngreso"].Value.ToString();
@@ -94,13 +94,14 @@ namespace gpro_desktop_windows.UsersControls
         editarEmpleadoForm.ShowDialog();
         string dni = editarEmpleadoForm.dni;
         if (!string.IsNullOrEmpty(dni))
-          buscarEmpleado("/empleado/documento/", dni, true);
+          buscarUsuario("/empleado/documento/", dni, true);
       }
-      if (e.ColumnIndex >= 0 && this.mgEmpleados.Columns[e.ColumnIndex].Name == "Ver" && e.RowIndex >= 0)
+      if (e.ColumnIndex >= 0 && this.mgUsuarios.Columns[e.ColumnIndex].Name == "Ver" && e.RowIndex >= 0)
       {
-        VerEmpleadoForm verEmpleadoForm = new VerEmpleadoForm();
-        DataGridViewRow verEmpleado = mgEmpleados.Rows[e.RowIndex];
+        VerUsuarioForm verUsuarioForm = new VerUsuarioForm();
+        DataGridViewRow verUsuario = mgUsuarios.Rows[e.RowIndex];
 
+        /*
         verEmpleadoForm.textBoxApellidoEmpl.Text = verEmpleado.Cells["apellidoEmpleado"].Value.ToString();
         verEmpleadoForm.textBoxNombreEmpl.Text = verEmpleado.Cells["nombreEmpleado"].Value.ToString();
         verEmpleadoForm.textBoxFechaIngEmpl.Text = verEmpleado.Cells["fechaIngreso"].Value.ToString();
@@ -109,16 +110,16 @@ namespace gpro_desktop_windows.UsersControls
         verEmpleadoForm.textBoxDomicilioEmpl.Text = verEmpleado.Cells["Domicilio"].Value.ToString();
         verEmpleadoForm.textBoxLocalidadEmpl.Text = verEmpleado.Cells["Localidad"].Value.ToString();
         verEmpleadoForm.textBoxProvinciaEmpl.Text = verEmpleado.Cells["Provincia"].Value.ToString();
-        verEmpleadoForm.textBoxNacionalidadEmpl.Text = verEmpleado.Cells["Nacionalidad"].Value.ToString();
-        verEmpleadoForm.Show();
+        verEmpleadoForm.textBoxNacionalidadEmpl.Text = verEmpleado.Cells["Nacionalidad"].Value.ToString();ç
+        */
+        verUsuarioForm.Show();
       }
     }
 
-    private void btnCrearEmpleado_Click(object sender, EventArgs e)
+    private void btnCrearUsuario_Click(object sender, EventArgs e)
     {
-
-      CrearEmpleadoForm crearEmpleadoForm = new CrearEmpleadoForm();
-      crearEmpleadoForm.ShowDialog();
+      CrearUsuarioForm crearUsuarioForm = new CrearUsuarioForm();
+      crearUsuarioForm.ShowDialog();
     }
 
     private void btnLimpiar_Click(object sender, EventArgs e)
@@ -143,11 +144,11 @@ namespace gpro_desktop_windows.UsersControls
       {
         path = "/empleado/empleados/";
         payload = textBoxDato.Text;
-        buscarEmpleado(path, payload, getbydni);
+        buscarUsuario(path, payload, getbydni);
       }
       else
       {
-        path = "/empleado/documento/";
+        path = "/usuarios/dni/";
         payload = textBoxDNI.Text;
         if (!payload.All(char.IsDigit))
         {
@@ -155,40 +156,45 @@ namespace gpro_desktop_windows.UsersControls
           return;
         }
         getbydni = true;
-        buscarEmpleado(path, payload, getbydni);
+        buscarUsuario(path, payload, getbydni);
       }
     }
 
-    private void buscarEmpleado(string path, string payload, bool getbydni)
+    private void buscarUsuario(string path, string payload, bool getbydni)
     {
-      Empleado empleadoResponse = null;
-      List<Empleado> empleadoResponses = null;
+      UsuarioResponse usuarioResponse = null;
+      List<UsuarioResponse> usuarioResponses = null;
 
       HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getEmpleado(client, path, payload);
+      HttpResponseMessage response = HttpUtils.getUsuario(client, path, payload);
 
       string stringER = response.Content.ReadAsStringAsync().Result;
 
+      usuarioResponses = JsonConvert.DeserializeObject<List<UsuarioResponse>>(stringER);
+      /*
       if (getbydni)
       {
-        empleadoResponse = JsonConvert.DeserializeObject<Empleado>(stringER);
-        empleadoResponses = new List<Empleado>();
-        empleadoResponses.Add(empleadoResponse);
+        usuarioResponse = JsonConvert.DeserializeObject<Usuario>(stringER);
+        usuarioResponses = new List<Usuario>();
+        usuarioResponses.Add(usuarioResponse);
       }
       else
       {
-        empleadoResponses = JsonConvert.DeserializeObject<List<Empleado>>(stringER);
+        usuarioResponses = JsonConvert.DeserializeObject<List<Usuario>>(stringER);
       }
-
+      */
       if (response.IsSuccessStatusCode)
       {
-        mgEmpleados.Visible = true;
-        if (getbydni) { mgEmpleados.DataSource = empleadoResponses; }
-        else { mgEmpleados.DataSource = empleadoResponses; }
+        mgUsuarios.Visible = true;
+        mgUsuarios.DataSource = usuarioResponses;
+        /*
+        if (getbydni) { mgUsuarios.DataSource = usuarioResponses; }
+        else { mgUsuarios.DataSource = usuarioResponses; }
+        */
       }
       else
       {
-        MessageBox.Show("No se encontró el empleado.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show("No se encontró el usuario.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         textBoxDato.Clear(); textBoxDNI.Clear();
       }
     }

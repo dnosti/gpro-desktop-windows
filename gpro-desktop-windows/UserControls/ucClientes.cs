@@ -17,9 +17,9 @@ using gpro_desktop_windows.Forms;
 
 namespace gpro_desktop_windows.UsersControls
 {
-  public partial class ucCliente : MetroFramework.Controls.MetroUserControl
+  public partial class ucClientes : MetroFramework.Controls.MetroUserControl
   {
-    public ucCliente()
+    public ucClientes()
     {
       InitializeComponent();
       mgClientes.Visible = false;

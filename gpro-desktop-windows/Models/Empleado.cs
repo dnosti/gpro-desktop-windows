@@ -16,6 +16,11 @@ namespace gpro_desktop_windows.Models
     public int Dni { get; set; }
     public string Nacionalidad { get; set; }
 
+    public string FullName
+    {
+      get { return ApellidoEmpleado + ", " + NombreEmpleado + " (DNI " + Dni + ")"; }
+    }
+
     public List<EmpleadoProyecto> EmpleadoProyecto { get; set; }
   }
 }

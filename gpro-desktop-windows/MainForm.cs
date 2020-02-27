@@ -16,6 +16,9 @@ namespace gpro_desktop_windows
 {
   public partial class MainForm : MetroFramework.Forms.MetroForm
   {
+    private string role = "";
+    private string control = "";
+
     static MainForm _instance;
     public static MainForm Instance
     {
@@ -45,7 +48,7 @@ namespace gpro_desktop_windows
       InitializeComponent();
       metroLabelUsername.Text = "username: " + Settings.Default.Username;
       metroLabelRole.Text = "role: " + Settings.Default.Role;
-      metroPanelMF.Focus();
+      this.role = Settings.Default.Role;
     }
 
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -70,14 +73,27 @@ namespace gpro_desktop_windows
     {
       mlBack.Visible = false;
       _instance = this;
-      ucDashboard uc = new ucDashboard();
-      uc.Dock = DockStyle.Fill;
-      metroPanelMF.Controls.Add(uc);
+      switch (role)
+      {
+        case "Admin":
+          ucAdmin uc = new ucAdmin();
+          uc.Dock = DockStyle.Fill;
+          metroPanelMF.Controls.Add(uc);
+          this.control = "ucAdmin";
+          break;
+        case "PM":
+          break;
+        case "Miembro":
+          break;
+        default:
+          break;
+      }
+      
     }
 
     private void mlBack_Click(object sender, EventArgs e)
     {
-      metroPanelMF.Controls["ucDashboard"].BringToFront();
+      metroPanelMF.Controls[this.control].BringToFront();
       mlBack.Visible = false;
       metroPanelMF.Focus();
     }
