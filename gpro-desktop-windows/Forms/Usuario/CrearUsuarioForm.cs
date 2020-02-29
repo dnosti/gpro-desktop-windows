@@ -60,7 +60,7 @@ namespace gpro_desktop_windows.Forms
       errorProvider1.SetError(textBoxPassword, "");
     }
 
-    private void GetRoles()
+    private void getRoles()
     {
       List<Role> roleResponses = null;
       HttpClient client = HttpUtils.configHttpClient();
@@ -77,7 +77,7 @@ namespace gpro_desktop_windows.Forms
       }
     }
 
-    private void GetEmpleados()
+    private void getEmpleados()
     {
       List<Empleado> empleadoResponses = null;
       HttpClient client = HttpUtils.configHttpClient();
@@ -124,8 +124,8 @@ namespace gpro_desktop_windows.Forms
 
     private void CrearUsuarioForm_Load(object sender, EventArgs e)
     {
-      GetEmpleados();
-      GetRoles();
+      getEmpleados();
+      getRoles();
     }
   }
 }

@@ -26,8 +26,67 @@ namespace gpro_desktop_windows.UsersControls
 
     private void btnLimpiar_Click(object sender, EventArgs e)
     {
-      textBoxProyecto.Clear();
-      textBoxEstado.Clear();
+      TextBoxDescripcion.Clear();
+      horasEstimadas.Value = 0;
+
+    }
+
+    private void getEmpleados()
+    {
+      List<Empleado> empleadoResponses = null;
+      HttpClient client = HttpUtils.configHttpClient();
+      HttpResponseMessage response = HttpUtils.getEmpleados(client, "/empleado/");
+
+      string stringCR = response.Content.ReadAsStringAsync().Result;
+
+      if (response.IsSuccessStatusCode)
+      {
+        empleadoResponses = JsonConvert.DeserializeObject<List<Empleado>>(stringCR);
+        ComboBoxEmpleado.DataSource = empleadoResponses.OrderBy(x => x.FullName).ToList();
+        ComboBoxEmpleado.DisplayMember = "FullName";
+        ComboBoxEmpleado.ValueMember = "IdEmpleado";
+      }
+    }
+
+    private void ucTareas_Load(object sender, EventArgs e)
+    {
+      getEmpleados();
+      getProyectos();
+      getPerfiles();
+    }
+
+    private void getProyectos()
+    {
+      List<Proyecto> proyectoResponses = null;
+      HttpClient client = HttpUtils.configHttpClient();
+      HttpResponseMessage response = HttpUtils.getProyectos(client, "/proyectos/");
+
+      string stringCR = response.Content.ReadAsStringAsync().Result;
+
+      if (response.IsSuccessStatusCode)
+      {
+        proyectoResponses = JsonConvert.DeserializeObject<List<Proyecto>>(stringCR);
+        ComboBoxProyecto.DataSource = proyectoResponses.OrderBy(x => x.TituloProyecto).ToList();
+        ComboBoxProyecto.DisplayMember = "TituloProyecto";
+        ComboBoxProyecto.ValueMember = "IdProyecto";
+      }
+    }
+
+    private void getPerfiles()
+    {
+      List<Perfil> perfilResponses = null;
+      HttpClient client = HttpUtils.configHttpClient();
+      HttpResponseMessage response = HttpUtils.getPerfiles(client, "/perfiles/");
+
+      string stringCR = response.Content.ReadAsStringAsync().Result;
+
+      if (response.IsSuccessStatusCode)
+      {
+        perfilResponses = JsonConvert.DeserializeObject<List<Perfil>>(stringCR);
+        ComboBoxPerfiles.DataSource = perfilResponses.OrderBy(x => x.DescripcionPerfil).ToList();
+        ComboBoxPerfiles.DisplayMember = "DescripcionPerfil";
+        ComboBoxPerfiles.ValueMember = "IdPerfil";
+      }
     }
   }
 }

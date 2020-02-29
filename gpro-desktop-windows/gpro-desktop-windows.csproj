@@ -124,6 +124,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Perfil.cs" />
     <Compile Include="Models\Proyecto.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\UsuarioResponse.cs" />

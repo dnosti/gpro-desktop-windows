@@ -142,5 +142,14 @@ namespace gpro_desktop_windows.Utils
       return response;
     }
 
+
+    /* Perfil */
+
+    public static HttpResponseMessage getPerfiles(HttpClient client, string path)
+    {
+      HttpResponseMessage response = client.GetAsync(path).Result;
+      return response;
+    }
+
   }
 }
