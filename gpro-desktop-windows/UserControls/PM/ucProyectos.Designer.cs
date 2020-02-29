@@ -48,6 +48,7 @@
       this.EstadoProyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ApellidoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.btnVerTodosProyectos = new MetroFramework.Controls.MetroButton();
       ((System.ComponentModel.ISupportInitialize)(this.mgProyectos)).BeginInit();
       this.SuspendLayout();
       // 
@@ -305,10 +306,24 @@
       this.ApellidoCliente.ReadOnly = true;
       this.ApellidoCliente.Visible = false;
       // 
+      // btnVerTodosProyectos
+      // 
+      this.btnVerTodosProyectos.Location = new System.Drawing.Point(254, 66);
+      this.btnVerTodosProyectos.Name = "btnVerTodosProyectos";
+      this.btnVerTodosProyectos.Size = new System.Drawing.Size(137, 25);
+      this.btnVerTodosProyectos.Style = MetroFramework.MetroColorStyle.Blue;
+      this.btnVerTodosProyectos.TabIndex = 9;
+      this.btnVerTodosProyectos.Text = "Ver todos los Proyectos";
+      this.btnVerTodosProyectos.Theme = MetroFramework.MetroThemeStyle.Light;
+      this.btnVerTodosProyectos.UseSelectable = true;
+      this.btnVerTodosProyectos.UseStyleColors = true;
+      this.btnVerTodosProyectos.Click += new System.EventHandler(this.btnVerTodosProyectos_Click);
+      // 
       // ucProyectos
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Controls.Add(this.btnVerTodosProyectos);
       this.Controls.Add(this.mgProyectos);
       this.Controls.Add(this.textBoxEstado);
       this.Controls.Add(this.metroPanel1);
@@ -349,5 +364,6 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn EstadoProyecto;
     private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
     private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoCliente;
+    private MetroFramework.Controls.MetroButton btnVerTodosProyectos;
   }
 }

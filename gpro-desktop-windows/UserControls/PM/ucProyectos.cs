@@ -22,8 +22,7 @@ namespace gpro_desktop_windows.UsersControls
     public ucProyectos()
     {
       InitializeComponent();
-      mgProyectos.Visible = true;
-      getProyectos();
+      mgProyectos.Visible = false;      
       ///* Botón Editar en DataGrid */
       //DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn();
       //btnEditar.Name = "Editar";
@@ -125,7 +124,7 @@ namespace gpro_desktop_windows.UsersControls
     {
       string path = "";
       string payload = "";
-      bool getbycuit = false;
+      bool getbyestado = false;
 
       if (string.IsNullOrEmpty(textBoxProyecto.Text) && string.IsNullOrEmpty(textBoxEstado.Text))
       {
@@ -135,54 +134,39 @@ namespace gpro_desktop_windows.UsersControls
 
       if (string.IsNullOrEmpty(textBoxEstado.Text))
       {
-        path = "/cliente/dato/";
+        path = "/proyectos/porTitulo/";
         payload = textBoxProyecto.Text;
-        buscarCliente(path, payload, getbycuit);
+        buscarProyecto(path, payload, getbyestado);
       }
       else
       {
-        path = "/cliente/cuit/";
+        path = "/proyectos/porEstado/";
         payload = textBoxEstado.Text;
-        if (!payload.All(char.IsDigit))
-        {
-          MessageBox.Show("En CUIT solo ingrese números.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-          return;
-        }
-        getbycuit = true;
-        buscarCliente(path, payload, getbycuit);
+        getbyestado = true;
+        buscarProyecto(path, payload, getbyestado);
       }
     }
 
-    private void buscarCliente(string path, string payload, bool getbycuit)
+    private void buscarProyecto(string path, string payload, bool getbyestado)
     {
-      Cliente clienteResponse = null;
-      List<Cliente> clienteResponses = null;
+      List<Proyecto> proyectoResponses = null;
 
       HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getCliente(client, path, payload);
+      HttpResponseMessage response = HttpUtils.getProyecto(client, path, payload);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 
-      if (getbycuit)
-      {
-        clienteResponse = JsonConvert.DeserializeObject<Cliente>(stringCR);
-        clienteResponses = new List<Cliente>();
-        clienteResponses.Add(clienteResponse);
-      }
-      else
-      {
-        clienteResponses = JsonConvert.DeserializeObject<List<Cliente>>(stringCR);
-      }
+      proyectoResponses = JsonConvert.DeserializeObject<List<Proyecto>>(stringCR);
+      
 
       if (response.IsSuccessStatusCode)
       {
         mgProyectos.Visible = true;
-        if (getbycuit) { mgProyectos.DataSource = clienteResponses; }
-        else { mgProyectos.DataSource = clienteResponses; }
+        mgProyectos.DataSource = proyectoResponses;
       }
       else
       {
-        MessageBox.Show("No se encontró el cliente.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show("No se encontró el proyecto.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         textBoxProyecto.Clear(); textBoxEstado.Clear();
       }
     }
@@ -200,6 +184,7 @@ namespace gpro_desktop_windows.UsersControls
 
       if (response.IsSuccessStatusCode)
       {
+        mgProyectos.Visible = true;
         proyectoResponses = JsonConvert.DeserializeObject<List<Proyecto>>(stringCR);
         mgProyectos.DataSource = proyectoResponses;
       }
@@ -208,6 +193,11 @@ namespace gpro_desktop_windows.UsersControls
         MessageBox.Show("No se encontró el proyecto.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         textBoxProyecto.Clear(); textBoxEstado.Clear();
       }
+    }
+
+    private void btnVerTodosProyectos_Click(object sender, EventArgs e)
+    {
+      getProyectos();
     }
   }
 }

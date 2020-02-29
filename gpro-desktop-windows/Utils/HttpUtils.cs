@@ -142,6 +142,11 @@ namespace gpro_desktop_windows.Utils
       return response;
     }
 
+    public static HttpResponseMessage getProyecto(HttpClient client, string path, string payload)
+    {
+      HttpResponseMessage response = client.GetAsync(path + payload).Result;
+      return response;
+    }
 
     /* Perfil */
 
