@@ -45,6 +45,7 @@
       this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.IdRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.DescripcionRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.apellidoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.nombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -220,6 +221,7 @@
             this.Username,
             this.IdEmpleado,
             this.IdRol,
+            this.DescripcionRole,
             this.apellidoEmpleado,
             this.nombreEmpleado,
             this.Dni});
@@ -287,6 +289,14 @@
       this.IdRol.ReadOnly = true;
       this.IdRol.Visible = false;
       // 
+      // DescripcionRole
+      // 
+      this.DescripcionRole.DataPropertyName = "Descripcion";
+      this.DescripcionRole.HeaderText = "Descripción";
+      this.DescripcionRole.Name = "DescripcionRole";
+      this.DescripcionRole.ReadOnly = true;
+      this.DescripcionRole.Visible = false;
+      // 
       // apellidoEmpleado
       // 
       this.apellidoEmpleado.DataPropertyName = "apellidoEmpleado";
@@ -349,6 +359,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn Username;
     private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpleado;
     private System.Windows.Forms.DataGridViewTextBoxColumn IdRol;
+    private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionRole;
     private System.Windows.Forms.DataGridViewTextBoxColumn apellidoEmpleado;
     private System.Windows.Forms.DataGridViewTextBoxColumn nombreEmpleado;
     private System.Windows.Forms.DataGridViewTextBoxColumn Dni;

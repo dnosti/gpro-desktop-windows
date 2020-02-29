@@ -61,7 +61,7 @@ namespace gpro_desktop_windows.UsersControls
       {
         e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-        DataGridViewButtonCell cellButtonVer = this.mgClientes.Rows[e.RowIndex].Cells["Editar"] as DataGridViewButtonCell;
+        DataGridViewButtonCell cellButtonVer = this.mgClientes.Rows[e.RowIndex].Cells["Ver"] as DataGridViewButtonCell;
         Icon icoVer = Properties.Resources.ver;
         e.Graphics.DrawIcon(icoVer, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
 

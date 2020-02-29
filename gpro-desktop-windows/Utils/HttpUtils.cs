@@ -108,6 +108,22 @@ namespace gpro_desktop_windows.Utils
       return response;
     }
 
+    public static HttpResponseMessage deleteUsuario(HttpClient client, string path, int payload)
+    {
+      HttpResponseMessage response = client.DeleteAsync(path + payload).Result;
+      return response;
+    }
+
+    public static HttpResponseMessage putUsuario(HttpClient client, int id, UsuarioRequest payload)
+    {
+      string stringData = JsonConvert.SerializeObject(payload);
+      var contentData = new StringContent(stringData, Encoding.UTF8, "application/json");
+
+      HttpResponseMessage response = client.PutAsync("/usuarios/" + id, contentData).Result;
+
+      return response;
+    }
+
 
     /* Roles */
 

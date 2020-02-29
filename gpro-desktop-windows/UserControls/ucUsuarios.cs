@@ -28,14 +28,19 @@ namespace gpro_desktop_windows.UsersControls
       DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn();
       btnEditar.Name = "Editar";
       mgUsuarios.Columns.Add(btnEditar);
-      mgUsuarios.Columns[7].HeaderText = "";
+      mgUsuarios.Columns[8].HeaderText = "";
 
       /* Botón Ver en DataGrid */
       DataGridViewButtonColumn btnVer = new DataGridViewButtonColumn();
       btnVer.Name = "Ver";
       mgUsuarios.Columns.Add(btnVer);
-      mgUsuarios.Columns[8].HeaderText = "";
+      mgUsuarios.Columns[9].HeaderText = "";
 
+      /* Botón Eliminar en DataGrid */
+      DataGridViewButtonColumn btnEliminar = new DataGridViewButtonColumn();
+      btnEliminar.Name = "Eliminar";
+      mgUsuarios.Columns.Add(btnEliminar);
+      mgUsuarios.Columns[10].HeaderText = "";
     }
 
     private void mgEmpleados_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -61,7 +66,7 @@ namespace gpro_desktop_windows.UsersControls
       {
         e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-        DataGridViewButtonCell cellButtonVer = this.mgUsuarios.Rows[e.RowIndex].Cells["Editar"] as DataGridViewButtonCell;
+        DataGridViewButtonCell cellButtonVer = this.mgUsuarios.Rows[e.RowIndex].Cells["Ver"] as DataGridViewButtonCell;
         Icon icoVer = Properties.Resources.ver;
         e.Graphics.DrawIcon(icoVer, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
 
@@ -73,46 +78,60 @@ namespace gpro_desktop_windows.UsersControls
 
         e.Handled = true;
       }
+
+      if (e.ColumnIndex >= 0 && this.mgUsuarios.Columns[e.ColumnIndex].Name == "Eliminar" && e.RowIndex >= 0)
+      {
+        e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+        DataGridViewButtonCell cellButtonVer = this.mgUsuarios.Rows[e.RowIndex].Cells["Eliminar"] as DataGridViewButtonCell;
+        Icon icoEliminar = Properties.Resources.eliminar;
+        e.Graphics.DrawIcon(icoEliminar, e.CellBounds.Left + 5, e.CellBounds.Top + 4);
+
+        this.mgUsuarios.Rows[e.RowIndex].Height = icoEliminar.Height + 8;
+        this.mgUsuarios.Columns[e.ColumnIndex].Width = icoEliminar.Width + 10;
+
+        DataGridViewCell cell = this.mgUsuarios.Rows[e.RowIndex].Cells[e.ColumnIndex];
+        cell.ToolTipText = "Eliminar";
+
+        e.Handled = true;
+      }
     }
 
     private void mgEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
     {
       if (e.ColumnIndex >= 0 && this.mgUsuarios.Columns[e.ColumnIndex].Name == "Editar" && e.RowIndex >= 0)
       {
+        string IdUsuario = mgUsuarios.Rows[e.RowIndex].Cells["Id"].Value.ToString();
         string IdEmpleado = mgUsuarios.Rows[e.RowIndex].Cells["IdEmpleado"].Value.ToString();
-        EditarEmpleadoForm editarEmpleadoForm = new EditarEmpleadoForm(IdEmpleado);
-        DataGridViewRow editarEmpleado = mgUsuarios.Rows[e.RowIndex];
-        editarEmpleadoForm.textBoxApellidoEmpl.Text = editarEmpleado.Cells["apellidoEmpleado"].Value.ToString();
-        editarEmpleadoForm.textBoxNombreEmpl.Text = editarEmpleado.Cells["nombreEmpleado"].Value.ToString();
-        editarEmpleadoForm.textBoxFechaIngEmpl.Text = editarEmpleado.Cells["fechaIngreso"].Value.ToString();
-        editarEmpleadoForm.textBoxDniEmpl.Text = editarEmpleado.Cells["Dni"].Value.ToString();
-        editarEmpleadoForm.textBoxTelefonoEmpl.Text = editarEmpleado.Cells["Telefono"].Value.ToString();
-        editarEmpleadoForm.textBoxDomicilioEmpl.Text = editarEmpleado.Cells["Domicilio"].Value.ToString();
-        editarEmpleadoForm.textBoxLocalidadEmpl.Text = editarEmpleado.Cells["Localidad"].Value.ToString();
-        editarEmpleadoForm.textBoxProvinciaEmpl.Text = editarEmpleado.Cells["Provincia"].Value.ToString();
-        editarEmpleadoForm.textBoxNacionalidadEmpl.Text = editarEmpleado.Cells["Nacionalidad"].Value.ToString();
-        editarEmpleadoForm.ShowDialog();
-        string dni = editarEmpleadoForm.dni;
-        if (!string.IsNullOrEmpty(dni))
-          buscarUsuario("/empleado/documento/", dni, true);
+        string dni = mgUsuarios.Rows[e.RowIndex].Cells["Dni"].Value.ToString();
+        EditarUsuarioForm editarUsuarioForm = new EditarUsuarioForm(IdUsuario, IdEmpleado);
+        DataGridViewRow editarUsuario = mgUsuarios.Rows[e.RowIndex];
+
+        editarUsuarioForm.textBoxEmpleado.Text = editarUsuario.Cells["apellidoEmpleado"].Value.ToString() + ", " + editarUsuario.Cells["nombreEmpleado"].Value.ToString();
+        editarUsuarioForm.textBoxUsuario.Text = editarUsuario.Cells["Username"].Value.ToString();
+        editarUsuarioForm.ShowDialog();
+        if (editarUsuarioForm.okUpdate)
+          buscarUsuario("/usuarios/dni/", dni, true);
       }
       if (e.ColumnIndex >= 0 && this.mgUsuarios.Columns[e.ColumnIndex].Name == "Ver" && e.RowIndex >= 0)
       {
         VerUsuarioForm verUsuarioForm = new VerUsuarioForm();
         DataGridViewRow verUsuario = mgUsuarios.Rows[e.RowIndex];
 
-        /*
-        verEmpleadoForm.textBoxApellidoEmpl.Text = verEmpleado.Cells["apellidoEmpleado"].Value.ToString();
-        verEmpleadoForm.textBoxNombreEmpl.Text = verEmpleado.Cells["nombreEmpleado"].Value.ToString();
-        verEmpleadoForm.textBoxFechaIngEmpl.Text = verEmpleado.Cells["fechaIngreso"].Value.ToString();
-        verEmpleadoForm.textBoxDniEmpl.Text = verEmpleado.Cells["Dni"].Value.ToString();
-        verEmpleadoForm.textBoxTelefonoEmpl.Text = verEmpleado.Cells["Telefono"].Value.ToString();
-        verEmpleadoForm.textBoxDomicilioEmpl.Text = verEmpleado.Cells["Domicilio"].Value.ToString();
-        verEmpleadoForm.textBoxLocalidadEmpl.Text = verEmpleado.Cells["Localidad"].Value.ToString();
-        verEmpleadoForm.textBoxProvinciaEmpl.Text = verEmpleado.Cells["Provincia"].Value.ToString();
-        verEmpleadoForm.textBoxNacionalidadEmpl.Text = verEmpleado.Cells["Nacionalidad"].Value.ToString();ç
-        */
+        verUsuarioForm.textBoxApellido.Text = verUsuario.Cells["apellidoEmpleado"].Value.ToString();
+        verUsuarioForm.textBoxNombre.Text = verUsuario.Cells["nombreEmpleado"].Value.ToString();
+        verUsuarioForm.textBoxDni.Text = verUsuario.Cells["Dni"].Value.ToString();
+        verUsuarioForm.textBoxUsername.Text = verUsuario.Cells["Username"].Value.ToString();
+        verUsuarioForm.textBoxRole.Text = verUsuario.Cells["DescripcionRole"].Value.ToString();
         verUsuarioForm.Show();
+      }
+      if (e.ColumnIndex >= 0 && this.mgUsuarios.Columns[e.ColumnIndex].Name == "Eliminar" && e.RowIndex >= 0)
+      {
+        int IdUsuario = int.Parse(mgUsuarios.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+
+        DialogResult result = MessageBox.Show("¿Está seguro de eliminar el usuario?", "Eliminar Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        if (result == DialogResult.Yes)
+          if (deleteUsuario(IdUsuario)) mgUsuarios.Visible = false;
       }
     }
 
@@ -136,13 +155,13 @@ namespace gpro_desktop_windows.UsersControls
 
       if (string.IsNullOrEmpty(textBoxDato.Text) && string.IsNullOrEmpty(textBoxDNI.Text))
       {
-        MessageBox.Show(this,"Complete el formulario para realizar la búsqueda.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        MessageBox.Show(this, "Complete el formulario para realizar la búsqueda.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         return;
       }
 
       if (string.IsNullOrEmpty(textBoxDNI.Text))
       {
-        path = "/empleado/empleados/";
+        path = "/usuarios/apynom/";
         payload = textBoxDato.Text;
         buscarUsuario(path, payload, getbydni);
       }
@@ -162,7 +181,6 @@ namespace gpro_desktop_windows.UsersControls
 
     private void buscarUsuario(string path, string payload, bool getbydni)
     {
-      UsuarioResponse usuarioResponse = null;
       List<UsuarioResponse> usuarioResponses = null;
 
       HttpClient client = HttpUtils.configHttpClient();
@@ -171,31 +189,36 @@ namespace gpro_desktop_windows.UsersControls
       string stringER = response.Content.ReadAsStringAsync().Result;
 
       usuarioResponses = JsonConvert.DeserializeObject<List<UsuarioResponse>>(stringER);
-      /*
-      if (getbydni)
-      {
-        usuarioResponse = JsonConvert.DeserializeObject<Usuario>(stringER);
-        usuarioResponses = new List<Usuario>();
-        usuarioResponses.Add(usuarioResponse);
-      }
-      else
-      {
-        usuarioResponses = JsonConvert.DeserializeObject<List<Usuario>>(stringER);
-      }
-      */
+
       if (response.IsSuccessStatusCode)
       {
         mgUsuarios.Visible = true;
         mgUsuarios.DataSource = usuarioResponses;
-        /*
-        if (getbydni) { mgUsuarios.DataSource = usuarioResponses; }
-        else { mgUsuarios.DataSource = usuarioResponses; }
-        */
       }
       else
       {
         MessageBox.Show("No se encontró el usuario.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         textBoxDato.Clear(); textBoxDNI.Clear();
+      }
+    }
+
+    private bool deleteUsuario(int id)
+    {
+      string path = "/usuarios/";
+      HttpClient client = HttpUtils.configHttpClient();
+      HttpResponseMessage response = HttpUtils.deleteUsuario(client, path, id);
+
+      string stringCR = response.Content.ReadAsStringAsync().Result;
+
+      if (response.IsSuccessStatusCode)
+      {
+        MessageBox.Show("Usuario eliminado con éxito!", "Wooh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        return true;
+      }
+      else
+      {
+        MessageBox.Show("No se pudo eliminar el usuario.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return false;
       }
     }
   }

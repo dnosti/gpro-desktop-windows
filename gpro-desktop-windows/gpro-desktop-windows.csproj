@@ -94,6 +94,12 @@
     <Compile Include="Forms\Empleado\VerEmpleadoForm.Designer.cs">
       <DependentUpon>VerEmpleadoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Usuario\EditarUsuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Usuario\EditarUsuarioForm.Designer.cs">
+      <DependentUpon>EditarUsuarioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Usuario\CrearUsuarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     <EmbeddedResource Include="Forms\Empleado\VerEmpleadoForm.resx">
       <DependentUpon>VerEmpleadoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Usuario\EditarUsuarioForm.resx">
+      <DependentUpon>EditarUsuarioForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Usuario\CrearUsuarioForm.resx">
       <DependentUpon>CrearUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +234,8 @@
   <ItemGroup>
     <None Include="Resources\ver.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\eliminar.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
