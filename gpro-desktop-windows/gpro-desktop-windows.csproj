@@ -134,29 +134,35 @@
     <Compile Include="Models\UserResponse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\ucAdmin.cs">
+    <Compile Include="UserControls\Admin\ucAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ucAdmin.Designer.cs">
+    <Compile Include="UserControls\Admin\ucAdmin.Designer.cs">
       <DependentUpon>ucAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ucUsuarios.cs">
+    <Compile Include="UserControls\Admin\ucUsuarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ucUsuarios.Designer.cs">
+    <Compile Include="UserControls\Admin\ucUsuarios.Designer.cs">
       <DependentUpon>ucUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ucEmpleados.cs">
+    <Compile Include="UserControls\Admin\ucEmpleados.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ucEmpleados.Designer.cs">
+    <Compile Include="UserControls\Admin\ucEmpleados.Designer.cs">
       <DependentUpon>ucEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ucClientes.cs">
+    <Compile Include="UserControls\Admin\ucClientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ucClientes.Designer.cs">
+    <Compile Include="UserControls\Admin\ucClientes.Designer.cs">
       <DependentUpon>ucClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PM\ucPM.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PM\ucPM.Designer.cs">
+      <DependentUpon>ucPM.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\HttpUtils.cs" />
     <EmbeddedResource Include="Forms\Cliente\CrearClienteForm.resx">
@@ -202,17 +208,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControls\ucAdmin.resx">
+    <EmbeddedResource Include="UserControls\Admin\ucAdmin.resx">
       <DependentUpon>ucAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ucUsuarios.resx">
+    <EmbeddedResource Include="UserControls\Admin\ucUsuarios.resx">
       <DependentUpon>ucUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ucEmpleados.resx">
+    <EmbeddedResource Include="UserControls\Admin\ucEmpleados.resx">
       <DependentUpon>ucEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ucClientes.resx">
+    <EmbeddedResource Include="UserControls\Admin\ucClientes.resx">
       <DependentUpon>ucClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PM\ucPM.resx">
+      <DependentUpon>ucPM.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

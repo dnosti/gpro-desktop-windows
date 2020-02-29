@@ -37,6 +37,7 @@
       this.mlBack = new MetroFramework.Controls.MetroLink();
       this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
       this.btnSalirGpro = new MetroFramework.Controls.MetroButton();
+      this.btnCerrarSesion = new MetroFramework.Controls.MetroButton();
       this.metroPanel2.SuspendLayout();
       this.metroPanel1.SuspendLayout();
       this.metroPanel3.SuspendLayout();
@@ -132,6 +133,7 @@
       // 
       // metroPanel3
       // 
+      this.metroPanel3.Controls.Add(this.btnCerrarSesion);
       this.metroPanel3.Controls.Add(this.btnSalirGpro);
       this.metroPanel3.Controls.Add(this.metroPanel1);
       this.metroPanel3.Controls.Add(this.metroPanel2);
@@ -158,6 +160,18 @@
       this.btnSalirGpro.UseSelectable = true;
       this.btnSalirGpro.UseStyleColors = true;
       this.btnSalirGpro.Click += new System.EventHandler(this.btnSalirGpro_Click);
+      // 
+      // btnCerrarSesion
+      // 
+      this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Default;
+      this.btnCerrarSesion.Location = new System.Drawing.Point(31, 183);
+      this.btnCerrarSesion.Name = "btnCerrarSesion";
+      this.btnCerrarSesion.Size = new System.Drawing.Size(177, 30);
+      this.btnCerrarSesion.TabIndex = 5;
+      this.btnCerrarSesion.Text = "Cerrar Sesión";
+      this.btnCerrarSesion.UseSelectable = true;
+      this.btnCerrarSesion.UseStyleColors = true;
+      this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
       // 
       // MainForm
       // 
@@ -191,5 +205,6 @@
     private MetroFramework.Controls.MetroLink mlBack;
     private MetroFramework.Controls.MetroPanel metroPanel3;
     private MetroFramework.Controls.MetroButton btnSalirGpro;
+    private MetroFramework.Controls.MetroButton btnCerrarSesion;
   }
 }

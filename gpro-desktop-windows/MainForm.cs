@@ -36,13 +36,13 @@ namespace gpro_desktop_windows
       set { metroPanelMF = value; }
     }
 
-    
+
     public MetroFramework.Controls.MetroLink MetroBack
     {
       get { return mlBack; }
       set { mlBack = value; }
     }
-    
+
     public MainForm()
     {
       InitializeComponent();
@@ -76,19 +76,23 @@ namespace gpro_desktop_windows
       switch (role)
       {
         case "Admin":
-          ucAdmin uc = new ucAdmin();
-          uc.Dock = DockStyle.Fill;
-          metroPanelMF.Controls.Add(uc);
+          ucAdmin ucAdmin = new ucAdmin();
+          ucAdmin.Dock = DockStyle.Fill;
+          metroPanelMF.Controls.Add(ucAdmin);
           this.control = "ucAdmin";
           break;
         case "PM":
+          ucPM ucPM = new ucPM();
+          ucPM.Dock = DockStyle.Fill;
+          metroPanelMF.Controls.Add(ucPM);
+          this.control = "ucPM";
           break;
         case "Miembro":
           break;
         default:
           break;
       }
-      
+
     }
 
     private void mlBack_Click(object sender, EventArgs e)
@@ -100,11 +104,27 @@ namespace gpro_desktop_windows
 
     private void btnSalirGpro_Click(object sender, EventArgs e)
     {
-      DialogResult result = MetroMessageBox.Show(this,"¿Seguro que desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+      DialogResult result = MetroMessageBox.Show(this, "¿Seguro que desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
       switch (result)
       {
         case DialogResult.Yes:
           Application.Exit();
+          break;
+        case DialogResult.No:
+          break;
+      }
+    }
+
+    private void btnCerrarSesion_Click(object sender, EventArgs e)
+    {
+      DialogResult result = MetroMessageBox.Show(this, "¿Seguro que desea Cerrar Sesión?", "Cerrar Sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+      switch (result)
+      {
+        case DialogResult.Yes:
+          this.Hide();
+          Settings.Default.Reset();
+          LoginForm loginForm = new LoginForm();
+          loginForm.Show();
           break;
         case DialogResult.No:
           break;

@@ -62,5 +62,10 @@ namespace gpro_desktop_windows
         textBoxPass.Clear();
       }
     }
+
+    private void lfclosing(object sender, FormClosingEventArgs e)
+    {
+      Application.Exit();
+    }
   }
 }

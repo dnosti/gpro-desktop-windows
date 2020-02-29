@@ -32,6 +32,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      
       this.textBoxUser = new MetroFramework.Controls.MetroTextBox();
       this.textBoxPass = new MetroFramework.Controls.MetroTextBox();
       this.btnIniciar = new MetroFramework.Controls.MetroButton();
@@ -242,6 +243,7 @@
       this.Resizable = false;
       this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
       this.Text = "Bienvenid@ a GPRO";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.lfclosing);
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
       this.ResumeLayout(false);
