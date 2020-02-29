@@ -51,6 +51,7 @@
       this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Nacionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this.mgEmpleados)).BeginInit();
       this.SuspendLayout();
       // 
@@ -228,7 +229,8 @@
             this.Localidad,
             this.Provincia,
             this.Dni,
-            this.Nacionalidad});
+            this.Nacionalidad,
+            this.FullName});
       dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
       dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -338,7 +340,15 @@
       this.Nacionalidad.ReadOnly = true;
       this.Nacionalidad.Visible = false;
       // 
-      // ucEmpleado
+      // FullName
+      // 
+      this.FullName.DataPropertyName = "FullName";
+      this.FullName.HeaderText = "Nombre Completo";
+      this.FullName.Name = "FullName";
+      this.FullName.ReadOnly = true;
+      this.FullName.Visible = false;
+      // 
+      // ucEmpleados
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -385,5 +395,6 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
     private System.Windows.Forms.DataGridViewTextBoxColumn Dni;
     private System.Windows.Forms.DataGridViewTextBoxColumn Nacionalidad;
+    private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
   }
 }

@@ -11,15 +11,16 @@ using gpro_desktop_windows.Properties;
 
 namespace gpro_desktop_windows.UsersControls
 {
-  public partial class ucPM : MetroFramework.Controls.MetroUserControl
+  public partial class ucMiembro : MetroFramework.Controls.MetroUserControl
   {
-    public ucPM()
+    public ucMiembro()
     {
       InitializeComponent();
     }
 
-    private void mtProyectos_Click_1(object sender, EventArgs e)
+    private void mtProyectosMiembro_Click(object sender, EventArgs e)
     {
+      /*
       if (!MainForm.Instance.MetroContainer.Controls.ContainsKey("ucProyectos"))
       {
         ucProyectos uc = new ucProyectos();
@@ -28,18 +29,7 @@ namespace gpro_desktop_windows.UsersControls
       }
       MainForm.Instance.MetroContainer.Controls["ucProyectos"].BringToFront();
       MainForm.Instance.MetroBack.Visible = true;
-    }
-
-    private void mtTareas_Click(object sender, EventArgs e)
-    {
-      if (!MainForm.Instance.MetroContainer.Controls.ContainsKey("ucTareas"))
-      {
-        ucTareas uc = new ucTareas();
-        uc.Dock = DockStyle.Fill;
-        MainForm.Instance.MetroContainer.Controls.Add(uc);
-      }
-      MainForm.Instance.MetroContainer.Controls["ucTareas"].BringToFront();
-      MainForm.Instance.MetroBack.Visible = true;
+      */
     }
   }
 }

@@ -1,6 +1,6 @@
 ﻿namespace gpro_desktop_windows.UsersControls
 {
-  partial class ucPM
+  partial class ucMiembro
   {
     /// <summary> 
     /// Variable del diseñador necesaria.
@@ -28,46 +28,21 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.mtProyectos = new MetroFramework.Controls.MetroTile();
-      this.mtTareas = new MetroFramework.Controls.MetroTile();
-      this.mtMiPanel = new MetroFramework.Controls.MetroTile();
+      this.mtProyectosMiembro = new MetroFramework.Controls.MetroTile();
       this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
       this.SuspendLayout();
       // 
-      // mtProyectos
+      // mtProyectosMiembro
       // 
-      this.mtProyectos.ActiveControl = null;
-      this.mtProyectos.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.mtProyectos.Location = new System.Drawing.Point(100, 66);
-      this.mtProyectos.Name = "mtProyectos";
-      this.mtProyectos.Size = new System.Drawing.Size(456, 119);
-      this.mtProyectos.TabIndex = 0;
-      this.mtProyectos.Text = "Proyectos";
-      this.mtProyectos.UseSelectable = true;
-      this.mtProyectos.Click += new System.EventHandler(this.mtProyectos_Click_1);
-      // 
-      // mtTareas
-      // 
-      this.mtTareas.ActiveControl = null;
-      this.mtTareas.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.mtTareas.Location = new System.Drawing.Point(100, 205);
-      this.mtTareas.Name = "mtTareas";
-      this.mtTareas.Size = new System.Drawing.Size(456, 119);
-      this.mtTareas.TabIndex = 0;
-      this.mtTareas.Text = "Tareas";
-      this.mtTareas.UseSelectable = true;
-      this.mtTareas.Click += new System.EventHandler(this.mtTareas_Click);
-      // 
-      // mtMiPanel
-      // 
-      this.mtMiPanel.ActiveControl = null;
-      this.mtMiPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.mtMiPanel.Location = new System.Drawing.Point(100, 344);
-      this.mtMiPanel.Name = "mtMiPanel";
-      this.mtMiPanel.Size = new System.Drawing.Size(456, 119);
-      this.mtMiPanel.TabIndex = 0;
-      this.mtMiPanel.Text = "Mi Panel";
-      this.mtMiPanel.UseSelectable = true;
+      this.mtProyectosMiembro.ActiveControl = null;
+      this.mtProyectosMiembro.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.mtProyectosMiembro.Location = new System.Drawing.Point(100, 66);
+      this.mtProyectosMiembro.Name = "mtProyectosMiembro";
+      this.mtProyectosMiembro.Size = new System.Drawing.Size(456, 119);
+      this.mtProyectosMiembro.TabIndex = 0;
+      this.mtProyectosMiembro.Text = "Mis Proyectos";
+      this.mtProyectosMiembro.UseSelectable = true;
+      this.mtProyectosMiembro.Click += new System.EventHandler(this.mtProyectosMiembro_Click);
       // 
       // metroPanel1
       // 
@@ -84,15 +59,13 @@
       this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
       this.metroPanel1.VerticalScrollbarSize = 10;
       // 
-      // ucPM
+      // ucMiembro
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.metroPanel1);
-      this.Controls.Add(this.mtMiPanel);
-      this.Controls.Add(this.mtTareas);
-      this.Controls.Add(this.mtProyectos);
-      this.Name = "ucPM";
+      this.Controls.Add(this.mtProyectosMiembro);
+      this.Name = "ucMiembro";
       this.Size = new System.Drawing.Size(900, 742);
       this.ResumeLayout(false);
 
@@ -100,9 +73,7 @@
 
     #endregion
 
-    private MetroFramework.Controls.MetroTile mtProyectos;
-    private MetroFramework.Controls.MetroTile mtTareas;
-    private MetroFramework.Controls.MetroTile mtMiPanel;
+    private MetroFramework.Controls.MetroTile mtProyectosMiembro;
     private MetroFramework.Controls.MetroPanel metroPanel1;
   }
 }

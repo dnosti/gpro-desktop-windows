@@ -87,7 +87,11 @@ namespace gpro_desktop_windows
           metroPanelMF.Controls.Add(ucPM);
           this.control = "ucPM";
           break;
-        case "Miembro":
+        case "Member":
+          ucMiembro ucMiembro = new ucMiembro();
+          ucMiembro.Dock = DockStyle.Fill;
+          metroPanelMF.Controls.Add(ucMiembro);
+          this.control = "ucMiembro";
           break;
         default:
           break;

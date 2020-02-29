@@ -124,6 +124,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Proyecto.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\UsuarioResponse.cs" />
     <Compile Include="Models\UsuarioRequest.cs" />
@@ -157,6 +158,24 @@
     </Compile>
     <Compile Include="UserControls\Admin\ucClientes.Designer.cs">
       <DependentUpon>ucClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Miembro\ucMiembro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Miembro\ucMiembro.Designer.cs">
+      <DependentUpon>ucMiembro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PM\ucTareas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PM\ucTareas.Designer.cs">
+      <DependentUpon>ucTareas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PM\ucProyectos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PM\ucProyectos.Designer.cs">
+      <DependentUpon>ucProyectos.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\PM\ucPM.cs">
       <SubType>UserControl</SubType>
@@ -219,6 +238,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Admin\ucClientes.resx">
       <DependentUpon>ucClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Miembro\ucMiembro.resx">
+      <DependentUpon>ucMiembro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PM\ucTareas.resx">
+      <DependentUpon>ucTareas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PM\ucProyectos.resx">
+      <DependentUpon>ucProyectos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\PM\ucPM.resx">
       <DependentUpon>ucPM.cs</DependentUpon>
