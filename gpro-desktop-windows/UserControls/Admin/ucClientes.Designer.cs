@@ -49,6 +49,7 @@
       this.direccionCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.telefonoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.emailCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this.mgClientes)).BeginInit();
       this.SuspendLayout();
       // 
@@ -224,7 +225,8 @@
             this.nombreCliente,
             this.direccionCliente,
             this.telefonoCliente,
-            this.emailCliente});
+            this.emailCliente,
+            this.FullName});
       dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
       dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -316,6 +318,14 @@
       this.emailCliente.ReadOnly = true;
       this.emailCliente.Visible = false;
       // 
+      // FullName
+      // 
+      this.FullName.DataPropertyName = "FullName";
+      this.FullName.HeaderText = "FullName";
+      this.FullName.Name = "FullName";
+      this.FullName.ReadOnly = true;
+      this.FullName.Visible = false;
+      // 
       // ucClientes
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,5 +371,6 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn direccionCliente;
     private System.Windows.Forms.DataGridViewTextBoxColumn telefonoCliente;
     private System.Windows.Forms.DataGridViewTextBoxColumn emailCliente;
+    private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
   }
 }

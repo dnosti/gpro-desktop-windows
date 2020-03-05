@@ -46,8 +46,10 @@
       this.TituloProyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.DescripciónProyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.EstadoProyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.IdEmpleadoPM = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ApellidoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.RazonSocialCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.btnVerTodosProyectos = new MetroFramework.Controls.MetroButton();
       ((System.ComponentModel.ISupportInitialize)(this.mgProyectos)).BeginInit();
       this.SuspendLayout();
@@ -222,8 +224,10 @@
             this.TituloProyecto,
             this.DescripciónProyecto,
             this.EstadoProyecto,
+            this.IdEmpleadoPM,
             this.NombreCliente,
-            this.ApellidoCliente});
+            this.ApellidoCliente,
+            this.RazonSocialCliente});
       dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
       dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -252,6 +256,8 @@
       this.mgProyectos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.mgProyectos.Size = new System.Drawing.Size(774, 425);
       this.mgProyectos.TabIndex = 8;
+      this.mgProyectos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mgProyectos_CellClick);
+      this.mgProyectos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.mgProyectos_CellPainting);
       // 
       // Id
       // 
@@ -290,6 +296,14 @@
       this.EstadoProyecto.Name = "EstadoProyecto";
       this.EstadoProyecto.ReadOnly = true;
       // 
+      // IdEmpleadoPM
+      // 
+      this.IdEmpleadoPM.DataPropertyName = "IdEmpleadoPm";
+      this.IdEmpleadoPM.HeaderText = "Id PM";
+      this.IdEmpleadoPM.Name = "IdEmpleadoPM";
+      this.IdEmpleadoPM.ReadOnly = true;
+      this.IdEmpleadoPM.Visible = false;
+      // 
       // NombreCliente
       // 
       this.NombreCliente.DataPropertyName = "NombreCliente";
@@ -305,6 +319,14 @@
       this.ApellidoCliente.Name = "ApellidoCliente";
       this.ApellidoCliente.ReadOnly = true;
       this.ApellidoCliente.Visible = false;
+      // 
+      // RazonSocialCliente
+      // 
+      this.RazonSocialCliente.DataPropertyName = "RazonSocialCliente";
+      this.RazonSocialCliente.HeaderText = "Razón Social";
+      this.RazonSocialCliente.Name = "RazonSocialCliente";
+      this.RazonSocialCliente.ReadOnly = true;
+      this.RazonSocialCliente.Visible = false;
       // 
       // btnVerTodosProyectos
       // 
@@ -357,13 +379,15 @@
     private MetroFramework.Controls.MetroPanel metroPanel1;
     private MetroFramework.Controls.MetroTextBox textBoxEstado;
     public MetroFramework.Controls.MetroGrid mgProyectos;
+    private MetroFramework.Controls.MetroButton btnVerTodosProyectos;
     private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
     private System.Windows.Forms.DataGridViewTextBoxColumn TituloProyecto;
     private System.Windows.Forms.DataGridViewTextBoxColumn DescripciónProyecto;
     private System.Windows.Forms.DataGridViewTextBoxColumn EstadoProyecto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpleadoPM;
     private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
     private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoCliente;
-    private MetroFramework.Controls.MetroButton btnVerTodosProyectos;
+    private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocialCliente;
   }
 }

@@ -28,13 +28,13 @@ namespace gpro_desktop_windows.UsersControls
       DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn();
       btnEditar.Name = "Editar";
       mgClientes.Columns.Add(btnEditar);
-      mgClientes.Columns[8].HeaderText = "";
+      mgClientes.Columns[9].HeaderText = "";
 
       /* Botón Ver en DataGrid */
       DataGridViewButtonColumn btnVer = new DataGridViewButtonColumn();
       btnVer.Name = "Ver";
       mgClientes.Columns.Add(btnVer);
-      mgClientes.Columns[9].HeaderText = "";
+      mgClientes.Columns[10].HeaderText = "";
 
     }
 

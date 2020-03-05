@@ -94,6 +94,36 @@
     <Compile Include="Forms\Empleado\VerEmpleadoForm.Designer.cs">
       <DependentUpon>VerEmpleadoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Proyecto\EditarProyectoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Proyecto\EditarProyectoForm.Designer.cs">
+      <DependentUpon>EditarProyectoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Proyecto\CrearProyectoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Proyecto\CrearProyectoForm.Designer.cs">
+      <DependentUpon>CrearProyectoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Proyecto\VerProyectoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Proyecto\VerProyectoForm.Designer.cs">
+      <DependentUpon>VerProyectoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tarea\CrearTareaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tarea\CrearTareaForm.Designer.cs">
+      <DependentUpon>CrearTareaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tarea\VerTareaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tarea\VerTareaForm.Designer.cs">
+      <DependentUpon>VerTareaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Usuario\EditarUsuarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,8 +154,10 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Tarea.cs" />
     <Compile Include="Models\Perfil.cs" />
-    <Compile Include="Models\Proyecto.cs" />
+    <Compile Include="Models\ProyectoResponse.cs" />
+    <Compile Include="Models\ProyectoRequest.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\UsuarioResponse.cs" />
     <Compile Include="Models\UsuarioRequest.cs" />
@@ -203,6 +235,21 @@
     <EmbeddedResource Include="Forms\Empleado\VerEmpleadoForm.resx">
       <DependentUpon>VerEmpleadoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Proyecto\EditarProyectoForm.resx">
+      <DependentUpon>EditarProyectoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Proyecto\CrearProyectoForm.resx">
+      <DependentUpon>CrearProyectoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Proyecto\VerProyectoForm.resx">
+      <DependentUpon>VerProyectoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tarea\CrearTareaForm.resx">
+      <DependentUpon>CrearTareaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tarea\VerTareaForm.resx">
+      <DependentUpon>VerTareaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Usuario\EditarUsuarioForm.resx">
       <DependentUpon>EditarUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,5 +322,6 @@
   <ItemGroup>
     <None Include="Resources\eliminar.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,67 +28,35 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-      this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-      this.btnAsignar = new MetroFramework.Controls.MetroButton();
-      this.btnLimpiar = new MetroFramework.Controls.MetroButton();
+      this.components = new System.ComponentModel.Container();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
       this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
       this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-      this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+      this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+      this.btnVerTodasTareas = new MetroFramework.Controls.MetroButton();
+      this.mgTareas = new MetroFramework.Controls.MetroGrid();
+      this.IdProyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.TituloProyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.IdEmpleadoPm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.IdTarea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.IdEmpleadoPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.DescripcionPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.DescripciónTarea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.HorasEstimadasTarea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.HorasOverbudgetTarea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+      this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+      this.btnBuscar = new MetroFramework.Controls.MetroButton();
+      this.btnCrearTarea = new MetroFramework.Controls.MetroButton();
       this.ComboBoxProyecto = new MetroFramework.Controls.MetroComboBox();
-      this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
       this.ComboBoxEmpleado = new MetroFramework.Controls.MetroComboBox();
-      this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-      this.TextBoxDescripcion = new MetroFramework.Controls.MetroTextBox();
-      this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-      this.ComboBoxPerfiles = new MetroFramework.Controls.MetroComboBox();
-      this.horasEstimadas = new System.Windows.Forms.NumericUpDown();
-      ((System.ComponentModel.ISupportInitialize)(this.horasEstimadas)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.mgTareas)).BeginInit();
       this.SuspendLayout();
-      // 
-      // metroLabel1
-      // 
-      this.metroLabel1.AutoSize = true;
-      this.metroLabel1.Location = new System.Drawing.Point(100, 108);
-      this.metroLabel1.Name = "metroLabel1";
-      this.metroLabel1.Size = new System.Drawing.Size(64, 19);
-      this.metroLabel1.TabIndex = 2;
-      this.metroLabel1.Text = "Proyecto:";
-      // 
-      // metroLabel2
-      // 
-      this.metroLabel2.AutoSize = true;
-      this.metroLabel2.Location = new System.Drawing.Point(498, 108);
-      this.metroLabel2.Name = "metroLabel2";
-      this.metroLabel2.Size = new System.Drawing.Size(108, 19);
-      this.metroLabel2.TabIndex = 2;
-      this.metroLabel2.Text = "Horas Estimadas:";
-      // 
-      // btnAsignar
-      // 
-      this.btnAsignar.Cursor = System.Windows.Forms.Cursors.Default;
-      this.btnAsignar.Location = new System.Drawing.Point(641, 389);
-      this.btnAsignar.Name = "btnAsignar";
-      this.btnAsignar.Size = new System.Drawing.Size(107, 25);
-      this.btnAsignar.Style = MetroFramework.MetroColorStyle.Blue;
-      this.btnAsignar.TabIndex = 0;
-      this.btnAsignar.Text = "Asignar Tarea";
-      this.btnAsignar.Theme = MetroFramework.MetroThemeStyle.Light;
-      this.btnAsignar.UseSelectable = true;
-      this.btnAsignar.UseStyleColors = true;
-      // 
-      // btnLimpiar
-      // 
-      this.btnLimpiar.Location = new System.Drawing.Point(766, 389);
-      this.btnLimpiar.Name = "btnLimpiar";
-      this.btnLimpiar.Size = new System.Drawing.Size(107, 25);
-      this.btnLimpiar.Style = MetroFramework.MetroColorStyle.Blue;
-      this.btnLimpiar.TabIndex = 0;
-      this.btnLimpiar.Text = "Limpiar";
-      this.btnLimpiar.Theme = MetroFramework.MetroThemeStyle.Light;
-      this.btnLimpiar.UseSelectable = true;
-      this.btnLimpiar.UseStyleColors = true;
-      this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
       // 
       // metroLabel3
       // 
@@ -119,19 +87,212 @@
       this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
       this.metroPanel1.VerticalScrollbarSize = 10;
       // 
-      // metroLabel4
+      // errorProvider1
       // 
-      this.metroLabel4.AutoSize = true;
-      this.metroLabel4.BackColor = System.Drawing.Color.Transparent;
-      this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
-      this.metroLabel4.ForeColor = System.Drawing.Color.Black;
-      this.metroLabel4.Location = new System.Drawing.Point(96, 66);
-      this.metroLabel4.Name = "metroLabel4";
-      this.metroLabel4.Size = new System.Drawing.Size(218, 25);
-      this.metroLabel4.TabIndex = 8;
-      this.metroLabel4.Text = "Asignar [ Tarea a Proyecto ]";
-      this.metroLabel4.UseCustomBackColor = true;
-      this.metroLabel4.UseCustomForeColor = true;
+      this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+      this.errorProvider1.ContainerControl = this;
+      // 
+      // btnVerTodasTareas
+      // 
+      this.btnVerTodasTareas.Location = new System.Drawing.Point(254, 66);
+      this.btnVerTodasTareas.Name = "btnVerTodasTareas";
+      this.btnVerTodasTareas.Size = new System.Drawing.Size(137, 25);
+      this.btnVerTodasTareas.Style = MetroFramework.MetroColorStyle.Blue;
+      this.btnVerTodasTareas.TabIndex = 18;
+      this.btnVerTodasTareas.Text = "Ver todas las Tareas";
+      this.btnVerTodasTareas.Theme = MetroFramework.MetroThemeStyle.Light;
+      this.btnVerTodasTareas.UseSelectable = true;
+      this.btnVerTodasTareas.UseStyleColors = true;
+      this.btnVerTodasTareas.Click += new System.EventHandler(this.btnVerTodasTareas_Click);
+      // 
+      // mgTareas
+      // 
+      this.mgTareas.AllowUserToResizeRows = false;
+      this.mgTareas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+      this.mgTareas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.mgTareas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.mgTareas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+      this.mgTareas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.mgTareas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      this.mgTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.mgTareas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProyecto,
+            this.TituloProyecto,
+            this.IdEmpleadoPm,
+            this.IdTarea,
+            this.IdEmpleadoPerfil,
+            this.DescripcionPerfil,
+            this.IdEmpleado,
+            this.Fullname,
+            this.DescripciónTarea,
+            this.HorasEstimadasTarea,
+            this.HorasOverbudgetTarea});
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+      this.mgTareas.DefaultCellStyle = dataGridViewCellStyle2;
+      this.mgTareas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+      this.mgTareas.EnableHeadersVisualStyles = false;
+      this.mgTareas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      this.mgTareas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.mgTareas.Location = new System.Drawing.Point(100, 213);
+      this.mgTareas.Name = "mgTareas";
+      this.mgTareas.ReadOnly = true;
+      this.mgTareas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+      dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.mgTareas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+      this.mgTareas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+      this.mgTareas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+      this.mgTareas.Size = new System.Drawing.Size(774, 425);
+      this.mgTareas.TabIndex = 17;
+      this.mgTareas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mgTareas_CellClick);
+      this.mgTareas.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.mgTareas_CellPainting);
+      // 
+      // IdProyecto
+      // 
+      this.IdProyecto.DataPropertyName = "ProyectoIdProyecto";
+      this.IdProyecto.HeaderText = "IdProyecto";
+      this.IdProyecto.Name = "IdProyecto";
+      this.IdProyecto.ReadOnly = true;
+      this.IdProyecto.Visible = false;
+      // 
+      // TituloProyecto
+      // 
+      this.TituloProyecto.DataPropertyName = "TituloProyecto";
+      this.TituloProyecto.HeaderText = "Proyecto";
+      this.TituloProyecto.Name = "TituloProyecto";
+      this.TituloProyecto.ReadOnly = true;
+      // 
+      // IdEmpleadoPm
+      // 
+      this.IdEmpleadoPm.DataPropertyName = "IdEmpleadoPm";
+      this.IdEmpleadoPm.HeaderText = "Id Project Manager";
+      this.IdEmpleadoPm.Name = "IdEmpleadoPm";
+      this.IdEmpleadoPm.ReadOnly = true;
+      this.IdEmpleadoPm.Visible = false;
+      // 
+      // IdTarea
+      // 
+      this.IdTarea.DataPropertyName = "IdTarea";
+      this.IdTarea.HeaderText = "Id Tarea";
+      this.IdTarea.Name = "IdTarea";
+      this.IdTarea.ReadOnly = true;
+      this.IdTarea.Visible = false;
+      // 
+      // IdEmpleadoPerfil
+      // 
+      this.IdEmpleadoPerfil.DataPropertyName = "PerfilEmpleadoIdPerfil";
+      this.IdEmpleadoPerfil.HeaderText = "Id Perfil Empleado";
+      this.IdEmpleadoPerfil.Name = "IdEmpleadoPerfil";
+      this.IdEmpleadoPerfil.ReadOnly = true;
+      this.IdEmpleadoPerfil.Visible = false;
+      // 
+      // DescripcionPerfil
+      // 
+      this.DescripcionPerfil.DataPropertyName = "DescripcionPerfil";
+      this.DescripcionPerfil.HeaderText = "Descripción Perfl";
+      this.DescripcionPerfil.Name = "DescripcionPerfil";
+      this.DescripcionPerfil.ReadOnly = true;
+      this.DescripcionPerfil.Visible = false;
+      // 
+      // IdEmpleado
+      // 
+      this.IdEmpleado.DataPropertyName = "PerfilEmpleadoIdEmpleado";
+      this.IdEmpleado.HeaderText = "Id Empleado";
+      this.IdEmpleado.Name = "IdEmpleado";
+      this.IdEmpleado.ReadOnly = true;
+      this.IdEmpleado.Visible = false;
+      // 
+      // Fullname
+      // 
+      this.Fullname.DataPropertyName = "Fullname";
+      this.Fullname.HeaderText = "Empleado";
+      this.Fullname.Name = "Fullname";
+      this.Fullname.ReadOnly = true;
+      // 
+      // DescripciónTarea
+      // 
+      this.DescripciónTarea.DataPropertyName = "DescripcionTarea";
+      this.DescripciónTarea.HeaderText = "Tarea";
+      this.DescripciónTarea.Name = "DescripciónTarea";
+      this.DescripciónTarea.ReadOnly = true;
+      // 
+      // HorasEstimadasTarea
+      // 
+      this.HorasEstimadasTarea.DataPropertyName = "HorasEstimadasTarea";
+      this.HorasEstimadasTarea.HeaderText = "Horas Estimadas";
+      this.HorasEstimadasTarea.Name = "HorasEstimadasTarea";
+      this.HorasEstimadasTarea.ReadOnly = true;
+      // 
+      // HorasOverbudgetTarea
+      // 
+      this.HorasOverbudgetTarea.DataPropertyName = "HorasOverbudgetTarea";
+      this.HorasOverbudgetTarea.HeaderText = "Horas Overbudget";
+      this.HorasOverbudgetTarea.Name = "HorasOverbudgetTarea";
+      this.HorasOverbudgetTarea.ReadOnly = true;
+      this.HorasOverbudgetTarea.Visible = false;
+      // 
+      // metroLabel2
+      // 
+      this.metroLabel2.AutoSize = true;
+      this.metroLabel2.Location = new System.Drawing.Point(498, 108);
+      this.metroLabel2.Name = "metroLabel2";
+      this.metroLabel2.Size = new System.Drawing.Size(69, 19);
+      this.metroLabel2.TabIndex = 13;
+      this.metroLabel2.Text = "Empleado";
+      // 
+      // metroLabel1
+      // 
+      this.metroLabel1.AutoSize = true;
+      this.metroLabel1.Location = new System.Drawing.Point(100, 108);
+      this.metroLabel1.Name = "metroLabel1";
+      this.metroLabel1.Size = new System.Drawing.Size(61, 19);
+      this.metroLabel1.TabIndex = 14;
+      this.metroLabel1.Text = "Proyecto";
+      // 
+      // btnBuscar
+      // 
+      this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Default;
+      this.btnBuscar.Location = new System.Drawing.Point(767, 166);
+      this.btnBuscar.Name = "btnBuscar";
+      this.btnBuscar.Size = new System.Drawing.Size(107, 25);
+      this.btnBuscar.Style = MetroFramework.MetroColorStyle.Blue;
+      this.btnBuscar.TabIndex = 11;
+      this.btnBuscar.Text = "Buscar";
+      this.btnBuscar.Theme = MetroFramework.MetroThemeStyle.Light;
+      this.btnBuscar.UseSelectable = true;
+      this.btnBuscar.UseStyleColors = true;
+      this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+      // 
+      // btnCrearTarea
+      // 
+      this.btnCrearTarea.Location = new System.Drawing.Point(100, 66);
+      this.btnCrearTarea.Name = "btnCrearTarea";
+      this.btnCrearTarea.Size = new System.Drawing.Size(137, 25);
+      this.btnCrearTarea.Style = MetroFramework.MetroColorStyle.Blue;
+      this.btnCrearTarea.TabIndex = 12;
+      this.btnCrearTarea.Text = "Crear Tarea";
+      this.btnCrearTarea.Theme = MetroFramework.MetroThemeStyle.Light;
+      this.btnCrearTarea.UseSelectable = true;
+      this.btnCrearTarea.UseStyleColors = true;
+      this.btnCrearTarea.Click += new System.EventHandler(this.btnCrearTarea_Click);
       // 
       // ComboBoxProyecto
       // 
@@ -140,141 +301,67 @@
       this.ComboBoxProyecto.Location = new System.Drawing.Point(100, 128);
       this.ComboBoxProyecto.Name = "ComboBoxProyecto";
       this.ComboBoxProyecto.Size = new System.Drawing.Size(377, 29);
-      this.ComboBoxProyecto.TabIndex = 9;
+      this.ComboBoxProyecto.TabIndex = 35;
       this.ComboBoxProyecto.UseSelectable = true;
-      // 
-      // metroLabel5
-      // 
-      this.metroLabel5.AutoSize = true;
-      this.metroLabel5.Location = new System.Drawing.Point(100, 177);
-      this.metroLabel5.Name = "metroLabel5";
-      this.metroLabel5.Size = new System.Drawing.Size(72, 19);
-      this.metroLabel5.TabIndex = 10;
-      this.metroLabel5.Text = "Empleado:";
       // 
       // ComboBoxEmpleado
       // 
       this.ComboBoxEmpleado.FormattingEnabled = true;
       this.ComboBoxEmpleado.ItemHeight = 23;
-      this.ComboBoxEmpleado.Location = new System.Drawing.Point(100, 197);
+      this.ComboBoxEmpleado.Location = new System.Drawing.Point(498, 128);
       this.ComboBoxEmpleado.Name = "ComboBoxEmpleado";
-      this.ComboBoxEmpleado.Size = new System.Drawing.Size(377, 29);
-      this.ComboBoxEmpleado.TabIndex = 11;
+      this.ComboBoxEmpleado.Size = new System.Drawing.Size(376, 29);
+      this.ComboBoxEmpleado.TabIndex = 36;
       this.ComboBoxEmpleado.UseSelectable = true;
-      // 
-      // metroLabel6
-      // 
-      this.metroLabel6.AutoSize = true;
-      this.metroLabel6.Location = new System.Drawing.Point(100, 246);
-      this.metroLabel6.Name = "metroLabel6";
-      this.metroLabel6.Size = new System.Drawing.Size(114, 19);
-      this.metroLabel6.TabIndex = 12;
-      this.metroLabel6.Text = "Descripción Tarea:";
-      // 
-      // TextBoxDescripcion
-      // 
-      // 
-      // 
-      // 
-      this.TextBoxDescripcion.CustomButton.Image = null;
-      this.TextBoxDescripcion.CustomButton.Location = new System.Drawing.Point(295, 2);
-      this.TextBoxDescripcion.CustomButton.Name = "";
-      this.TextBoxDescripcion.CustomButton.Size = new System.Drawing.Size(79, 79);
-      this.TextBoxDescripcion.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-      this.TextBoxDescripcion.CustomButton.TabIndex = 1;
-      this.TextBoxDescripcion.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-      this.TextBoxDescripcion.CustomButton.UseSelectable = true;
-      this.TextBoxDescripcion.CustomButton.Visible = false;
-      this.TextBoxDescripcion.Lines = new string[0];
-      this.TextBoxDescripcion.Location = new System.Drawing.Point(100, 268);
-      this.TextBoxDescripcion.MaxLength = 32767;
-      this.TextBoxDescripcion.Multiline = true;
-      this.TextBoxDescripcion.Name = "TextBoxDescripcion";
-      this.TextBoxDescripcion.PasswordChar = '\0';
-      this.TextBoxDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.None;
-      this.TextBoxDescripcion.SelectedText = "";
-      this.TextBoxDescripcion.SelectionLength = 0;
-      this.TextBoxDescripcion.SelectionStart = 0;
-      this.TextBoxDescripcion.ShortcutsEnabled = true;
-      this.TextBoxDescripcion.Size = new System.Drawing.Size(377, 84);
-      this.TextBoxDescripcion.TabIndex = 13;
-      this.TextBoxDescripcion.UseSelectable = true;
-      this.TextBoxDescripcion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-      this.TextBoxDescripcion.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-      // 
-      // metroLabel7
-      // 
-      this.metroLabel7.AutoSize = true;
-      this.metroLabel7.Location = new System.Drawing.Point(498, 177);
-      this.metroLabel7.Name = "metroLabel7";
-      this.metroLabel7.Size = new System.Drawing.Size(41, 19);
-      this.metroLabel7.TabIndex = 14;
-      this.metroLabel7.Text = "Perfil:";
-      // 
-      // ComboBoxPerfiles
-      // 
-      this.ComboBoxPerfiles.FormattingEnabled = true;
-      this.ComboBoxPerfiles.ItemHeight = 23;
-      this.ComboBoxPerfiles.Location = new System.Drawing.Point(498, 197);
-      this.ComboBoxPerfiles.Name = "ComboBoxPerfiles";
-      this.ComboBoxPerfiles.Size = new System.Drawing.Size(377, 29);
-      this.ComboBoxPerfiles.TabIndex = 15;
-      this.ComboBoxPerfiles.UseSelectable = true;
-      // 
-      // horasEstimadas
-      // 
-      this.horasEstimadas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.horasEstimadas.Location = new System.Drawing.Point(498, 128);
-      this.horasEstimadas.Name = "horasEstimadas";
-      this.horasEstimadas.Size = new System.Drawing.Size(377, 29);
-      this.horasEstimadas.TabIndex = 16;
       // 
       // ucTareas
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.horasEstimadas);
-      this.Controls.Add(this.metroLabel7);
-      this.Controls.Add(this.ComboBoxPerfiles);
-      this.Controls.Add(this.TextBoxDescripcion);
-      this.Controls.Add(this.metroLabel6);
-      this.Controls.Add(this.metroLabel5);
-      this.Controls.Add(this.ComboBoxEmpleado);
-      this.Controls.Add(this.metroPanel1);
-      this.Controls.Add(this.metroLabel3);
+      this.Controls.Add(this.btnVerTodasTareas);
+      this.Controls.Add(this.mgTareas);
       this.Controls.Add(this.metroLabel2);
       this.Controls.Add(this.metroLabel1);
-      this.Controls.Add(this.btnLimpiar);
-      this.Controls.Add(this.btnAsignar);
-      this.Controls.Add(this.metroLabel4);
+      this.Controls.Add(this.btnBuscar);
+      this.Controls.Add(this.btnCrearTarea);
+      this.Controls.Add(this.metroPanel1);
+      this.Controls.Add(this.metroLabel3);
       this.Controls.Add(this.ComboBoxProyecto);
+      this.Controls.Add(this.ComboBoxEmpleado);
       this.Name = "ucTareas";
       this.Size = new System.Drawing.Size(900, 742);
       this.Style = MetroFramework.MetroColorStyle.Blue;
       this.Theme = MetroFramework.MetroThemeStyle.Light;
       this.UseStyleColors = true;
-      this.Load += new System.EventHandler(this.ucTareas_Load);
-      ((System.ComponentModel.ISupportInitialize)(this.horasEstimadas)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.mgTareas)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
     }
 
     #endregion
-    private MetroFramework.Controls.MetroLabel metroLabel1;
-    private MetroFramework.Controls.MetroLabel metroLabel2;
-    private MetroFramework.Controls.MetroButton btnAsignar;
-    private MetroFramework.Controls.MetroButton btnLimpiar;
     private MetroFramework.Controls.MetroLabel metroLabel3;
     private MetroFramework.Controls.MetroPanel metroPanel1;
-    private MetroFramework.Controls.MetroLabel metroLabel4;
-    private MetroFramework.Controls.MetroLabel metroLabel5;
-    private MetroFramework.Controls.MetroComboBox ComboBoxEmpleado;
-    private MetroFramework.Controls.MetroLabel metroLabel6;
-    private MetroFramework.Controls.MetroTextBox TextBoxDescripcion;
-    private MetroFramework.Controls.MetroLabel metroLabel7;
-    private MetroFramework.Controls.MetroComboBox ComboBoxPerfiles;
-    private System.Windows.Forms.NumericUpDown horasEstimadas;
+    private System.Windows.Forms.ErrorProvider errorProvider1;
+    private MetroFramework.Controls.MetroButton btnVerTodasTareas;
+    public MetroFramework.Controls.MetroGrid mgTareas;
+    private MetroFramework.Controls.MetroLabel metroLabel2;
+    private MetroFramework.Controls.MetroLabel metroLabel1;
+    private MetroFramework.Controls.MetroButton btnBuscar;
+    private MetroFramework.Controls.MetroButton btnCrearTarea;
+    private System.Windows.Forms.DataGridViewTextBoxColumn IdProyecto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn TituloProyecto;
+    private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpleadoPm;
+    private System.Windows.Forms.DataGridViewTextBoxColumn IdTarea;
+    private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpleadoPerfil;
+    private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionPerfil;
+    private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpleado;
+    private System.Windows.Forms.DataGridViewTextBoxColumn Fullname;
+    private System.Windows.Forms.DataGridViewTextBoxColumn DescripciónTarea;
+    private System.Windows.Forms.DataGridViewTextBoxColumn HorasEstimadasTarea;
+    private System.Windows.Forms.DataGridViewTextBoxColumn HorasOverbudgetTarea;
     public MetroFramework.Controls.MetroComboBox ComboBoxProyecto;
+    public MetroFramework.Controls.MetroComboBox ComboBoxEmpleado;
   }
 }

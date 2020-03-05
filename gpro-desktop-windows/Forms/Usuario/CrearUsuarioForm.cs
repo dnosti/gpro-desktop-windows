@@ -30,8 +30,8 @@ namespace gpro_desktop_windows.Forms
       if (ValidarCampos())
       {
         DialogResult result = MessageBox.Show("¿Está seguro de crear un nuevo usuario?", "Crear Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        if (result == DialogResult.Yes) {; }
-        postUsuario();
+        if (result == DialogResult.Yes)
+          postUsuario();
       }
 
     }
@@ -64,7 +64,7 @@ namespace gpro_desktop_windows.Forms
     {
       List<Role> roleResponses = null;
       HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getEmpleados(client, "/rols/");
+      HttpResponseMessage response = HttpUtils.getRoles(client, "/rols/");
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 

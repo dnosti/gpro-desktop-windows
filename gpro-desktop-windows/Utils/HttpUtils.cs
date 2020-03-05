@@ -34,6 +34,12 @@ namespace gpro_desktop_windows.Utils
       return response;
     }
 
+    public static HttpResponseMessage getClientes(HttpClient client, string path)
+    {
+      HttpResponseMessage response = client.GetAsync(path).Result;
+      return response;
+    }
+
     public static HttpResponseMessage postCliente(HttpClient client, Cliente payload)
     {
       string stringData = JsonConvert.SerializeObject(payload);
@@ -148,9 +154,29 @@ namespace gpro_desktop_windows.Utils
       return response;
     }
 
-    /* Perfil */
+    public static HttpResponseMessage postProyecto(HttpClient client, ProyectoRequest payload)
+    {
+      string stringData = JsonConvert.SerializeObject(payload);
+      var contentData = new StringContent(stringData, Encoding.UTF8, "application/json");
+
+      HttpResponseMessage response = client.PostAsync("/proyectos/", contentData).Result;
+
+      return response;
+    }
+
+
+    /* Perfiles */
 
     public static HttpResponseMessage getPerfiles(HttpClient client, string path)
+    {
+      HttpResponseMessage response = client.GetAsync(path).Result;
+      return response;
+    }
+
+
+    /* Tareas */
+
+    public static HttpResponseMessage getTareas(HttpClient client, string path)
     {
       HttpResponseMessage response = client.GetAsync(path).Result;
       return response;

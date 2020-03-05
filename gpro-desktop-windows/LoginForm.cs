@@ -49,6 +49,7 @@ namespace gpro_desktop_windows
         Settings.Default.Token = userResponse.Token;
         Settings.Default.Username = userResponse.Username;
         Settings.Default.Role = userResponse.Rol;
+        Settings.Default.IdEmpleado = userResponse.IdEmpleado;
 
         LoginForm.ActiveForm.Hide();
 

@@ -12,5 +12,10 @@ namespace gpro_desktop_windows.Models
     public string DireccionCliente { get; set; }
     public string TelefonoCliente { get; set; }
     public string EmailCliente { get; set; }
+
+    public string FullName
+    {
+      get { return "(" + RazonSocialCliente +") " + ApellidoCliente + ", " + NombreCliente + " (CUIT " + IdCliente + ")"; }
+    }
   }
 }

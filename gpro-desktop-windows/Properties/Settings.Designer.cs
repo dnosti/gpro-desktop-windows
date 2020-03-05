@@ -58,5 +58,17 @@ namespace gpro_desktop_windows.Properties {
                 this["Role"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int IdEmpleado {
+            get {
+                return ((int)(this["IdEmpleado"]));
+            }
+            set {
+                this["IdEmpleado"] = value;
+            }
+        }
     }
 }
