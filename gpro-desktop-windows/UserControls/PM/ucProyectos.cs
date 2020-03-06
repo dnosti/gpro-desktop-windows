@@ -85,9 +85,8 @@ namespace gpro_desktop_windows.UsersControls
         editarProyectoForm.textBoxTitulo.Text = editarProyecto.Cells["TituloProyecto"].Value.ToString();
         editarProyectoForm.textBoxDescProyecto.Text = editarProyecto.Cells["DescripciónProyecto"].Value.ToString();
         editarProyectoForm.ShowDialog();
-      //  string cuit = editarClienteForm.cuit;
-      //  if (!string.IsNullOrEmpty(cuit))
-      //    buscarCliente("/cliente/cuit/", cuit, true);
+        if (editarProyectoForm.okUpdate)
+          buscarProyecto("/proyectos/porTitulo/", editarProyectoForm.tituloProyecto, false);
       }
       if (e.ColumnIndex >= 0 && this.mgProyectos.Columns[e.ColumnIndex].Name == "Ver" && e.RowIndex >= 0)
       {

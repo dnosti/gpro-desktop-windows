@@ -19,6 +19,8 @@ namespace gpro_desktop_windows.Forms
     private string idProyecto = "";
     private string idCliente = "";
     private string estado = "";
+    public bool okUpdate = false;
+    public string tituloProyecto = "";
 
     public EditarProyectoForm(string idProyecto, string idCliente, string estado)
     {
@@ -40,7 +42,7 @@ namespace gpro_desktop_windows.Forms
       {
         DialogResult result = MessageBox.Show("¿Está seguro de actualizar los datos?", "Editar Proyecto", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         if (result == DialogResult.Yes)
-          postProyecto();
+          putProyecto(idProyecto);
       }
 
     }
@@ -81,9 +83,38 @@ namespace gpro_desktop_windows.Forms
       }
     }
 
-    private void postProyecto()
+    private void putProyecto(string idProyecto)
     {
+      ProyectoRequest proyectoRequest = new ProyectoRequest()
+      {
+        IdProyecto = int.Parse(idProyecto),
+        ClienteId = int.Parse(ComboBoxCliente.SelectedValue.ToString()),
+        TituloProyecto = textBoxTitulo.Text,
+        DescripcionProyecto = textBoxDescProyecto.Text,
+        EstadoProyecto = comboBoxEstado.SelectedItem.ToString(),
+        IdEmpleadoPm = Settings.Default.IdEmpleado
+      };
 
+      HttpClient client = HttpUtils.configHttpClient();
+      HttpResponseMessage response = HttpUtils.putProyecto(client, int.Parse(idProyecto), proyectoRequest);
+
+      string stringPR = response.Content.ReadAsStringAsync().Result;
+      var responseMessage = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(stringPR);
+
+      if (response.IsSuccessStatusCode)
+      {
+        DialogResult result = MessageBox.Show("Proyecto actualizado con éxito!", "Wooh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        if (result == DialogResult.OK)
+        {
+          okUpdate = true;
+          tituloProyecto = textBoxTitulo.Text;
+          this.Dispose();
+        }
+      }
+      else
+      {
+        MessageBox.Show(this, (string)responseMessage.message, "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      }
     }
 
     private void EditarProyectoForm_Load(object sender, EventArgs e)

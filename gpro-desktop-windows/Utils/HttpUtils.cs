@@ -164,6 +164,16 @@ namespace gpro_desktop_windows.Utils
       return response;
     }
 
+    public static HttpResponseMessage putProyecto(HttpClient client, int id, ProyectoRequest payload)
+    {
+      string stringData = JsonConvert.SerializeObject(payload);
+      var contentData = new StringContent(stringData, Encoding.UTF8, "application/json");
+
+      HttpResponseMessage response = client.PutAsync("/proyectos/" + id, contentData).Result;
+
+      return response;
+    }
+
 
     /* Perfiles */
 
