@@ -110,7 +110,7 @@ namespace gpro_desktop_windows.UsersControls
         perfilResponses = JsonConvert.DeserializeObject<List<Perfil>>(stringPER);
         empleadoResponses = JsonConvert.DeserializeObject<List<Empleado>>(stringER);
 
-        var listaTareas = 
+        var listaTareas =
           from t in tareaResponses
           join p in proyectoResponses on t.ProyectoIdProyecto equals p.IdProyecto
           join pr in perfilResponses on t.PerfilEmpleadoIdPerfil equals pr.IdPerfil
@@ -130,7 +130,7 @@ namespace gpro_desktop_windows.UsersControls
             t.HorasOverbudgetTarea
           };
 
-        mgTareas.DataSource = listaTareas.Where(x => x.IdEmpleadoPm == Settings.Default.IdEmpleado).ToList();        
+        mgTareas.DataSource = listaTareas.Where(x => x.IdEmpleadoPm == Settings.Default.IdEmpleado).ToList();
       }
       else
       {
@@ -175,7 +175,114 @@ namespace gpro_desktop_windows.UsersControls
 
     private void btnBuscar_Click(object sender, EventArgs e)
     {
-      //buscarTarea por Proyecto y por Tarea o Empleado ... ver
+      if (ComboBoxProyecto.SelectedIndex == -1 && ComboBoxEmpleado.SelectedIndex == -1)
+      {
+        MessageBox.Show(this, "Complete el formulario para realizar la búsqueda.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        return;
+      }
+
+      if (ComboBoxEmpleado.SelectedIndex != -1)
+      {
+        List<Tarea> tareaResponses = null;
+        List<ProyectoResponse> proyectoResponses = null;
+        List<Perfil> perfilResponses = null;
+        List<Empleado> empleadoResponses = null;
+
+        HttpClient client = HttpUtils.configHttpClient();
+        HttpResponseMessage responseTarea = HttpUtils.getTareas(client, "/tarea/");
+        HttpResponseMessage responseProyecto = HttpUtils.getProyectos(client, "/proyectos/");
+        HttpResponseMessage responsePerfil = HttpUtils.getPerfiles(client, "/perfiles/");
+        HttpResponseMessage responseEmpleado = HttpUtils.getEmpleados(client, "/empleado/");
+
+        string stringTR = responseTarea.Content.ReadAsStringAsync().Result;
+        string stringPR = responseProyecto.Content.ReadAsStringAsync().Result;
+        string stringPER = responsePerfil.Content.ReadAsStringAsync().Result;
+        string stringER = responseEmpleado.Content.ReadAsStringAsync().Result;
+
+        if (responseTarea.IsSuccessStatusCode)
+        {
+          mgTareas.Visible = true;
+          tareaResponses = JsonConvert.DeserializeObject<List<Tarea>>(stringTR);
+          proyectoResponses = JsonConvert.DeserializeObject<List<ProyectoResponse>>(stringPR);
+          perfilResponses = JsonConvert.DeserializeObject<List<Perfil>>(stringPER);
+          empleadoResponses = JsonConvert.DeserializeObject<List<Empleado>>(stringER);
+
+          var listaTareas =
+            from t in tareaResponses
+            join p in proyectoResponses on t.ProyectoIdProyecto equals p.IdProyecto
+            join pr in perfilResponses on t.PerfilEmpleadoIdPerfil equals pr.IdPerfil
+            join er in empleadoResponses on t.PerfilEmpleadoIdEmpleado equals er.IdEmpleado
+            select new
+            {
+              t.ProyectoIdProyecto,
+              p.TituloProyecto,
+              p.IdEmpleadoPm,
+              t.IdTarea,
+              t.PerfilEmpleadoIdPerfil,
+              pr.DescripcionPerfil,
+              t.PerfilEmpleadoIdEmpleado,
+              Fullname = er.ApellidoEmpleado + ", " + er.NombreEmpleado,
+              t.DescripcionTarea,
+              t.HorasEstimadasTarea,
+              t.HorasOverbudgetTarea
+            };
+
+          var filtroIdPM = listaTareas.Where(x => x.IdEmpleadoPm == Settings.Default.IdEmpleado).ToList();
+          var filtroIdEmpleado = filtroIdPM.Where(x => x.PerfilEmpleadoIdEmpleado == int.Parse(ComboBoxEmpleado.SelectedValue.ToString())).ToList();
+          mgTareas.DataSource = filtroIdEmpleado;
+        }
+      }
+      else
+      {
+        List<Tarea> tareaResponses = null;
+        List<ProyectoResponse> proyectoResponses = null;
+        List<Perfil> perfilResponses = null;
+        List<Empleado> empleadoResponses = null;
+
+        HttpClient client = HttpUtils.configHttpClient();
+        HttpResponseMessage responseTarea = HttpUtils.getTareas(client, "/tarea/");
+        HttpResponseMessage responseProyecto = HttpUtils.getProyectos(client, "/proyectos/");
+        HttpResponseMessage responsePerfil = HttpUtils.getPerfiles(client, "/perfiles/");
+        HttpResponseMessage responseEmpleado = HttpUtils.getEmpleados(client, "/empleado/");
+
+        string stringTR = responseTarea.Content.ReadAsStringAsync().Result;
+        string stringPR = responseProyecto.Content.ReadAsStringAsync().Result;
+        string stringPER = responsePerfil.Content.ReadAsStringAsync().Result;
+        string stringER = responseEmpleado.Content.ReadAsStringAsync().Result;
+
+        if (responseTarea.IsSuccessStatusCode)
+        {
+          mgTareas.Visible = true;
+          tareaResponses = JsonConvert.DeserializeObject<List<Tarea>>(stringTR);
+          proyectoResponses = JsonConvert.DeserializeObject<List<ProyectoResponse>>(stringPR);
+          perfilResponses = JsonConvert.DeserializeObject<List<Perfil>>(stringPER);
+          empleadoResponses = JsonConvert.DeserializeObject<List<Empleado>>(stringER);
+
+          var listaTareas =
+            from t in tareaResponses
+            join p in proyectoResponses on t.ProyectoIdProyecto equals p.IdProyecto
+            join pr in perfilResponses on t.PerfilEmpleadoIdPerfil equals pr.IdPerfil
+            join er in empleadoResponses on t.PerfilEmpleadoIdEmpleado equals er.IdEmpleado
+            select new
+            {
+              t.ProyectoIdProyecto,
+              p.TituloProyecto,
+              p.IdEmpleadoPm,
+              t.IdTarea,
+              t.PerfilEmpleadoIdPerfil,
+              pr.DescripcionPerfil,
+              t.PerfilEmpleadoIdEmpleado,
+              Fullname = er.ApellidoEmpleado + ", " + er.NombreEmpleado,
+              t.DescripcionTarea,
+              t.HorasEstimadasTarea,
+              t.HorasOverbudgetTarea
+            };
+
+          var filtroIdPM = listaTareas.Where(x => x.IdEmpleadoPm == Settings.Default.IdEmpleado).ToList();
+          var filtroIdProyecto = filtroIdPM.Where(x => x.ProyectoIdProyecto == int.Parse(ComboBoxProyecto.SelectedValue.ToString())).ToList();
+          mgTareas.DataSource = filtroIdProyecto;
+        }
+      }
     }
 
     private void getTareaId(string path, string payload)
@@ -229,6 +336,54 @@ namespace gpro_desktop_windows.UsersControls
 
         mgTareas.DataSource = listaTareas.Where(x => x.IdEmpleadoPm == Settings.Default.IdEmpleado).ToList();
       }
+    }
+
+    private void getEmpleados()
+    {
+      List<Empleado> empleadoResponses = null;
+      HttpClient client = HttpUtils.configHttpClient();
+      HttpResponseMessage response = HttpUtils.getEmpleados(client, "/empleado/");
+
+      string stringCR = response.Content.ReadAsStringAsync().Result;
+
+      if (response.IsSuccessStatusCode)
+      {
+        empleadoResponses = JsonConvert.DeserializeObject<List<Empleado>>(stringCR);
+        ComboBoxEmpleado.DataSource = empleadoResponses.OrderBy(x => x.FullName).ToList();
+        ComboBoxEmpleado.DisplayMember = "FullName";
+        ComboBoxEmpleado.ValueMember = "IdEmpleado";
+        ComboBoxEmpleado.SelectedValue = "";
+      }
+    }
+
+    private void getProyectos()
+    {
+      List<ProyectoResponse> proyectoResponses = null;
+      HttpClient client = HttpUtils.configHttpClient();
+      HttpResponseMessage response = HttpUtils.getProyectos(client, "/proyectos/");
+
+      string stringCR = response.Content.ReadAsStringAsync().Result;
+
+      if (response.IsSuccessStatusCode)
+      {
+        proyectoResponses = JsonConvert.DeserializeObject<List<ProyectoResponse>>(stringCR);
+        ComboBoxProyecto.DataSource = proyectoResponses.OrderBy(x => x.TituloProyecto).ToList();
+        ComboBoxProyecto.DisplayMember = "TituloProyecto";
+        ComboBoxProyecto.ValueMember = "IdProyecto";
+        ComboBoxProyecto.SelectedValue = "";
+      }
+    }
+
+    private void ucTareas_Load(object sender, EventArgs e)
+    {
+      getProyectos();
+      getEmpleados();
+    }
+
+    private void btnLimpiar_Click(object sender, EventArgs e)
+    {
+      ComboBoxEmpleado.SelectedValue = "";
+      ComboBoxProyecto.SelectedValue = "";
     }
   }
 }
