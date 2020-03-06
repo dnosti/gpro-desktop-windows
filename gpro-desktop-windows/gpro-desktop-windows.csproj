@@ -112,6 +112,12 @@
     <Compile Include="Forms\Proyecto\VerProyectoForm.Designer.cs">
       <DependentUpon>VerProyectoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Tarea\EditarTareaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tarea\EditarTareaForm.Designer.cs">
+      <DependentUpon>EditarTareaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Tarea\CrearTareaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Proyecto\VerProyectoForm.resx">
       <DependentUpon>VerProyectoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tarea\EditarTareaForm.resx">
+      <DependentUpon>EditarTareaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tarea\CrearTareaForm.resx">
       <DependentUpon>CrearTareaForm.cs</DependentUpon>

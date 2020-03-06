@@ -124,12 +124,6 @@ namespace gpro_desktop_windows.Forms
       comboBoxEstado.Items.Add("No vigente");
       comboBoxEstado.Items.Add("Pausado");
       comboBoxEstado.Items.Add("Vigente");
-
-      /* Parche hasta acomodar db */
-      TextInfo textInfo = new CultureInfo("es-ES", false).TextInfo;
-      estado = textInfo.ToTitleCase(estado);
-      /* ************************ */
-
       comboBoxEstado.SelectedItem = estado;
     }
   }

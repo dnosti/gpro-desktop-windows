@@ -242,7 +242,7 @@
       this.Name = "EditarUsuarioForm";
       this.ShowIcon = false;
       this.Text = "Editar Usuario";
-      this.Load += new System.EventHandler(this.CrearUsuarioForm_Load);
+      this.Load += new System.EventHandler(this.EditarUsuarioForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();

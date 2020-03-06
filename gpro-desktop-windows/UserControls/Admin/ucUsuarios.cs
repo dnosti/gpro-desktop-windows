@@ -103,8 +103,9 @@ namespace gpro_desktop_windows.UsersControls
       {
         string IdUsuario = mgUsuarios.Rows[e.RowIndex].Cells["Id"].Value.ToString();
         string IdEmpleado = mgUsuarios.Rows[e.RowIndex].Cells["IdEmpleado"].Value.ToString();
+        string Role = mgUsuarios.Rows[e.RowIndex].Cells["DescripcionRole"].Value.ToString();
         string dni = mgUsuarios.Rows[e.RowIndex].Cells["Dni"].Value.ToString();
-        EditarUsuarioForm editarUsuarioForm = new EditarUsuarioForm(IdUsuario, IdEmpleado);
+        EditarUsuarioForm editarUsuarioForm = new EditarUsuarioForm(IdUsuario, IdEmpleado, Role);
         DataGridViewRow editarUsuario = mgUsuarios.Rows[e.RowIndex];
 
         editarUsuarioForm.textBoxEmpleado.Text = editarUsuario.Cells["apellidoEmpleado"].Value.ToString() + ", " + editarUsuario.Cells["nombreEmpleado"].Value.ToString();
@@ -219,6 +220,32 @@ namespace gpro_desktop_windows.UsersControls
       {
         MessageBox.Show("No se pudo eliminar el usuario.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return false;
+      }
+    }
+
+    private void btnVerTodosUsuarios_Click(object sender, EventArgs e)
+    {
+      getUsuarios();
+    }
+
+    private void getUsuarios()
+    {
+      List<UsuarioResponse> usuarioResponses = null;
+
+      HttpClient client = HttpUtils.configHttpClient();
+      HttpResponseMessage response = HttpUtils.getUsuarios(client, "/usuarios/");
+
+      string stringCR = response.Content.ReadAsStringAsync().Result;
+
+      if (response.IsSuccessStatusCode)
+      {
+        mgUsuarios.Visible = true;
+        usuarioResponses = JsonConvert.DeserializeObject<List<UsuarioResponse>>(stringCR);
+        mgUsuarios.DataSource = usuarioResponses;
+      }
+      else
+      {
+        MessageBox.Show("No se encontraron usuarios.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
   }

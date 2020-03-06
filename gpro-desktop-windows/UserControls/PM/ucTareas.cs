@@ -140,23 +140,20 @@ namespace gpro_desktop_windows.UsersControls
 
     private void mgTareas_CellClick(object sender, DataGridViewCellEventArgs e)
     {
-      //if (e.ColumnIndex >= 0 && this.mgProyectos.Columns[e.ColumnIndex].Name == "Editar" && e.RowIndex >= 0)
-      //{
-      //  string Id = mgProyectos.Rows[e.RowIndex].Cells["Id"].Value.ToString();
-      //  EditarClienteForm editarClienteForm = new EditarClienteForm(Id);
-      //  DataGridViewRow editarCliente = mgProyectos.Rows[e.RowIndex];
-      //  editarClienteForm.textBoxidCliente.Text = editarCliente.Cells["idCliente"].Value.ToString();
-      //  editarClienteForm.textBoxRSocial.Text = editarCliente.Cells["razonSocialCliente"].Value.ToString();
-      //  editarClienteForm.textBoxApellido.Text = editarCliente.Cells["apellidoCliente"].Value.ToString();
-      //  editarClienteForm.textBoxNombre.Text = editarCliente.Cells["nombreCliente"].Value.ToString();
-      //  editarClienteForm.textBoxDomicilio.Text = editarCliente.Cells["direccionCliente"].Value.ToString();
-      //  editarClienteForm.textBoxTelefono.Text = editarCliente.Cells["telefonoCliente"].Value.ToString();
-      //  editarClienteForm.textBoxEMail.Text = editarCliente.Cells["emailCliente"].Value.ToString();
-      //  editarClienteForm.ShowDialog();
-      //  string cuit = editarClienteForm.cuit;
-      //  if (!string.IsNullOrEmpty(cuit))
-      //    buscarCliente("/cliente/cuit/", cuit, true);
-      //}
+      if (e.ColumnIndex >= 0 && this.mgTareas.Columns[e.ColumnIndex].Name == "Editar" && e.RowIndex >= 0)
+      {
+        string Id = mgTareas.Rows[e.RowIndex].Cells["IdTarea"].Value.ToString();
+        string IdProyecto = mgTareas.Rows[e.RowIndex].Cells["IdProyecto"].Value.ToString();
+        string IdEmpleado = mgTareas.Rows[e.RowIndex].Cells["IdEmpleado"].Value.ToString();
+        string IdPerfil = mgTareas.Rows[e.RowIndex].Cells["IdEmpleadoPerfil"].Value.ToString();
+        EditarTareaForm editarTareaForm = new EditarTareaForm(Id, IdProyecto, IdEmpleado, IdPerfil);
+        DataGridViewRow editarTarea = mgTareas.Rows[e.RowIndex];
+        editarTareaForm.textBoxDescTarea.Text = editarTarea.Cells["DescripciónTarea"].Value.ToString();
+        editarTareaForm.horasEstimadas.Value = int.Parse(editarTarea.Cells["HorasEstimadasTarea"].Value.ToString());
+        editarTareaForm.ShowDialog();
+        if (editarTareaForm.okUpdate)
+          getTareaId("/tarea/", editarTareaForm.id);
+      }
       if (e.ColumnIndex >= 0 && this.mgTareas.Columns[e.ColumnIndex].Name == "Ver" && e.RowIndex >= 0)
       {
         VerTareaForm verTareaForm = new VerTareaForm();
@@ -179,6 +176,59 @@ namespace gpro_desktop_windows.UsersControls
     private void btnBuscar_Click(object sender, EventArgs e)
     {
       //buscarTarea por Proyecto y por Tarea o Empleado ... ver
+    }
+
+    private void getTareaId(string path, string payload)
+    {
+      Tarea tareaResponse = null;
+      List<Tarea> tareaResponses = null;
+      List<ProyectoResponse> proyectoResponses = null;
+      List<Perfil> perfilResponses = null;
+      List<Empleado> empleadoResponses = null;
+
+      HttpClient client = HttpUtils.configHttpClient();
+      HttpResponseMessage responseTarea = HttpUtils.getTarea(client, path, payload);
+      HttpResponseMessage responseProyecto = HttpUtils.getProyectos(client, "/proyectos/");
+      HttpResponseMessage responsePerfil = HttpUtils.getPerfiles(client, "/perfiles/");
+      HttpResponseMessage responseEmpleado = HttpUtils.getEmpleados(client, "/empleado/");
+
+      string stringTR = responseTarea.Content.ReadAsStringAsync().Result;
+      string stringPR = responseProyecto.Content.ReadAsStringAsync().Result;
+      string stringPER = responsePerfil.Content.ReadAsStringAsync().Result;
+      string stringER = responseEmpleado.Content.ReadAsStringAsync().Result;
+
+      if (responseTarea.IsSuccessStatusCode)
+      {
+        mgTareas.Visible = true;
+        tareaResponse = JsonConvert.DeserializeObject<Tarea>(stringTR);
+        tareaResponses = new List<Tarea>();
+        tareaResponses.Add(tareaResponse);
+        proyectoResponses = JsonConvert.DeserializeObject<List<ProyectoResponse>>(stringPR);
+        perfilResponses = JsonConvert.DeserializeObject<List<Perfil>>(stringPER);
+        empleadoResponses = JsonConvert.DeserializeObject<List<Empleado>>(stringER);
+
+        var listaTareas =
+          from t in tareaResponses
+          join p in proyectoResponses on t.ProyectoIdProyecto equals p.IdProyecto
+          join pr in perfilResponses on t.PerfilEmpleadoIdPerfil equals pr.IdPerfil
+          join e in empleadoResponses on t.PerfilEmpleadoIdEmpleado equals e.IdEmpleado
+          select new
+          {
+            t.ProyectoIdProyecto,
+            p.TituloProyecto,
+            p.IdEmpleadoPm,
+            t.IdTarea,
+            t.PerfilEmpleadoIdPerfil,
+            pr.DescripcionPerfil,
+            t.PerfilEmpleadoIdEmpleado,
+            Fullname = e.ApellidoEmpleado + ", " + e.NombreEmpleado,
+            t.DescripcionTarea,
+            t.HorasEstimadasTarea,
+            t.HorasOverbudgetTarea
+          };
+
+        mgTareas.DataSource = listaTareas.Where(x => x.IdEmpleadoPm == Settings.Default.IdEmpleado).ToList();
+      }
     }
   }
 }

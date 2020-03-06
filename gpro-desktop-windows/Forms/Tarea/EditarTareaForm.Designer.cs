@@ -1,6 +1,6 @@
 ﻿namespace gpro_desktop_windows.Forms
 {
-  partial class CrearTareaForm
+  partial class EditarTareaForm
   {
     /// <summary>
     /// Required designer variable.
@@ -198,7 +198,7 @@
       this.ComboBoxProyecto.TabIndex = 38;
       this.ComboBoxProyecto.UseSelectable = true;
       // 
-      // CrearTareaForm
+      // EditarTareaForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -218,10 +218,10 @@
       this.Font = new System.Drawing.Font("Segoe UI", 10F);
       this.Margin = new System.Windows.Forms.Padding(4);
       this.MaximizeBox = false;
-      this.Name = "CrearTareaForm";
+      this.Name = "EditarTareaForm";
       this.ShowIcon = false;
-      this.Text = "Crear Tarea";
-      this.Load += new System.EventHandler(this.CrearTareaForm_Load);
+      this.Text = "Editar Tarea";
+      this.Load += new System.EventHandler(this.EditarTareaForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.horasEstimadas)).EndInit();
       this.ResumeLayout(false);
@@ -234,14 +234,14 @@
     private MetroFramework.Controls.MetroButton btnCancelar;
     private MetroFramework.Controls.MetroButton btnConfirmar;
     private MetroFramework.Controls.MetroLabel metroLabel3;
-    private MetroFramework.Controls.MetroTextBox textBoxDescTarea;
     private MetroFramework.Controls.MetroLabel metroLabel4;
     private MetroFramework.Controls.MetroLabel metroLabel9;
     public MetroFramework.Controls.MetroComboBox ComboBoxProyecto;
     private MetroFramework.Controls.MetroLabel metroLabel5;
     private MetroFramework.Controls.MetroLabel metroLabel8;
-    private System.Windows.Forms.NumericUpDown horasEstimadas;
-    private MetroFramework.Controls.MetroComboBox ComboBoxPerfiles;
     public MetroFramework.Controls.MetroComboBox ComboBoxEmpleado;
+    public MetroFramework.Controls.MetroTextBox textBoxDescTarea;
+    public System.Windows.Forms.NumericUpDown horasEstimadas;
+    public MetroFramework.Controls.MetroComboBox ComboBoxPerfiles;
   }
 }

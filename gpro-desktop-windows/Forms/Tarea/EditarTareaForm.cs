@@ -12,11 +12,23 @@ using Newtonsoft.Json;
 
 namespace gpro_desktop_windows.Forms
 {
-  public partial class CrearTareaForm : MetroFramework.Forms.MetroForm
+  public partial class EditarTareaForm : MetroFramework.Forms.MetroForm
   {
-    public CrearTareaForm()
+
+    public string id = "";
+    private string idProyecto = "";
+    private string idEmpleado = "";
+    private string idPerfil = "";
+    public bool okUpdate = false;
+
+
+    public EditarTareaForm(string id, string idProyecto, string idEmpleado, string idPerfil)
     {
       InitializeComponent();
+      this.id = id;
+      this.idProyecto = idProyecto;
+      this.idEmpleado = idEmpleado;
+      this.idPerfil = idPerfil;
     }
 
     private void btnCancelar_Click(object sender, EventArgs e)
@@ -29,9 +41,9 @@ namespace gpro_desktop_windows.Forms
       BorrarMensajeError();
       if (ValidarCampos())
       {
-        DialogResult result = MessageBox.Show("¿Está seguro de asignar la tarea al proyecto?", "Asignar Tarea", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        DialogResult result = MessageBox.Show("¿Está seguro de actualizar los datos?", "Editar Tarea", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         if (result == DialogResult.Yes)
-          postTarea();
+          putTarea();
       }
 
     }
@@ -48,8 +60,9 @@ namespace gpro_desktop_windows.Forms
       {
         empleadoResponses = JsonConvert.DeserializeObject<List<Empleado>>(stringCR);
         ComboBoxEmpleado.DataSource = empleadoResponses.OrderBy(x => x.FullName).ToList();
-        ComboBoxEmpleado.DisplayMember = "FullName";
         ComboBoxEmpleado.ValueMember = "IdEmpleado";
+        ComboBoxEmpleado.DisplayMember = "FullName";
+        ComboBoxEmpleado.SelectedValue = int.Parse(this.idEmpleado);
       }
     }
 
@@ -65,8 +78,9 @@ namespace gpro_desktop_windows.Forms
       {
         proyectoResponses = JsonConvert.DeserializeObject<List<ProyectoResponse>>(stringCR);
         ComboBoxProyecto.DataSource = proyectoResponses.OrderBy(x => x.TituloProyecto).ToList();
-        ComboBoxProyecto.DisplayMember = "TituloProyecto";
         ComboBoxProyecto.ValueMember = "IdProyecto";
+        ComboBoxProyecto.DisplayMember = "TituloProyecto";
+        ComboBoxProyecto.SelectedValue = int.Parse(idProyecto);
       }
     }
 
@@ -82,8 +96,10 @@ namespace gpro_desktop_windows.Forms
       {
         perfilResponses = JsonConvert.DeserializeObject<List<Perfil>>(stringCR);
         ComboBoxPerfiles.DataSource = perfilResponses.OrderBy(x => x.DescripcionPerfil).ToList();
-        ComboBoxPerfiles.DisplayMember = "DescripcionPerfil";
         ComboBoxPerfiles.ValueMember = "IdPerfil";
+        ComboBoxPerfiles.DisplayMember = "DescripcionPerfil";
+        ComboBoxPerfiles.SelectedValue = int.Parse(idPerfil);
+
       }
     }
 
@@ -104,11 +120,12 @@ namespace gpro_desktop_windows.Forms
       errorProvider1.SetError(textBoxDescTarea, "");
     }
 
-    private void postTarea()
+    private void putTarea()
     {
       Tarea tareaRequest = new Tarea()
       {
         ProyectoIdProyecto = int.Parse(ComboBoxProyecto.SelectedValue.ToString()),
+        IdTarea = int.Parse(this.id),
         PerfilEmpleadoIdPerfil = int.Parse(ComboBoxPerfiles.SelectedValue.ToString()),
         PerfilEmpleadoIdEmpleado = int.Parse(ComboBoxEmpleado.SelectedValue.ToString()),
         DescripcionTarea = textBoxDescTarea.Text,
@@ -116,16 +133,19 @@ namespace gpro_desktop_windows.Forms
       };
 
       HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.postTarea(client, tareaRequest);
+      HttpResponseMessage response = HttpUtils.putTarea(client, tareaRequest);
 
-      string stringCR = response.Content.ReadAsStringAsync().Result;
-      var responseMessage = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(stringCR);
+      string stringTR = response.Content.ReadAsStringAsync().Result;
+      var responseMessage = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(stringTR);
 
       if (response.IsSuccessStatusCode)
       {
-        MessageBox.Show("Tarea creada con éxito!", "Wooh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        foreach (MetroTextBox textBox in Controls.OfType<MetroTextBox>())
-          textBox.Clear();
+        DialogResult result = MessageBox.Show("Tarea actualizada con éxito!", "Wooh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        if (result == DialogResult.OK)
+        {
+          okUpdate = true;
+          this.Dispose();
+        }
       }
       else
       {
@@ -133,13 +153,12 @@ namespace gpro_desktop_windows.Forms
       }
     }
 
-    private void CrearTareaForm_Load(object sender, EventArgs e)
+    private void EditarTareaForm_Load(object sender, EventArgs e)
     {
       getEmpleados();
       getProyectos();
       getPerfiles();
     }
-
   }
 }
 

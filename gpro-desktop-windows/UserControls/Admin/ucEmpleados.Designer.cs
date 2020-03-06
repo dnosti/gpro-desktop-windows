@@ -28,9 +28,9 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
       this.btnCrearEmpleado = new MetroFramework.Controls.MetroButton();
       this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
       this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -52,6 +52,7 @@
       this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Nacionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.btnVerTodosEmpleados = new MetroFramework.Controls.MetroButton();
       ((System.ComponentModel.ISupportInitialize)(this.mgEmpleados)).BeginInit();
       this.SuspendLayout();
       // 
@@ -210,14 +211,14 @@
       this.mgEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.mgEmpleados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
       this.mgEmpleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.mgEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+      dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.mgEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
       this.mgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.mgEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdEmpleado,
@@ -231,16 +232,16 @@
             this.Dni,
             this.Nacionalidad,
             this.FullName});
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-      dataGridViewCellStyle2.Format = "d";
-      dataGridViewCellStyle2.NullValue = null;
-      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-      this.mgEmpleados.DefaultCellStyle = dataGridViewCellStyle2;
+      dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+      dataGridViewCellStyle5.Format = "d";
+      dataGridViewCellStyle5.NullValue = null;
+      dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+      this.mgEmpleados.DefaultCellStyle = dataGridViewCellStyle5;
       this.mgEmpleados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
       this.mgEmpleados.EnableHeadersVisualStyles = false;
       this.mgEmpleados.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -249,14 +250,14 @@
       this.mgEmpleados.Name = "mgEmpleados";
       this.mgEmpleados.ReadOnly = true;
       this.mgEmpleados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-      dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.mgEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+      dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+      dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.mgEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
       this.mgEmpleados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
       this.mgEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.mgEmpleados.Size = new System.Drawing.Size(774, 425);
@@ -348,10 +349,24 @@
       this.FullName.ReadOnly = true;
       this.FullName.Visible = false;
       // 
+      // btnVerTodosEmpleados
+      // 
+      this.btnVerTodosEmpleados.Location = new System.Drawing.Point(254, 66);
+      this.btnVerTodosEmpleados.Name = "btnVerTodosEmpleados";
+      this.btnVerTodosEmpleados.Size = new System.Drawing.Size(137, 25);
+      this.btnVerTodosEmpleados.Style = MetroFramework.MetroColorStyle.Blue;
+      this.btnVerTodosEmpleados.TabIndex = 11;
+      this.btnVerTodosEmpleados.Text = "Ver todos los Empleados";
+      this.btnVerTodosEmpleados.Theme = MetroFramework.MetroThemeStyle.Light;
+      this.btnVerTodosEmpleados.UseSelectable = true;
+      this.btnVerTodosEmpleados.UseStyleColors = true;
+      this.btnVerTodosEmpleados.Click += new System.EventHandler(this.btnVerTodosEmpleados_Click);
+      // 
       // ucEmpleados
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Controls.Add(this.btnVerTodosEmpleados);
       this.Controls.Add(this.mgEmpleados);
       this.Controls.Add(this.textBoxDNI);
       this.Controls.Add(this.metroPanel1);
@@ -396,5 +411,6 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn Dni;
     private System.Windows.Forms.DataGridViewTextBoxColumn Nacionalidad;
     private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+    private MetroFramework.Controls.MetroButton btnVerTodosEmpleados;
   }
 }

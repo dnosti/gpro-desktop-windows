@@ -79,7 +79,7 @@ namespace gpro_desktop_windows.Forms
         ClienteId = int.Parse(ComboBoxCliente.SelectedValue.ToString()),
         TituloProyecto = textBoxTitulo.Text,
         DescripcionProyecto = textBoxDescProyecto.Text,
-        EstadoProyecto = "vigente",
+        EstadoProyecto = "Vigente",
         IdEmpleadoPm = Settings.Default.IdEmpleado
       };
 

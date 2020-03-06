@@ -186,6 +186,32 @@ namespace gpro_desktop_windows.UsersControls
         textBoxDato.Clear(); textBoxCUIT.Clear();
       }
     }
+
+    private void btnVerTodosClientes_Click(object sender, EventArgs e)
+    {
+      getClientes();
+    }
+
+    private void getClientes()
+    {
+      List<Cliente> clienteResponses = null;
+
+      HttpClient client = HttpUtils.configHttpClient();
+      HttpResponseMessage response = HttpUtils.getClientes(client, "/cliente/");
+
+      string stringCR = response.Content.ReadAsStringAsync().Result;
+
+      if (response.IsSuccessStatusCode)
+      {
+        mgClientes.Visible = true;
+        clienteResponses = JsonConvert.DeserializeObject<List<Cliente>>(stringCR);
+        mgClientes.DataSource = clienteResponses;
+      }
+      else
+      {
+        MessageBox.Show("No se encontraron clientes.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      }
+    }
   }
 }
 

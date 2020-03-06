@@ -16,13 +16,15 @@ namespace gpro_desktop_windows.Forms
   {
     private int id;
     private int idEmpleado;
+    private string role = "";
     public bool okUpdate = false;
 
-    public EditarUsuarioForm(string id, string idEmpleado)
+    public EditarUsuarioForm(string id, string idEmpleado, string role)
     {
       InitializeComponent();
       this.id = int.Parse(id);
       this.idEmpleado = int.Parse(idEmpleado);
+      this.role = role;
     }
 
     private void btnCancelar_Click(object sender, EventArgs e)
@@ -80,6 +82,7 @@ namespace gpro_desktop_windows.Forms
         ComboBoxRole.DataSource = roleResponses.OrderBy(x => x.Descripcion).ToList();
         ComboBoxRole.ValueMember = "Id";
         ComboBoxRole.DisplayMember = "Descripcion";
+        //ComboBoxRole.SelectedValue = this.role;
       }
     }
 
@@ -114,7 +117,7 @@ namespace gpro_desktop_windows.Forms
 
     }
 
-    private void CrearUsuarioForm_Load(object sender, EventArgs e)
+    private void EditarUsuarioForm_Load(object sender, EventArgs e)
     {
       GetRoles();
     }

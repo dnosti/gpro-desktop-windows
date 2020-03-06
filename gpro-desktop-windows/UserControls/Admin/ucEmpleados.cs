@@ -192,6 +192,32 @@ namespace gpro_desktop_windows.UsersControls
         textBoxDato.Clear(); textBoxDNI.Clear();
       }
     }
+
+    private void btnVerTodosEmpleados_Click(object sender, EventArgs e)
+    {
+      getEmpleados();
+    }
+
+    private void getEmpleados()
+    {
+      List<Empleado> empleadoResponses = null;
+
+      HttpClient client = HttpUtils.configHttpClient();
+      HttpResponseMessage response = HttpUtils.getEmpleados(client, "/empleado/");
+
+      string stringCR = response.Content.ReadAsStringAsync().Result;
+
+      if (response.IsSuccessStatusCode)
+      {
+        mgEmpleados.Visible = true;
+        empleadoResponses = JsonConvert.DeserializeObject<List<Empleado>>(stringCR);
+        mgEmpleados.DataSource = empleadoResponses;
+      }
+      else
+      {
+        MessageBox.Show("No se encontraron empleados.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      }
+    }
   }
 }
 

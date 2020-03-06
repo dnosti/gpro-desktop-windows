@@ -130,6 +130,12 @@ namespace gpro_desktop_windows.Utils
       return response;
     }
 
+    public static HttpResponseMessage getUsuarios(HttpClient client, string path)
+    {
+      HttpResponseMessage response = client.GetAsync(path).Result;
+      return response;
+    }
+
 
     /* Roles */
 
@@ -192,5 +198,30 @@ namespace gpro_desktop_windows.Utils
       return response;
     }
 
+    public static HttpResponseMessage putTarea(HttpClient client, Tarea payload)
+    {
+      string stringData = JsonConvert.SerializeObject(payload);
+      var contentData = new StringContent(stringData, Encoding.UTF8, "application/json");
+
+      HttpResponseMessage response = client.PutAsync("/tarea/", contentData).Result;
+
+      return response;
+    }
+
+    public static HttpResponseMessage getTarea(HttpClient client, string path, string payload)
+    {
+      HttpResponseMessage response = client.GetAsync(path + payload).Result;
+      return response;
+    }
+
+    public static HttpResponseMessage postTarea(HttpClient client, Tarea payload)
+    {
+      string stringData = JsonConvert.SerializeObject(payload);
+      var contentData = new StringContent(stringData, Encoding.UTF8, "application/json");
+
+      HttpResponseMessage response = client.PostAsync("/tarea/", contentData).Result;
+
+      return response;
+    }
   }
 }
