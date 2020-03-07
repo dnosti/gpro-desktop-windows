@@ -83,6 +83,16 @@ namespace gpro_desktop_windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
+        internal static System.Drawing.Icon reloj {
+            get {
+                object obj = ResourceManager.GetObject("reloj", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        /// </summary>
         internal static System.Drawing.Icon ver {
             get {
                 object obj = ResourceManager.GetObject("ver", resourceCulture);

@@ -34,6 +34,12 @@ namespace gpro_desktop_windows.UsersControls
       btnVer.Name = "Ver";
       mgProyectos.Columns.Add(btnVer);
       mgProyectos.Columns[10].HeaderText = "";
+
+      /* Botón Horas Trabajadas en Datagrid */
+      DataGridViewButtonColumn btnHoras = new DataGridViewButtonColumn();
+      btnHoras.Name = "Horas Trabajadas";
+      mgProyectos.Columns.Add(btnHoras);
+      mgProyectos.Columns[11].HeaderText = "";
     }
 
     private void mgProyectos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -71,6 +77,23 @@ namespace gpro_desktop_windows.UsersControls
 
         e.Handled = true;
       }
+
+      if (e.ColumnIndex >= 0 && this.mgProyectos.Columns[e.ColumnIndex].Name == "Horas Trabajadas" && e.RowIndex >= 0)
+      {
+        e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+        DataGridViewButtonCell cellButtonVer = this.mgProyectos.Rows[e.RowIndex].Cells["Horas Trabajadas"] as DataGridViewButtonCell;
+        Icon icoHoras = Properties.Resources.reloj;
+        e.Graphics.DrawIcon(icoHoras, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+        this.mgProyectos.Rows[e.RowIndex].Height = icoHoras.Height + 8;
+        this.mgProyectos.Columns[e.ColumnIndex].Width = icoHoras.Width + 8;
+
+        DataGridViewCell cell = this.mgProyectos.Rows[e.RowIndex].Cells[e.ColumnIndex];
+        cell.ToolTipText = "Horas Trabajadas";
+
+        e.Handled = true;
+      }
     }
 
     private void mgProyectos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -100,6 +123,13 @@ namespace gpro_desktop_windows.UsersControls
         verProyectoForm.textBoxCliente.Text = verProyecto.Cells["ApellidoCliente"].Value.ToString() + ", " + verProyecto.Cells["NombreCliente"].Value.ToString();
         verProyectoForm.Show();
       }
+      if (e.ColumnIndex >= 0 && this.mgProyectos.Columns[e.ColumnIndex].Name == "Horas Trabajadas" && e.RowIndex >= 0)
+      {
+        string Id = mgProyectos.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+        HorasTrabajadasForm horasTrabajadasForm = new HorasTrabajadasForm(Id);
+        horasTrabajadasForm.ShowDialog();
+      }
+
     }
 
     private void btnCrearProyecto_Click(object sender, EventArgs e)

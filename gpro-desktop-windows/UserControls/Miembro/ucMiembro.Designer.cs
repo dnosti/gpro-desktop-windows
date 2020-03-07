@@ -40,7 +40,7 @@
       this.mtProyectosMiembro.Name = "mtProyectosMiembro";
       this.mtProyectosMiembro.Size = new System.Drawing.Size(456, 119);
       this.mtProyectosMiembro.TabIndex = 0;
-      this.mtProyectosMiembro.Text = "Mis Proyectos";
+      this.mtProyectosMiembro.Text = "Mi Panel";
       this.mtProyectosMiembro.UseSelectable = true;
       this.mtProyectosMiembro.Click += new System.EventHandler(this.mtProyectosMiembro_Click);
       // 

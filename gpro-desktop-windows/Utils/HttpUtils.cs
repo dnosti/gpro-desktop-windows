@@ -223,5 +223,14 @@ namespace gpro_desktop_windows.Utils
 
       return response;
     }
+
+
+    /* Horas Trabajadas */
+
+    public static HttpResponseMessage getHorasTrabajadas(HttpClient client, string path, string payload)
+    {
+      HttpResponseMessage response = client.GetAsync(path + payload).Result;
+      return response;
+    }
   }
 }
