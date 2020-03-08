@@ -232,5 +232,15 @@ namespace gpro_desktop_windows.Utils
       HttpResponseMessage response = client.GetAsync(path + payload).Result;
       return response;
     }
+
+    public static HttpResponseMessage postHorasTrabajadas(HttpClient client, HoraTrab payload)
+    {
+      string stringData = JsonConvert.SerializeObject(payload);
+      var contentData = new StringContent(stringData, Encoding.UTF8, "application/json");
+
+      HttpResponseMessage response = client.PostAsync("/horatrabajadas/", contentData).Result;
+
+      return response;
+    }
   }
 }

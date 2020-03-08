@@ -32,7 +32,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      
       this.textBoxUser = new MetroFramework.Controls.MetroTextBox();
       this.textBoxPass = new MetroFramework.Controls.MetroTextBox();
       this.btnIniciar = new MetroFramework.Controls.MetroButton();
@@ -208,7 +207,7 @@
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(60, 10);
       this.label3.TabIndex = 7;
-      this.label3.Text = "Version 0.1";
+      this.label3.Text = "Version 0.9";
       // 
       // label4
       // 
@@ -217,9 +216,9 @@
       this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
       this.label4.Location = new System.Drawing.Point(278, 281);
       this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(65, 10);
+      this.label4.Size = new System.Drawing.Size(55, 10);
       this.label4.TabIndex = 9;
-      this.label4.Text = "Febrero 2020";
+      this.label4.Text = "Marzo 2020";
       // 
       // LoginForm
       // 

@@ -28,21 +28,21 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.mtProyectosMiembro = new MetroFramework.Controls.MetroTile();
+      this.mtPanelMiembro = new MetroFramework.Controls.MetroTile();
       this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
       this.SuspendLayout();
       // 
-      // mtProyectosMiembro
+      // mtPanelMiembro
       // 
-      this.mtProyectosMiembro.ActiveControl = null;
-      this.mtProyectosMiembro.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.mtProyectosMiembro.Location = new System.Drawing.Point(100, 66);
-      this.mtProyectosMiembro.Name = "mtProyectosMiembro";
-      this.mtProyectosMiembro.Size = new System.Drawing.Size(456, 119);
-      this.mtProyectosMiembro.TabIndex = 0;
-      this.mtProyectosMiembro.Text = "Mi Panel";
-      this.mtProyectosMiembro.UseSelectable = true;
-      this.mtProyectosMiembro.Click += new System.EventHandler(this.mtProyectosMiembro_Click);
+      this.mtPanelMiembro.ActiveControl = null;
+      this.mtPanelMiembro.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.mtPanelMiembro.Location = new System.Drawing.Point(100, 66);
+      this.mtPanelMiembro.Name = "mtPanelMiembro";
+      this.mtPanelMiembro.Size = new System.Drawing.Size(456, 119);
+      this.mtPanelMiembro.TabIndex = 0;
+      this.mtPanelMiembro.Text = "Mi Panel";
+      this.mtPanelMiembro.UseSelectable = true;
+      this.mtPanelMiembro.Click += new System.EventHandler(this.mtPanelMiembro_Click);
       // 
       // metroPanel1
       // 
@@ -64,7 +64,7 @@
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.metroPanel1);
-      this.Controls.Add(this.mtProyectosMiembro);
+      this.Controls.Add(this.mtPanelMiembro);
       this.Name = "ucMiembro";
       this.Size = new System.Drawing.Size(900, 742);
       this.ResumeLayout(false);
@@ -73,7 +73,7 @@
 
     #endregion
 
-    private MetroFramework.Controls.MetroTile mtProyectosMiembro;
+    private MetroFramework.Controls.MetroTile mtPanelMiembro;
     private MetroFramework.Controls.MetroPanel metroPanel1;
   }
 }

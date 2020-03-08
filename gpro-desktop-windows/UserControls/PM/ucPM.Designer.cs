@@ -68,6 +68,7 @@
       this.mtMiPanel.TabIndex = 0;
       this.mtMiPanel.Text = "Mi Panel";
       this.mtMiPanel.UseSelectable = true;
+      this.mtMiPanel.Click += new System.EventHandler(this.mtMiPanel_Click);
       // 
       // metroPanel1
       // 

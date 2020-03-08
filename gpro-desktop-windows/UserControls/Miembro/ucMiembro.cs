@@ -18,18 +18,16 @@ namespace gpro_desktop_windows.UsersControls
       InitializeComponent();
     }
 
-    private void mtProyectosMiembro_Click(object sender, EventArgs e)
+    private void mtPanelMiembro_Click(object sender, EventArgs e)
     {
-      /*
-      if (!MainForm.Instance.MetroContainer.Controls.ContainsKey("ucProyectos"))
+      if (!MainForm.Instance.MetroContainer.Controls.ContainsKey("ucMiPanel"))
       {
-        ucProyectos uc = new ucProyectos();
+        ucMiPanel uc = new ucMiPanel();
         uc.Dock = DockStyle.Fill;
         MainForm.Instance.MetroContainer.Controls.Add(uc);
       }
-      MainForm.Instance.MetroContainer.Controls["ucProyectos"].BringToFront();
+      MainForm.Instance.MetroContainer.Controls["ucMiPanel"].BringToFront();
       MainForm.Instance.MetroBack.Visible = true;
-      */
     }
   }
 }

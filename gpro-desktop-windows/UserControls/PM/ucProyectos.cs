@@ -40,6 +40,12 @@ namespace gpro_desktop_windows.UsersControls
       btnHoras.Name = "Horas Trabajadas";
       mgProyectos.Columns.Add(btnHoras);
       mgProyectos.Columns[11].HeaderText = "";
+
+      comboBoxEstado.Items.Add("Cancelado");
+      comboBoxEstado.Items.Add("No vigente");
+      comboBoxEstado.Items.Add("Pausado");
+      comboBoxEstado.Items.Add("Vigente");
+      comboBoxEstado.SelectedItem = "";
     }
 
     private void mgProyectos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -50,7 +56,7 @@ namespace gpro_desktop_windows.UsersControls
 
         DataGridViewButtonCell cellButtonEditar = this.mgProyectos.Rows[e.RowIndex].Cells["Editar"] as DataGridViewButtonCell;
         Icon icoEditar = Properties.Resources.editar;
-        e.Graphics.DrawIcon(icoEditar, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+        e.Graphics.DrawIcon(icoEditar, e.CellBounds.Left + 4, e.CellBounds.Top + 4);
 
         this.mgProyectos.Rows[e.RowIndex].Height = icoEditar.Height + 8;
         this.mgProyectos.Columns[e.ColumnIndex].Width = icoEditar.Width + 8;
@@ -67,7 +73,7 @@ namespace gpro_desktop_windows.UsersControls
 
         DataGridViewButtonCell cellButtonVer = this.mgProyectos.Rows[e.RowIndex].Cells["Ver"] as DataGridViewButtonCell;
         Icon icoVer = Properties.Resources.ver;
-        e.Graphics.DrawIcon(icoVer, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+        e.Graphics.DrawIcon(icoVer, e.CellBounds.Left + 4, e.CellBounds.Top + 4);
 
         this.mgProyectos.Rows[e.RowIndex].Height = icoVer.Height + 8;
         this.mgProyectos.Columns[e.ColumnIndex].Width = icoVer.Width + 8;
@@ -84,7 +90,7 @@ namespace gpro_desktop_windows.UsersControls
 
         DataGridViewButtonCell cellButtonVer = this.mgProyectos.Rows[e.RowIndex].Cells["Horas Trabajadas"] as DataGridViewButtonCell;
         Icon icoHoras = Properties.Resources.reloj;
-        e.Graphics.DrawIcon(icoHoras, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+        e.Graphics.DrawIcon(icoHoras, e.CellBounds.Left + 4, e.CellBounds.Top + 4);
 
         this.mgProyectos.Rows[e.RowIndex].Height = icoHoras.Height + 8;
         this.mgProyectos.Columns[e.ColumnIndex].Width = icoHoras.Width + 8;
@@ -141,7 +147,7 @@ namespace gpro_desktop_windows.UsersControls
     private void btnLimpiar_Click(object sender, EventArgs e)
     {
       textBoxProyecto.Clear();
-      textBoxEstado.Clear();
+      comboBoxEstado.SelectedIndex = -1;
     }
 
     private void btnBuscar_Click(object sender, EventArgs e)
@@ -150,13 +156,13 @@ namespace gpro_desktop_windows.UsersControls
       string payload = "";
       bool getbyestado = false;
 
-      if (string.IsNullOrEmpty(textBoxProyecto.Text) && string.IsNullOrEmpty(textBoxEstado.Text))
+      if (string.IsNullOrEmpty(textBoxProyecto.Text) && (comboBoxEstado.SelectedIndex == -1))
       {
         MessageBox.Show(this, "Complete el formulario para realizar la búsqueda.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         return;
       }
 
-      if (string.IsNullOrEmpty(textBoxEstado.Text))
+      if (comboBoxEstado.SelectedIndex == -1)
       {
         path = "/proyectos/porTitulo/";
         payload = textBoxProyecto.Text;
@@ -165,7 +171,7 @@ namespace gpro_desktop_windows.UsersControls
       else
       {
         path = "/proyectos/porEstado/";
-        payload = textBoxEstado.Text;
+        payload = comboBoxEstado.SelectedItem.ToString();
         getbyestado = true;
         buscarProyecto(path, payload, getbyestado);
       }

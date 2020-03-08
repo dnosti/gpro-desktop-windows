@@ -51,6 +51,7 @@
       this.ApellidoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.RazonSocialCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.btnVerTodosProyectos = new MetroFramework.Controls.MetroButton();
+      this.comboBoxEstado = new MetroFramework.Controls.MetroComboBox();
       ((System.ComponentModel.ISupportInitialize)(this.mgProyectos)).BeginInit();
       this.SuspendLayout();
       // 
@@ -118,9 +119,9 @@
       // 
       // 
       this.textBoxProyecto.CustomButton.Image = null;
-      this.textBoxProyecto.CustomButton.Location = new System.Drawing.Point(353, 1);
+      this.textBoxProyecto.CustomButton.Location = new System.Drawing.Point(349, 1);
       this.textBoxProyecto.CustomButton.Name = "";
-      this.textBoxProyecto.CustomButton.Size = new System.Drawing.Size(23, 23);
+      this.textBoxProyecto.CustomButton.Size = new System.Drawing.Size(27, 27);
       this.textBoxProyecto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
       this.textBoxProyecto.CustomButton.TabIndex = 1;
       this.textBoxProyecto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -136,7 +137,7 @@
       this.textBoxProyecto.SelectionLength = 0;
       this.textBoxProyecto.SelectionStart = 0;
       this.textBoxProyecto.ShortcutsEnabled = true;
-      this.textBoxProyecto.Size = new System.Drawing.Size(377, 25);
+      this.textBoxProyecto.Size = new System.Drawing.Size(377, 29);
       this.textBoxProyecto.TabIndex = 3;
       this.textBoxProyecto.UseSelectable = true;
       this.textBoxProyecto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -341,10 +342,21 @@
       this.btnVerTodosProyectos.UseStyleColors = true;
       this.btnVerTodosProyectos.Click += new System.EventHandler(this.btnVerTodosProyectos_Click);
       // 
+      // comboBoxEstado
+      // 
+      this.comboBoxEstado.FormattingEnabled = true;
+      this.comboBoxEstado.ItemHeight = 23;
+      this.comboBoxEstado.Location = new System.Drawing.Point(498, 128);
+      this.comboBoxEstado.Name = "comboBoxEstado";
+      this.comboBoxEstado.Size = new System.Drawing.Size(376, 29);
+      this.comboBoxEstado.TabIndex = 10;
+      this.comboBoxEstado.UseSelectable = true;
+      // 
       // ucProyectos
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Controls.Add(this.comboBoxEstado);
       this.Controls.Add(this.btnVerTodosProyectos);
       this.Controls.Add(this.mgProyectos);
       this.Controls.Add(this.textBoxEstado);
@@ -389,5 +401,6 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
     private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoCliente;
     private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocialCliente;
+    private MetroFramework.Controls.MetroComboBox comboBoxEstado;
   }
 }

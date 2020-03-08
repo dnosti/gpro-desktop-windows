@@ -94,6 +94,18 @@
     <Compile Include="Forms\Empleado\VerEmpleadoForm.Designer.cs">
       <DependentUpon>VerEmpleadoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HorasTrabajadas\VerHorasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HorasTrabajadas\VerHorasForm.Designer.cs">
+      <DependentUpon>VerHorasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HorasTrabajadas\CargarHorasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HorasTrabajadas\CargarHorasForm.Designer.cs">
+      <DependentUpon>CargarHorasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Proyecto\EditarProyectoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +178,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\HoraTrab.cs" />
     <Compile Include="Models\HoraTrabajada.cs" />
     <Compile Include="Models\Tarea.cs" />
     <Compile Include="Models\Perfil.cs" />
@@ -204,6 +217,12 @@
     </Compile>
     <Compile Include="UserControls\Admin\ucClientes.Designer.cs">
       <DependentUpon>ucClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Miembro\ucMiPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Miembro\ucMiPanel.Designer.cs">
+      <DependentUpon>ucMiPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Miembro\ucMiembro.cs">
       <SubType>UserControl</SubType>
@@ -247,6 +266,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Empleado\VerEmpleadoForm.resx">
       <DependentUpon>VerEmpleadoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HorasTrabajadas\VerHorasForm.resx">
+      <DependentUpon>VerHorasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HorasTrabajadas\CargarHorasForm.resx">
+      <DependentUpon>CargarHorasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Proyecto\EditarProyectoForm.resx">
       <DependentUpon>EditarProyectoForm.cs</DependentUpon>
@@ -306,6 +331,9 @@
     <EmbeddedResource Include="UserControls\Admin\ucClientes.resx">
       <DependentUpon>ucClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Miembro\ucMiPanel.resx">
+      <DependentUpon>ucMiPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Miembro\ucMiembro.resx">
       <DependentUpon>ucMiembro.cs</DependentUpon>
     </EmbeddedResource>
@@ -343,6 +371,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\reloj.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
