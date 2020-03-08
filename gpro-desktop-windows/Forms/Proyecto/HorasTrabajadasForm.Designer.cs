@@ -35,7 +35,6 @@
       this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
       this.metroTabPagePerfil = new MetroFramework.Controls.MetroTabPage();
       this.mgPorPerfil = new MetroFramework.Controls.MetroGrid();
-      this.metroTabPagePeriodo = new MetroFramework.Controls.MetroTabPage();
       this.IdPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.HorasPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,15 +45,24 @@
       this.ValorHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.metroTabPagePeriodo = new MetroFramework.Controls.MetroTabPage();
+      this.fechaInicio = new MetroFramework.Controls.MetroDateTime();
+      this.ComboBoxPerfiles = new MetroFramework.Controls.MetroComboBox();
+      this.fechaFin = new MetroFramework.Controls.MetroDateTime();
+      this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+      this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+      this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+      this.metroButton1 = new MetroFramework.Controls.MetroButton();
       this.metroTabControl.SuspendLayout();
       this.metroTabPagePerfil.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.mgPorPerfil)).BeginInit();
+      this.metroTabPagePeriodo.SuspendLayout();
       this.SuspendLayout();
       // 
       // btnCerrar
       // 
       this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Default;
-      this.btnCerrar.Location = new System.Drawing.Point(640, 324);
+      this.btnCerrar.Location = new System.Drawing.Point(640, 309);
       this.btnCerrar.Name = "btnCerrar";
       this.btnCerrar.Size = new System.Drawing.Size(124, 34);
       this.btnCerrar.Style = MetroFramework.MetroColorStyle.Blue;
@@ -71,7 +79,7 @@
       this.metroTabControl.Controls.Add(this.metroTabPagePeriodo);
       this.metroTabControl.Location = new System.Drawing.Point(22, 67);
       this.metroTabControl.Name = "metroTabControl";
-      this.metroTabControl.SelectedIndex = 0;
+      this.metroTabControl.SelectedIndex = 1;
       this.metroTabControl.Size = new System.Drawing.Size(745, 242);
       this.metroTabControl.TabIndex = 50;
       this.metroTabControl.UseSelectable = true;
@@ -148,20 +156,6 @@
       this.mgPorPerfil.Size = new System.Drawing.Size(737, 196);
       this.mgPorPerfil.TabIndex = 51;
       // 
-      // metroTabPagePeriodo
-      // 
-      this.metroTabPagePeriodo.HorizontalScrollbarBarColor = true;
-      this.metroTabPagePeriodo.HorizontalScrollbarHighlightOnWheel = false;
-      this.metroTabPagePeriodo.HorizontalScrollbarSize = 10;
-      this.metroTabPagePeriodo.Location = new System.Drawing.Point(4, 38);
-      this.metroTabPagePeriodo.Name = "metroTabPagePeriodo";
-      this.metroTabPagePeriodo.Size = new System.Drawing.Size(737, 200);
-      this.metroTabPagePeriodo.TabIndex = 1;
-      this.metroTabPagePeriodo.Text = "Por Período";
-      this.metroTabPagePeriodo.VerticalScrollbarBarColor = true;
-      this.metroTabPagePeriodo.VerticalScrollbarHighlightOnWheel = false;
-      this.metroTabPagePeriodo.VerticalScrollbarSize = 10;
-      // 
       // IdPerfil
       // 
       this.IdPerfil.DataPropertyName = "IdPerfil";
@@ -237,11 +231,98 @@
       this.Apellido.ReadOnly = true;
       this.Apellido.Visible = false;
       // 
+      // metroTabPagePeriodo
+      // 
+      this.metroTabPagePeriodo.Controls.Add(this.metroButton1);
+      this.metroTabPagePeriodo.Controls.Add(this.metroLabel3);
+      this.metroTabPagePeriodo.Controls.Add(this.metroLabel2);
+      this.metroTabPagePeriodo.Controls.Add(this.metroLabel1);
+      this.metroTabPagePeriodo.Controls.Add(this.fechaFin);
+      this.metroTabPagePeriodo.Controls.Add(this.ComboBoxPerfiles);
+      this.metroTabPagePeriodo.Controls.Add(this.fechaInicio);
+      this.metroTabPagePeriodo.HorizontalScrollbarBarColor = true;
+      this.metroTabPagePeriodo.HorizontalScrollbarHighlightOnWheel = false;
+      this.metroTabPagePeriodo.HorizontalScrollbarSize = 10;
+      this.metroTabPagePeriodo.Location = new System.Drawing.Point(4, 38);
+      this.metroTabPagePeriodo.Name = "metroTabPagePeriodo";
+      this.metroTabPagePeriodo.Size = new System.Drawing.Size(737, 200);
+      this.metroTabPagePeriodo.TabIndex = 1;
+      this.metroTabPagePeriodo.Text = "Por Período";
+      this.metroTabPagePeriodo.VerticalScrollbarBarColor = true;
+      this.metroTabPagePeriodo.VerticalScrollbarHighlightOnWheel = false;
+      this.metroTabPagePeriodo.VerticalScrollbarSize = 10;
+      // 
+      // fechaInicio
+      // 
+      this.fechaInicio.Location = new System.Drawing.Point(235, 36);
+      this.fechaInicio.MinimumSize = new System.Drawing.Size(0, 29);
+      this.fechaInicio.Name = "fechaInicio";
+      this.fechaInicio.Size = new System.Drawing.Size(234, 29);
+      this.fechaInicio.TabIndex = 57;
+      // 
+      // ComboBoxPerfiles
+      // 
+      this.ComboBoxPerfiles.FormattingEnabled = true;
+      this.ComboBoxPerfiles.ItemHeight = 23;
+      this.ComboBoxPerfiles.Location = new System.Drawing.Point(0, 36);
+      this.ComboBoxPerfiles.Name = "ComboBoxPerfiles";
+      this.ComboBoxPerfiles.Size = new System.Drawing.Size(201, 29);
+      this.ComboBoxPerfiles.TabIndex = 58;
+      this.ComboBoxPerfiles.UseSelectable = true;
+      // 
+      // fechaFin
+      // 
+      this.fechaFin.Location = new System.Drawing.Point(503, 36);
+      this.fechaFin.MinimumSize = new System.Drawing.Size(0, 29);
+      this.fechaFin.Name = "fechaFin";
+      this.fechaFin.Size = new System.Drawing.Size(234, 29);
+      this.fechaFin.TabIndex = 59;
+      // 
+      // metroLabel1
+      // 
+      this.metroLabel1.AutoSize = true;
+      this.metroLabel1.Location = new System.Drawing.Point(0, 11);
+      this.metroLabel1.Name = "metroLabel1";
+      this.metroLabel1.Size = new System.Drawing.Size(41, 19);
+      this.metroLabel1.TabIndex = 60;
+      this.metroLabel1.Text = "Perfil:";
+      // 
+      // metroLabel2
+      // 
+      this.metroLabel2.AutoSize = true;
+      this.metroLabel2.Location = new System.Drawing.Point(235, 11);
+      this.metroLabel2.Name = "metroLabel2";
+      this.metroLabel2.Size = new System.Drawing.Size(80, 19);
+      this.metroLabel2.TabIndex = 61;
+      this.metroLabel2.Text = "Fecha Inicio:";
+      // 
+      // metroLabel3
+      // 
+      this.metroLabel3.AutoSize = true;
+      this.metroLabel3.Location = new System.Drawing.Point(503, 11);
+      this.metroLabel3.Name = "metroLabel3";
+      this.metroLabel3.Size = new System.Drawing.Size(67, 19);
+      this.metroLabel3.TabIndex = 62;
+      this.metroLabel3.Text = "Fecha Fin:";
+      // 
+      // metroButton1
+      // 
+      this.metroButton1.Cursor = System.Windows.Forms.Cursors.Default;
+      this.metroButton1.Location = new System.Drawing.Point(613, 77);
+      this.metroButton1.Name = "metroButton1";
+      this.metroButton1.Size = new System.Drawing.Size(124, 24);
+      this.metroButton1.Style = MetroFramework.MetroColorStyle.Blue;
+      this.metroButton1.TabIndex = 51;
+      this.metroButton1.Text = "Buscar";
+      this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Light;
+      this.metroButton1.UseSelectable = true;
+      this.metroButton1.UseStyleColors = true;
+      // 
       // HorasTrabajadasForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(792, 389);
+      this.ClientSize = new System.Drawing.Size(792, 368);
       this.Controls.Add(this.metroTabControl);
       this.Controls.Add(this.btnCerrar);
       this.MaximizeBox = false;
@@ -251,6 +332,8 @@
       this.metroTabControl.ResumeLayout(false);
       this.metroTabPagePerfil.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.mgPorPerfil)).EndInit();
+      this.metroTabPagePeriodo.ResumeLayout(false);
+      this.metroTabPagePeriodo.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -271,5 +354,12 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn ValorHora;
     private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+    private MetroFramework.Controls.MetroDateTime fechaInicio;
+    private MetroFramework.Controls.MetroDateTime fechaFin;
+    public MetroFramework.Controls.MetroComboBox ComboBoxPerfiles;
+    private MetroFramework.Controls.MetroButton metroButton1;
+    private MetroFramework.Controls.MetroLabel metroLabel3;
+    private MetroFramework.Controls.MetroLabel metroLabel2;
+    private MetroFramework.Controls.MetroLabel metroLabel1;
   }
 }

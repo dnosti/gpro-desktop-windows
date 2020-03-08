@@ -23,6 +23,8 @@ namespace gpro_desktop_windows.Forms
       InitializeComponent();
       this.IdProyecto = IdProyecto;
       metroTabControl.SelectedTab = metroTabPagePerfil;
+      fechaInicio.MaxDate = DateTime.Now;
+      fechaFin.MaxDate = DateTime.Now;
       getHorasTrabajadas();
     }
 
@@ -45,7 +47,10 @@ namespace gpro_desktop_windows.Forms
       if (response.IsSuccessStatusCode)
       {
         mgPorPerfil.DataSource = horasTrabajadas.SumaPorPerfil;
-      }
+
+        ComboBoxPerfiles.DataSource = (from t in horasTrabajadas.SumaPorPerfil
+                                       select new { t.DescripcionPerfil }).Distinct().ToList();
+      }      
     }
   }
 }
