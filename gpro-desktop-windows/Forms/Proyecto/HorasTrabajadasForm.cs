@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace gpro_desktop_windows.Forms
 {
-  public partial class HorasTrabajadasForm: MetroFramework.Forms.MetroForm
+  public partial class HorasTrabajadasForm : MetroFramework.Forms.MetroForm
   {
     private string IdProyecto = "";
 
@@ -41,7 +41,7 @@ namespace gpro_desktop_windows.Forms
       HttpResponseMessage response = HttpUtils.getHorasTrabajadas(client, "/horatrabajadas/porProy/", IdProyecto);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
-       
+
       horasTrabajadas = JsonConvert.DeserializeObject<HoraTrabajada>(stringCR);
 
       if (response.IsSuccessStatusCode)
@@ -49,8 +49,35 @@ namespace gpro_desktop_windows.Forms
         mgPorPerfil.DataSource = horasTrabajadas.SumaPorPerfil;
 
         ComboBoxPerfiles.DataSource = (from t in horasTrabajadas.SumaPorPerfil
-                                       select new { t.DescripcionPerfil }).Distinct().ToList();
-      }      
+                                       select new { t.DescripcionPerfil, t.IdPerfil }).Distinct().ToList();
+        ComboBoxPerfiles.ValueMember = "IdPerfil";
+        ComboBoxPerfiles.DisplayMember = "DescripcionPerfil";
+      }
+    }
+
+    private void getHorasPorPeriodo()
+    {
+      HtrabPorRecDto horasTrabajadas = null;
+
+      HttpClient client = HttpUtils.configHttpClient();
+      HttpResponseMessage response = HttpUtils.getHorasTrabajadasFecha(client, "/horatrabajadas/porfecha/", ComboBoxPerfiles.SelectedValue.ToString(), fechaInicio.Value.Date.ToString(("yyyy-MM-ddTHH\\:mm\\:ss.fffffffzzz")), fechaFin.Value.Date.ToString(("yyyy-MM-ddTHH\\:mm\\:ss.fffffffzzz")));
+
+      string stringCR = response.Content.ReadAsStringAsync().Result;
+      horasTrabajadas = JsonConvert.DeserializeObject<HtrabPorRecDto>(stringCR);
+
+      if (response.IsSuccessStatusCode && horasTrabajadas.TotalHorasRec > 0)
+      {
+        DialogResult result = MessageBox.Show("Total de horas: " + horasTrabajadas.TotalHorasRec, "Horas Trabajadas por Período", MessageBoxButtons.OK, MessageBoxIcon.Information);
+      } 
+      else
+      {
+        MessageBox.Show("No posee horas cargadas en ese período.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+      }
+    }
+
+    private void btnBuscar_Click(object sender, EventArgs e)
+    {
+      getHorasPorPeriodo();
     }
   }
 }

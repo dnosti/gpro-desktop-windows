@@ -233,6 +233,12 @@ namespace gpro_desktop_windows.Utils
       return response;
     }
 
+    public static HttpResponseMessage getHorasTrabajadasFecha(HttpClient client, string path, string payload_id, string payload_finicio, string payload_ffin)
+    {
+      HttpResponseMessage response = client.GetAsync(path + payload_id + "/" + payload_finicio + "/" + payload_ffin).Result;
+      return response;
+    }
+
     public static HttpResponseMessage postHorasTrabajadas(HttpClient client, HoraTrab payload)
     {
       string stringData = JsonConvert.SerializeObject(payload);

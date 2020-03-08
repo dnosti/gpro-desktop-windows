@@ -41,6 +41,12 @@ namespace gpro_desktop_windows.UsersControls
       mgProyectos.Columns.Add(btnHoras);
       mgProyectos.Columns[11].HeaderText = "";
 
+      /* Botón Informe Semanal en Datagrid */
+      DataGridViewButtonColumn btnInforme = new DataGridViewButtonColumn();
+      btnInforme.Name = "Informe Semanal";
+      mgProyectos.Columns.Add(btnInforme);
+      mgProyectos.Columns[12].HeaderText = "";
+
       comboBoxEstado.Items.Add("Cancelado");
       comboBoxEstado.Items.Add("No vigente");
       comboBoxEstado.Items.Add("Pausado");
@@ -100,6 +106,23 @@ namespace gpro_desktop_windows.UsersControls
 
         e.Handled = true;
       }
+
+      if (e.ColumnIndex >= 0 && this.mgProyectos.Columns[e.ColumnIndex].Name == "Informe Semanal" && e.RowIndex >= 0)
+      {
+        e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+        DataGridViewButtonCell cellButtonVer = this.mgProyectos.Rows[e.RowIndex].Cells["Informe Semanal"] as DataGridViewButtonCell;
+        Icon icoCalendar = Properties.Resources.calendar;
+        e.Graphics.DrawIcon(icoCalendar, e.CellBounds.Left + 4, e.CellBounds.Top + 4);
+
+        this.mgProyectos.Rows[e.RowIndex].Height = icoCalendar.Height + 8;
+        this.mgProyectos.Columns[e.ColumnIndex].Width = icoCalendar.Width + 8;
+
+        DataGridViewCell cell = this.mgProyectos.Rows[e.RowIndex].Cells[e.ColumnIndex];
+        cell.ToolTipText = "Informe Semanal Horas Overbudget";
+
+        e.Handled = true;
+      }
     }
 
     private void mgProyectos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -135,7 +158,12 @@ namespace gpro_desktop_windows.UsersControls
         HorasTrabajadasForm horasTrabajadasForm = new HorasTrabajadasForm(Id);
         horasTrabajadasForm.ShowDialog();
       }
-
+      if (e.ColumnIndex >= 0 && this.mgProyectos.Columns[e.ColumnIndex].Name == "Informe Semanal" && e.RowIndex >= 0)
+      {
+        string Id = mgProyectos.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+        HorasOverbudgetForm horasOverbudgetForm = new HorasOverbudgetForm(Id);
+        horasOverbudgetForm.ShowDialog();
+      }
     }
 
     private void btnCrearProyecto_Click(object sender, EventArgs e)

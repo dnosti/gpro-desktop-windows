@@ -103,6 +103,7 @@
       // 
       // ComboBoxPerfiles
       // 
+      this.ComboBoxPerfiles.Enabled = false;
       this.ComboBoxPerfiles.FormattingEnabled = true;
       this.ComboBoxPerfiles.ItemHeight = 23;
       this.ComboBoxPerfiles.Location = new System.Drawing.Point(415, 163);
@@ -162,6 +163,7 @@
       // 
       // ComboBoxEmpleado
       // 
+      this.ComboBoxEmpleado.Enabled = false;
       this.ComboBoxEmpleado.FormattingEnabled = true;
       this.ComboBoxEmpleado.ItemHeight = 23;
       this.ComboBoxEmpleado.Location = new System.Drawing.Point(27, 163);
@@ -190,6 +192,7 @@
       // 
       // ComboBoxProyecto
       // 
+      this.ComboBoxProyecto.Enabled = false;
       this.ComboBoxProyecto.FormattingEnabled = true;
       this.ComboBoxProyecto.ItemHeight = 23;
       this.ComboBoxProyecto.Location = new System.Drawing.Point(27, 94);

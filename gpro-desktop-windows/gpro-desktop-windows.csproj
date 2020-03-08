@@ -118,6 +118,12 @@
     <Compile Include="Forms\Proyecto\CrearProyectoForm.Designer.cs">
       <DependentUpon>CrearProyectoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Proyecto\HorasOverbudgetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Proyecto\HorasOverbudgetForm.Designer.cs">
+      <DependentUpon>HorasOverbudgetForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Proyecto\HorasTrabajadasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     <EmbeddedResource Include="Forms\Proyecto\CrearProyectoForm.resx">
       <DependentUpon>CrearProyectoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Proyecto\HorasOverbudgetForm.resx">
+      <DependentUpon>HorasOverbudgetForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Proyecto\HorasTrabajadasForm.resx">
       <DependentUpon>HorasTrabajadasForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -374,6 +383,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\agregar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
