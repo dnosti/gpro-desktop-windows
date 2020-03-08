@@ -38,6 +38,7 @@
       this.HorasPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.HorasTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.HorasEstimadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.EstadoHorasTrab = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.FechaHorasTrab = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.DescripcionPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ValorHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +84,7 @@
             this.HorasPerfil,
             this.HorasTotales,
             this.HorasEstimadas,
+            this.EstadoHorasTrab,
             this.FechaHorasTrab,
             this.DescripcionPerfil,
             this.ValorHora,
@@ -155,6 +157,13 @@
       this.HorasEstimadas.ReadOnly = true;
       this.HorasEstimadas.Visible = false;
       // 
+      // EstadoHorasTrab
+      // 
+      this.EstadoHorasTrab.DataPropertyName = "EstadoHorasTrab";
+      this.EstadoHorasTrab.HeaderText = "Estado";
+      this.EstadoHorasTrab.Name = "EstadoHorasTrab";
+      this.EstadoHorasTrab.ReadOnly = true;
+      // 
       // FechaHorasTrab
       // 
       this.FechaHorasTrab.DataPropertyName = "FechaHorasTrab";
@@ -216,6 +225,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn HorasPerfil;
     private System.Windows.Forms.DataGridViewTextBoxColumn HorasTotales;
     private System.Windows.Forms.DataGridViewTextBoxColumn HorasEstimadas;
+    private System.Windows.Forms.DataGridViewTextBoxColumn EstadoHorasTrab;
     private System.Windows.Forms.DataGridViewTextBoxColumn FechaHorasTrab;
     private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionPerfil;
     private System.Windows.Forms.DataGridViewTextBoxColumn ValorHora;

@@ -28,23 +28,13 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
       this.btnCerrar = new MetroFramework.Controls.MetroButton();
       this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
       this.metroTabPagePerfil = new MetroFramework.Controls.MetroTabPage();
       this.mgPorPerfil = new MetroFramework.Controls.MetroGrid();
-      this.IdPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.HorasPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.HorasTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.HorasEstimadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.FechaHorasTrab = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.DescripcionPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ValorHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.metroTabPagePerfilDetalle = new System.Windows.Forms.TabPage();
       this.metroTabPagePeriodo = new MetroFramework.Controls.MetroTabPage();
       this.btnBuscar = new MetroFramework.Controls.MetroButton();
@@ -54,6 +44,17 @@
       this.fechaFin = new MetroFramework.Controls.MetroDateTime();
       this.ComboBoxPerfiles = new MetroFramework.Controls.MetroComboBox();
       this.fechaInicio = new MetroFramework.Controls.MetroDateTime();
+      this.IdPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.HorasPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.HorasTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.HorasEstimadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.EstadoHorasTrab = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.FechaHorasTrab = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.DescripcionPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ValorHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.metroTabControl.SuspendLayout();
       this.metroTabPagePerfil.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.mgPorPerfil)).BeginInit();
@@ -81,7 +82,7 @@
       this.metroTabControl.Controls.Add(this.metroTabPagePeriodo);
       this.metroTabControl.Location = new System.Drawing.Point(22, 67);
       this.metroTabControl.Name = "metroTabControl";
-      this.metroTabControl.SelectedIndex = 2;
+      this.metroTabControl.SelectedIndex = 0;
       this.metroTabControl.Size = new System.Drawing.Size(745, 242);
       this.metroTabControl.TabIndex = 50;
       this.metroTabControl.UseSelectable = true;
@@ -109,14 +110,14 @@
       this.mgPorPerfil.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.mgPorPerfil.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
       this.mgPorPerfil.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-      dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-      dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-      dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.mgPorPerfil.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.mgPorPerfil.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.mgPorPerfil.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.mgPorPerfil.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdPerfil,
@@ -124,19 +125,20 @@
             this.HorasPerfil,
             this.HorasTotales,
             this.HorasEstimadas,
+            this.EstadoHorasTrab,
             this.FechaHorasTrab,
             this.DescripcionPerfil,
             this.ValorHora,
             this.Nombre,
             this.Apellido});
-      dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-      dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-      dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-      dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-      this.mgPorPerfil.DefaultCellStyle = dataGridViewCellStyle5;
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+      this.mgPorPerfil.DefaultCellStyle = dataGridViewCellStyle2;
       this.mgPorPerfil.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
       this.mgPorPerfil.EnableHeadersVisualStyles = false;
       this.mgPorPerfil.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -145,93 +147,18 @@
       this.mgPorPerfil.Name = "mgPorPerfil";
       this.mgPorPerfil.ReadOnly = true;
       this.mgPorPerfil.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-      dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-      dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-      dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-      dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.mgPorPerfil.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+      dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.mgPorPerfil.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
       this.mgPorPerfil.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
       this.mgPorPerfil.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.mgPorPerfil.Size = new System.Drawing.Size(737, 196);
       this.mgPorPerfil.TabIndex = 51;
-      // 
-      // IdPerfil
-      // 
-      this.IdPerfil.DataPropertyName = "IdPerfil";
-      this.IdPerfil.HeaderText = "Id Perfil";
-      this.IdPerfil.Name = "IdPerfil";
-      this.IdPerfil.ReadOnly = true;
-      this.IdPerfil.Visible = false;
-      // 
-      // FullName
-      // 
-      this.FullName.DataPropertyName = "FullName";
-      this.FullName.HeaderText = "Empleado";
-      this.FullName.Name = "FullName";
-      this.FullName.ReadOnly = true;
-      // 
-      // HorasPerfil
-      // 
-      this.HorasPerfil.DataPropertyName = "HorasPerfil";
-      this.HorasPerfil.HeaderText = "Horas Trabajadas";
-      this.HorasPerfil.Name = "HorasPerfil";
-      this.HorasPerfil.ReadOnly = true;
-      // 
-      // HorasTotales
-      // 
-      this.HorasTotales.DataPropertyName = "HorasTotales";
-      this.HorasTotales.HeaderText = "Horas Totales";
-      this.HorasTotales.Name = "HorasTotales";
-      this.HorasTotales.ReadOnly = true;
-      this.HorasTotales.Visible = false;
-      // 
-      // HorasEstimadas
-      // 
-      this.HorasEstimadas.DataPropertyName = "HorasEstimadas";
-      this.HorasEstimadas.HeaderText = "Horas Estimadas";
-      this.HorasEstimadas.Name = "HorasEstimadas";
-      this.HorasEstimadas.ReadOnly = true;
-      this.HorasEstimadas.Visible = false;
-      // 
-      // FechaHorasTrab
-      // 
-      this.FechaHorasTrab.DataPropertyName = "FechaHorasTrab";
-      this.FechaHorasTrab.HeaderText = "Fecha";
-      this.FechaHorasTrab.Name = "FechaHorasTrab";
-      this.FechaHorasTrab.ReadOnly = true;
-      // 
-      // DescripcionPerfil
-      // 
-      this.DescripcionPerfil.DataPropertyName = "DescripcionPerfil";
-      this.DescripcionPerfil.HeaderText = "Perfil";
-      this.DescripcionPerfil.Name = "DescripcionPerfil";
-      this.DescripcionPerfil.ReadOnly = true;
-      // 
-      // ValorHora
-      // 
-      this.ValorHora.DataPropertyName = "ValorHora";
-      this.ValorHora.HeaderText = "Valor Hora";
-      this.ValorHora.Name = "ValorHora";
-      this.ValorHora.ReadOnly = true;
-      // 
-      // Nombre
-      // 
-      this.Nombre.DataPropertyName = "Nombre";
-      this.Nombre.HeaderText = "Nombre";
-      this.Nombre.Name = "Nombre";
-      this.Nombre.ReadOnly = true;
-      this.Nombre.Visible = false;
-      // 
-      // Apellido
-      // 
-      this.Apellido.DataPropertyName = "Apellido";
-      this.Apellido.HeaderText = "Apellido";
-      this.Apellido.Name = "Apellido";
-      this.Apellido.ReadOnly = true;
-      this.Apellido.Visible = false;
       // 
       // metroTabPagePerfilDetalle
       // 
@@ -330,6 +257,88 @@
       this.fechaInicio.Size = new System.Drawing.Size(234, 29);
       this.fechaInicio.TabIndex = 57;
       // 
+      // IdPerfil
+      // 
+      this.IdPerfil.DataPropertyName = "IdPerfil";
+      this.IdPerfil.HeaderText = "Id Perfil";
+      this.IdPerfil.Name = "IdPerfil";
+      this.IdPerfil.ReadOnly = true;
+      this.IdPerfil.Visible = false;
+      // 
+      // FullName
+      // 
+      this.FullName.DataPropertyName = "FullName";
+      this.FullName.HeaderText = "Empleado";
+      this.FullName.Name = "FullName";
+      this.FullName.ReadOnly = true;
+      // 
+      // HorasPerfil
+      // 
+      this.HorasPerfil.DataPropertyName = "HorasPerfil";
+      this.HorasPerfil.HeaderText = "Horas Trabajadas";
+      this.HorasPerfil.Name = "HorasPerfil";
+      this.HorasPerfil.ReadOnly = true;
+      // 
+      // HorasTotales
+      // 
+      this.HorasTotales.DataPropertyName = "HorasTotales";
+      this.HorasTotales.HeaderText = "Horas Totales";
+      this.HorasTotales.Name = "HorasTotales";
+      this.HorasTotales.ReadOnly = true;
+      this.HorasTotales.Visible = false;
+      // 
+      // HorasEstimadas
+      // 
+      this.HorasEstimadas.DataPropertyName = "HorasEstimadas";
+      this.HorasEstimadas.HeaderText = "Horas Estimadas";
+      this.HorasEstimadas.Name = "HorasEstimadas";
+      this.HorasEstimadas.ReadOnly = true;
+      this.HorasEstimadas.Visible = false;
+      // 
+      // EstadoHorasTrab
+      // 
+      this.EstadoHorasTrab.DataPropertyName = "EstadoHorasTrab";
+      this.EstadoHorasTrab.HeaderText = "Estado";
+      this.EstadoHorasTrab.Name = "EstadoHorasTrab";
+      this.EstadoHorasTrab.ReadOnly = true;
+      // 
+      // FechaHorasTrab
+      // 
+      this.FechaHorasTrab.DataPropertyName = "FechaHorasTrab";
+      this.FechaHorasTrab.HeaderText = "Fecha";
+      this.FechaHorasTrab.Name = "FechaHorasTrab";
+      this.FechaHorasTrab.ReadOnly = true;
+      // 
+      // DescripcionPerfil
+      // 
+      this.DescripcionPerfil.DataPropertyName = "DescripcionPerfil";
+      this.DescripcionPerfil.HeaderText = "Perfil";
+      this.DescripcionPerfil.Name = "DescripcionPerfil";
+      this.DescripcionPerfil.ReadOnly = true;
+      // 
+      // ValorHora
+      // 
+      this.ValorHora.DataPropertyName = "ValorHora";
+      this.ValorHora.HeaderText = "Valor Hora";
+      this.ValorHora.Name = "ValorHora";
+      this.ValorHora.ReadOnly = true;
+      // 
+      // Nombre
+      // 
+      this.Nombre.DataPropertyName = "Nombre";
+      this.Nombre.HeaderText = "Nombre";
+      this.Nombre.Name = "Nombre";
+      this.Nombre.ReadOnly = true;
+      this.Nombre.Visible = false;
+      // 
+      // Apellido
+      // 
+      this.Apellido.DataPropertyName = "Apellido";
+      this.Apellido.HeaderText = "Apellido";
+      this.Apellido.Name = "Apellido";
+      this.Apellido.ReadOnly = true;
+      this.Apellido.Visible = false;
+      // 
       // HorasTrabajadasForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,16 +365,6 @@
     private MetroFramework.Controls.MetroTabPage metroTabPagePerfil;
     private MetroFramework.Controls.MetroTabPage metroTabPagePeriodo;
     public MetroFramework.Controls.MetroGrid mgPorPerfil;
-    private System.Windows.Forms.DataGridViewTextBoxColumn IdPerfil;
-    private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
-    private System.Windows.Forms.DataGridViewTextBoxColumn HorasPerfil;
-    private System.Windows.Forms.DataGridViewTextBoxColumn HorasTotales;
-    private System.Windows.Forms.DataGridViewTextBoxColumn HorasEstimadas;
-    private System.Windows.Forms.DataGridViewTextBoxColumn FechaHorasTrab;
-    private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionPerfil;
-    private System.Windows.Forms.DataGridViewTextBoxColumn ValorHora;
-    private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-    private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
     private MetroFramework.Controls.MetroDateTime fechaInicio;
     private MetroFramework.Controls.MetroDateTime fechaFin;
     public MetroFramework.Controls.MetroComboBox ComboBoxPerfiles;
@@ -374,5 +373,16 @@
     private MetroFramework.Controls.MetroLabel metroLabel2;
     private MetroFramework.Controls.MetroLabel metroLabel1;
     private System.Windows.Forms.TabPage metroTabPagePerfilDetalle;
+    private System.Windows.Forms.DataGridViewTextBoxColumn IdPerfil;
+    private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+    private System.Windows.Forms.DataGridViewTextBoxColumn HorasPerfil;
+    private System.Windows.Forms.DataGridViewTextBoxColumn HorasTotales;
+    private System.Windows.Forms.DataGridViewTextBoxColumn HorasEstimadas;
+    private System.Windows.Forms.DataGridViewTextBoxColumn EstadoHorasTrab;
+    private System.Windows.Forms.DataGridViewTextBoxColumn FechaHorasTrab;
+    private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionPerfil;
+    private System.Windows.Forms.DataGridViewTextBoxColumn ValorHora;
+    private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+    private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
   }
 }

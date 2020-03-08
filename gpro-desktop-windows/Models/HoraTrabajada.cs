@@ -19,6 +19,7 @@ namespace gpro_desktop_windows.Models
       public int HorasPerfil { get; set; }
       public int HorasTotales { get; set; }
       public int HorasEstimadas { get; set; }
+      public string EstadoHorasTrab { get; set; }
       public DateTime FechaHorasTrab { get; set; }
       public string DescripcionPerfil { get; set; }
       public float ValorHora { get; set; }
