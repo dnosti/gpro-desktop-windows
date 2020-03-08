@@ -23,6 +23,7 @@ namespace gpro_desktop_windows.UsersControls
     {
       InitializeComponent();
       mgTareas.Visible = false;
+
       /* Botón Editar en DataGrid */
       DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn();
       btnEditar.Name = "Editar";

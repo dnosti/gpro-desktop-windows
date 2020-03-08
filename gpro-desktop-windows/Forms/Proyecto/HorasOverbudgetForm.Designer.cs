@@ -44,6 +44,10 @@
       this.ValorHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.fechaDesde = new MetroFramework.Controls.MetroTextBox();
+      this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+      this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+      this.fechaHasta = new MetroFramework.Controls.MetroTextBox();
       ((System.ComponentModel.ISupportInitialize)(this.mgHorasOverbudget)).BeginInit();
       this.SuspendLayout();
       // 
@@ -201,11 +205,95 @@
       this.Apellido.ReadOnly = true;
       this.Apellido.Visible = false;
       // 
+      // fechaDesde
+      // 
+      // 
+      // 
+      // 
+      this.fechaDesde.CustomButton.Image = null;
+      this.fechaDesde.CustomButton.Location = new System.Drawing.Point(99, 1);
+      this.fechaDesde.CustomButton.Name = "";
+      this.fechaDesde.CustomButton.Size = new System.Drawing.Size(21, 21);
+      this.fechaDesde.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+      this.fechaDesde.CustomButton.TabIndex = 1;
+      this.fechaDesde.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+      this.fechaDesde.CustomButton.UseSelectable = true;
+      this.fechaDesde.CustomButton.Visible = false;
+      this.fechaDesde.Enabled = false;
+      this.fechaDesde.Lines = new string[0];
+      this.fechaDesde.Location = new System.Drawing.Point(81, 320);
+      this.fechaDesde.MaxLength = 32767;
+      this.fechaDesde.Name = "fechaDesde";
+      this.fechaDesde.PasswordChar = '\0';
+      this.fechaDesde.ScrollBars = System.Windows.Forms.ScrollBars.None;
+      this.fechaDesde.SelectedText = "";
+      this.fechaDesde.SelectionLength = 0;
+      this.fechaDesde.SelectionStart = 0;
+      this.fechaDesde.ShortcutsEnabled = true;
+      this.fechaDesde.Size = new System.Drawing.Size(121, 23);
+      this.fechaDesde.TabIndex = 53;
+      this.fechaDesde.UseSelectable = true;
+      this.fechaDesde.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+      this.fechaDesde.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+      // 
+      // metroLabel1
+      // 
+      this.metroLabel1.AutoSize = true;
+      this.metroLabel1.Location = new System.Drawing.Point(27, 320);
+      this.metroLabel1.Name = "metroLabel1";
+      this.metroLabel1.Size = new System.Drawing.Size(48, 19);
+      this.metroLabel1.TabIndex = 54;
+      this.metroLabel1.Text = "Desde:";
+      // 
+      // metroLabel2
+      // 
+      this.metroLabel2.AutoSize = true;
+      this.metroLabel2.Location = new System.Drawing.Point(231, 320);
+      this.metroLabel2.Name = "metroLabel2";
+      this.metroLabel2.Size = new System.Drawing.Size(44, 19);
+      this.metroLabel2.TabIndex = 56;
+      this.metroLabel2.Text = "Hasta:";
+      // 
+      // fechaHasta
+      // 
+      // 
+      // 
+      // 
+      this.fechaHasta.CustomButton.Image = null;
+      this.fechaHasta.CustomButton.Location = new System.Drawing.Point(99, 1);
+      this.fechaHasta.CustomButton.Name = "";
+      this.fechaHasta.CustomButton.Size = new System.Drawing.Size(21, 21);
+      this.fechaHasta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+      this.fechaHasta.CustomButton.TabIndex = 1;
+      this.fechaHasta.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+      this.fechaHasta.CustomButton.UseSelectable = true;
+      this.fechaHasta.CustomButton.Visible = false;
+      this.fechaHasta.Enabled = false;
+      this.fechaHasta.Lines = new string[0];
+      this.fechaHasta.Location = new System.Drawing.Point(285, 320);
+      this.fechaHasta.MaxLength = 32767;
+      this.fechaHasta.Name = "fechaHasta";
+      this.fechaHasta.PasswordChar = '\0';
+      this.fechaHasta.ScrollBars = System.Windows.Forms.ScrollBars.None;
+      this.fechaHasta.SelectedText = "";
+      this.fechaHasta.SelectionLength = 0;
+      this.fechaHasta.SelectionStart = 0;
+      this.fechaHasta.ShortcutsEnabled = true;
+      this.fechaHasta.Size = new System.Drawing.Size(121, 23);
+      this.fechaHasta.TabIndex = 55;
+      this.fechaHasta.UseSelectable = true;
+      this.fechaHasta.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+      this.fechaHasta.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+      // 
       // HorasOverbudgetForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(790, 368);
+      this.Controls.Add(this.metroLabel2);
+      this.Controls.Add(this.fechaHasta);
+      this.Controls.Add(this.metroLabel1);
+      this.Controls.Add(this.fechaDesde);
       this.Controls.Add(this.mgHorasOverbudget);
       this.Controls.Add(this.btnCerrar);
       this.MaximizeBox = false;
@@ -214,6 +302,7 @@
       this.Text = "Horas Overbudget [Informe Semanal]";
       ((System.ComponentModel.ISupportInitialize)(this.mgHorasOverbudget)).EndInit();
       this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 
@@ -231,5 +320,9 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn ValorHora;
     private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+    private MetroFramework.Controls.MetroTextBox fechaDesde;
+    private MetroFramework.Controls.MetroLabel metroLabel1;
+    private MetroFramework.Controls.MetroLabel metroLabel2;
+    private MetroFramework.Controls.MetroTextBox fechaHasta;
   }
 }

@@ -37,9 +37,6 @@ namespace gpro_desktop_windows.Forms
       string fechaInicio = DateTime.Today.AddDays(-7).ToString("yyyy-MM-ddTHH\\:mm\\:ss.fffffffzzz");
       string fechaFin = DateTime.Today.ToString("yyyy-MM-ddTHH\\:mm\\:ss.fffffffzzz");
 
-      //let inicio = moment(Date.now() - 7 * 24 * 3600 * 1000).toISOString();
-      //let fin = moment().toISOString();
-
       HttpClient client = HttpUtils.configHttpClient();
       HttpResponseMessage response = HttpUtils.getHorasTrabajadasFecha(client, "/horatrabajadas/overbudget/", this.IdProyecto, fechaInicio, fechaFin);
 
@@ -49,6 +46,10 @@ namespace gpro_desktop_windows.Forms
       if (response.IsSuccessStatusCode)
       {
         mgHorasOverbudget.DataSource = horasTrabajadas.SumaPorPerfil;
+        if (horasTrabajadas.SumaPorPerfil.Count() > 0) { 
+          fechaDesde.Text = DateTime.Today.AddDays(-7).ToString("dd-MM-yyyy");
+          fechaHasta.Text = DateTime.Today.ToString("dd-MM-yyyy");
+        }
       }
     }
   }

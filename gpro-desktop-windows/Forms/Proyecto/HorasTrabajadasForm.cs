@@ -26,6 +26,7 @@ namespace gpro_desktop_windows.Forms
       fechaInicio.MaxDate = DateTime.Now;
       fechaFin.MaxDate = DateTime.Now;
       getHorasTrabajadas();
+      getDetalles();
     }
 
     private void btnCerrar_Click(object sender, EventArgs e)
@@ -68,7 +69,7 @@ namespace gpro_desktop_windows.Forms
       if (response.IsSuccessStatusCode && horasTrabajadas.TotalHorasRec > 0)
       {
         DialogResult result = MessageBox.Show("Total de horas: " + horasTrabajadas.TotalHorasRec, "Horas Trabajadas por Período", MessageBoxButtons.OK, MessageBoxIcon.Information);
-      } 
+      }
       else
       {
         MessageBox.Show("No posee horas cargadas en ese período.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -77,7 +78,39 @@ namespace gpro_desktop_windows.Forms
 
     private void btnBuscar_Click(object sender, EventArgs e)
     {
-      getHorasPorPeriodo();
+      if (ComboBoxPerfiles.SelectedIndex != -1)
+        getHorasPorPeriodo();
+    }
+
+    private void getDetalles()
+    {
+      HoraTrabajada horasTrabajadas = null;
+
+      HttpClient client = HttpUtils.configHttpClient();
+      HttpResponseMessage response = HttpUtils.getHorasTrabajadas(client, "/horatrabajadas/porProy/", IdProyecto);
+
+      string stringCR = response.Content.ReadAsStringAsync().Result;
+
+      horasTrabajadas = JsonConvert.DeserializeObject<HoraTrabajada>(stringCR);
+
+      if (response.IsSuccessStatusCode)
+      {
+        var detalle = (from t in horasTrabajadas.SumaPorPerfil
+                       select new
+                       {
+                         t.DescripcionPerfil,
+                         t.IdPerfil,
+                         t.HorasEstimadas,
+                         t.HorasTotales,
+                         HorasRestantes = t.HorasEstimadas - t.HorasTotales,
+                         t.ValorHora,
+                         t.EstadoHorasTrab
+                       }).Distinct().ToList();
+
+        mgDetalle.DataSource = detalle;
+
+        tbHorasAdeudadas.Text = detalle.Sum(x => x.EstadoHorasTrab == "Adeudadas" ? x.HorasTotales : 0).ToString();
+      }
     }
   }
 }
