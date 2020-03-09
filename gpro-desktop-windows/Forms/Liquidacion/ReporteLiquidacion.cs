@@ -1,5 +1,6 @@
 ﻿using gpro_desktop_windows.Models;
 using gpro_desktop_windows.Utils;
+using Microsoft.Reporting.WinForms;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace gpro_desktop_windows.Forms
 
     private void ReporteLiquidacionForm_Load(object sender, EventArgs e)
     {
-      var reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+      var reportDataSource1 = new ReportDataSource();
       reportDataSource1.Name = "DataSet1";
       reportDataSource1.Value = reporte;
       this.reportViewerHorasOverbudget.LocalReport.DataSources.Add(reportDataSource1);
