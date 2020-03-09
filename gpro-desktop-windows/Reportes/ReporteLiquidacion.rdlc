@@ -259,7 +259,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
         <Top>2.04321cm</Top>
-        <Left>10.14789cm</Left>
+        <Left>6.97289cm</Left>
         <Height>1.04979cm</Height>
         <Width>9.06104cm</Width>
         <ZIndex>2</ZIndex>
@@ -277,7 +277,7 @@
         <Top>1.86682cm</Top>
         <Left>0.63295cm</Left>
         <Height>0cm</Height>
-        <Width>18.41723cm</Width>
+        <Width>15.40098cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -1090,13 +1090,13 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>5.65625in</Height>
+    <Height>5.05208in</Height>
     <Style />
   </Body>
-  <Width>7.76929in</Width>
+  <Width>6.59221in</Width>
   <Page>
     <PageFooter>
-      <Height>1.64042cm</Height>
+      <Height>1.48167cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1120,7 +1120,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
           <Top>0.52599cm</Top>
-          <Left>2.85545cm</Left>
+          <Left>1.26795cm</Left>
           <Height>0.6cm</Height>
           <Width>14.27396cm</Width>
           <Style>

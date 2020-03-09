@@ -9,19 +9,19 @@
               <Width>2.38535cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.47014cm</Width>
+              <Width>2.42133cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.46472cm</Width>
+              <Width>1.96612cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.00883cm</Width>
+              <Width>3.20557cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.9145cm</Width>
+              <Width>3.43298cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.17368cm</Width>
+              <Width>1.98964cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -73,7 +73,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Horas Overbudget</Value>
+                              <Value>Horas OB</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                               </Style>
@@ -363,10 +363,13 @@
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>8pt</FontSize>
+                                <Format>d</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>FechaHorasTrab</rd:DefaultName>
@@ -486,7 +489,7 @@
         <Top>3.83328cm</Top>
         <Left>0.63295cm</Left>
         <Height>1.2cm</Height>
-        <Width>18.41722cm</Width>
+        <Width>15.40098cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -535,7 +538,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Horas Overbudget [ Reporte Semanal ]</Value>
+                <Value>Horas Overbudget [ Reporte ]</Value>
                 <Style>
                   <FontFamily>Segoe UI</FontFamily>
                   <FontSize>14pt</FontSize>
@@ -549,9 +552,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
         <Top>2.04321cm</Top>
-        <Left>10.14789cm</Left>
+        <Left>9.01018cm</Left>
         <Height>1.04979cm</Height>
-        <Width>9.06104cm</Width>
+        <Width>7.02375cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -563,18 +566,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Line Name="Line1">
-        <Top>1.86682cm</Top>
-        <Left>0.63295cm</Left>
-        <Height>0cm</Height>
-        <Width>18.41723cm</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
       <Textbox Name="Textbox2">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -597,7 +588,7 @@
         <Left>1.90704cm</Left>
         <Height>0.6cm</Height>
         <Width>2.10312cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -630,7 +621,7 @@
         <Left>0.63295cm</Left>
         <Height>0.6cm</Height>
         <Width>1.0977cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -663,7 +654,7 @@
         <Left>5.61602cm</Left>
         <Height>0.6cm</Height>
         <Width>2.10312cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -696,7 +687,7 @@
         <Left>4.34193cm</Left>
         <Height>0.6cm</Height>
         <Width>1.0977cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -707,11 +698,23 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Line Name="Line2">
+        <Top>1.86682cm</Top>
+        <Left>0.63295cm</Left>
+        <Height>0cm</Height>
+        <Width>15.40098cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
-    <Height>2.88542in</Height>
+    <Height>2.22917in</Height>
     <Style />
   </Body>
-  <Width>7.76929in</Width>
+  <Width>6.56257in</Width>
   <Page>
     <PageFooter>
       <Height>1.5875cm</Height>
@@ -738,7 +741,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
           <Top>0.52599cm</Top>
-          <Left>2.85545cm</Left>
+          <Left>1.24149cm</Left>
           <Height>0.6cm</Height>
           <Width>14.27396cm</Width>
           <Style>
