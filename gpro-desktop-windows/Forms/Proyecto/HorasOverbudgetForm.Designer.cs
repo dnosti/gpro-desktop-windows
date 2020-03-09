@@ -33,6 +33,10 @@
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
       this.btnCerrar = new MetroFramework.Controls.MetroButton();
       this.mgHorasOverbudget = new MetroFramework.Controls.MetroGrid();
+      this.fechaDesde = new MetroFramework.Controls.MetroTextBox();
+      this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+      this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+      this.fechaHasta = new MetroFramework.Controls.MetroTextBox();
       this.IdPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.HorasPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,10 +48,6 @@
       this.ValorHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.fechaDesde = new MetroFramework.Controls.MetroTextBox();
-      this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-      this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-      this.fechaHasta = new MetroFramework.Controls.MetroTextBox();
       ((System.ComponentModel.ISupportInitialize)(this.mgHorasOverbudget)).BeginInit();
       this.SuspendLayout();
       // 
@@ -122,88 +122,6 @@
       this.mgHorasOverbudget.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.mgHorasOverbudget.Size = new System.Drawing.Size(737, 196);
       this.mgHorasOverbudget.TabIndex = 52;
-      // 
-      // IdPerfil
-      // 
-      this.IdPerfil.DataPropertyName = "IdPerfil";
-      this.IdPerfil.HeaderText = "Id Perfil";
-      this.IdPerfil.Name = "IdPerfil";
-      this.IdPerfil.ReadOnly = true;
-      this.IdPerfil.Visible = false;
-      // 
-      // FullName
-      // 
-      this.FullName.DataPropertyName = "FullName";
-      this.FullName.HeaderText = "Empleado";
-      this.FullName.Name = "FullName";
-      this.FullName.ReadOnly = true;
-      // 
-      // HorasPerfil
-      // 
-      this.HorasPerfil.DataPropertyName = "HorasPerfil";
-      this.HorasPerfil.HeaderText = "Horas Trabajadas";
-      this.HorasPerfil.Name = "HorasPerfil";
-      this.HorasPerfil.ReadOnly = true;
-      // 
-      // HorasTotales
-      // 
-      this.HorasTotales.DataPropertyName = "HorasTotales";
-      this.HorasTotales.HeaderText = "Horas Totales";
-      this.HorasTotales.Name = "HorasTotales";
-      this.HorasTotales.ReadOnly = true;
-      this.HorasTotales.Visible = false;
-      // 
-      // HorasEstimadas
-      // 
-      this.HorasEstimadas.DataPropertyName = "HorasEstimadas";
-      this.HorasEstimadas.HeaderText = "Horas Estimadas";
-      this.HorasEstimadas.Name = "HorasEstimadas";
-      this.HorasEstimadas.ReadOnly = true;
-      this.HorasEstimadas.Visible = false;
-      // 
-      // EstadoHorasTrab
-      // 
-      this.EstadoHorasTrab.DataPropertyName = "EstadoHorasTrab";
-      this.EstadoHorasTrab.HeaderText = "Estado";
-      this.EstadoHorasTrab.Name = "EstadoHorasTrab";
-      this.EstadoHorasTrab.ReadOnly = true;
-      // 
-      // FechaHorasTrab
-      // 
-      this.FechaHorasTrab.DataPropertyName = "FechaHorasTrab";
-      this.FechaHorasTrab.HeaderText = "Fecha";
-      this.FechaHorasTrab.Name = "FechaHorasTrab";
-      this.FechaHorasTrab.ReadOnly = true;
-      // 
-      // DescripcionPerfil
-      // 
-      this.DescripcionPerfil.DataPropertyName = "DescripcionPerfil";
-      this.DescripcionPerfil.HeaderText = "Perfil";
-      this.DescripcionPerfil.Name = "DescripcionPerfil";
-      this.DescripcionPerfil.ReadOnly = true;
-      // 
-      // ValorHora
-      // 
-      this.ValorHora.DataPropertyName = "ValorHora";
-      this.ValorHora.HeaderText = "Valor Hora";
-      this.ValorHora.Name = "ValorHora";
-      this.ValorHora.ReadOnly = true;
-      // 
-      // Nombre
-      // 
-      this.Nombre.DataPropertyName = "Nombre";
-      this.Nombre.HeaderText = "Nombre";
-      this.Nombre.Name = "Nombre";
-      this.Nombre.ReadOnly = true;
-      this.Nombre.Visible = false;
-      // 
-      // Apellido
-      // 
-      this.Apellido.DataPropertyName = "Apellido";
-      this.Apellido.HeaderText = "Apellido";
-      this.Apellido.Name = "Apellido";
-      this.Apellido.ReadOnly = true;
-      this.Apellido.Visible = false;
       // 
       // fechaDesde
       // 
@@ -285,6 +203,88 @@
       this.fechaHasta.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
       this.fechaHasta.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
       // 
+      // IdPerfil
+      // 
+      this.IdPerfil.DataPropertyName = "IdPerfil";
+      this.IdPerfil.HeaderText = "Id Perfil";
+      this.IdPerfil.Name = "IdPerfil";
+      this.IdPerfil.ReadOnly = true;
+      this.IdPerfil.Visible = false;
+      // 
+      // FullName
+      // 
+      this.FullName.DataPropertyName = "FullName";
+      this.FullName.HeaderText = "Empleado";
+      this.FullName.Name = "FullName";
+      this.FullName.ReadOnly = true;
+      // 
+      // HorasPerfil
+      // 
+      this.HorasPerfil.DataPropertyName = "HorasPerfil";
+      this.HorasPerfil.HeaderText = "Horas Overbudget";
+      this.HorasPerfil.Name = "HorasPerfil";
+      this.HorasPerfil.ReadOnly = true;
+      // 
+      // HorasTotales
+      // 
+      this.HorasTotales.DataPropertyName = "HorasTotales";
+      this.HorasTotales.HeaderText = "Horas Totales";
+      this.HorasTotales.Name = "HorasTotales";
+      this.HorasTotales.ReadOnly = true;
+      this.HorasTotales.Visible = false;
+      // 
+      // HorasEstimadas
+      // 
+      this.HorasEstimadas.DataPropertyName = "HorasEstimadas";
+      this.HorasEstimadas.HeaderText = "Horas Estimadas";
+      this.HorasEstimadas.Name = "HorasEstimadas";
+      this.HorasEstimadas.ReadOnly = true;
+      this.HorasEstimadas.Visible = false;
+      // 
+      // EstadoHorasTrab
+      // 
+      this.EstadoHorasTrab.DataPropertyName = "EstadoHorasTrab";
+      this.EstadoHorasTrab.HeaderText = "Estado";
+      this.EstadoHorasTrab.Name = "EstadoHorasTrab";
+      this.EstadoHorasTrab.ReadOnly = true;
+      // 
+      // FechaHorasTrab
+      // 
+      this.FechaHorasTrab.DataPropertyName = "FechaHorasTrab";
+      this.FechaHorasTrab.HeaderText = "Fecha";
+      this.FechaHorasTrab.Name = "FechaHorasTrab";
+      this.FechaHorasTrab.ReadOnly = true;
+      // 
+      // DescripcionPerfil
+      // 
+      this.DescripcionPerfil.DataPropertyName = "DescripcionPerfil";
+      this.DescripcionPerfil.HeaderText = "Perfil";
+      this.DescripcionPerfil.Name = "DescripcionPerfil";
+      this.DescripcionPerfil.ReadOnly = true;
+      // 
+      // ValorHora
+      // 
+      this.ValorHora.DataPropertyName = "ValorHora";
+      this.ValorHora.HeaderText = "Valor Hora";
+      this.ValorHora.Name = "ValorHora";
+      this.ValorHora.ReadOnly = true;
+      // 
+      // Nombre
+      // 
+      this.Nombre.DataPropertyName = "Nombre";
+      this.Nombre.HeaderText = "Nombre";
+      this.Nombre.Name = "Nombre";
+      this.Nombre.ReadOnly = true;
+      this.Nombre.Visible = false;
+      // 
+      // Apellido
+      // 
+      this.Apellido.DataPropertyName = "Apellido";
+      this.Apellido.HeaderText = "Apellido";
+      this.Apellido.Name = "Apellido";
+      this.Apellido.ReadOnly = true;
+      this.Apellido.Visible = false;
+      // 
       // HorasOverbudgetForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,6 +309,10 @@
     #endregion
     private MetroFramework.Controls.MetroButton btnCerrar;
     public MetroFramework.Controls.MetroGrid mgHorasOverbudget;
+    private MetroFramework.Controls.MetroTextBox fechaDesde;
+    private MetroFramework.Controls.MetroLabel metroLabel1;
+    private MetroFramework.Controls.MetroLabel metroLabel2;
+    private MetroFramework.Controls.MetroTextBox fechaHasta;
     private System.Windows.Forms.DataGridViewTextBoxColumn IdPerfil;
     private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
     private System.Windows.Forms.DataGridViewTextBoxColumn HorasPerfil;
@@ -320,9 +324,5 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn ValorHora;
     private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-    private MetroFramework.Controls.MetroTextBox fechaDesde;
-    private MetroFramework.Controls.MetroLabel metroLabel1;
-    private MetroFramework.Controls.MetroLabel metroLabel2;
-    private MetroFramework.Controls.MetroTextBox fechaHasta;
   }
 }

@@ -45,7 +45,12 @@ namespace gpro_desktop_windows.Forms
 
       if (response.IsSuccessStatusCode)
       {
-        mgHorasOverbudget.DataSource = horasTrabajadas.SumaPorPerfil;
+        var lista = horasTrabajadas.SumaPorPerfil;
+        foreach (SumaPerfiles i in lista)
+          i.HorasPerfil = i.HorasPerfil - 8;
+
+        mgHorasOverbudget.DataSource = lista;
+        
         if (horasTrabajadas.SumaPorPerfil.Count() > 0) { 
           fechaDesde.Text = DateTime.Today.AddDays(-7).ToString("dd-MM-yyyy");
           fechaHasta.Text = DateTime.Today.ToString("dd-MM-yyyy");
