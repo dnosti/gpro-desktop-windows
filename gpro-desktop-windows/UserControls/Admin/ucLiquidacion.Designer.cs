@@ -36,7 +36,6 @@
       this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
       this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
       this.mgLiquidacion = new MetroFramework.Controls.MetroGrid();
-      this.btnVerTodasLiquidaciones = new MetroFramework.Controls.MetroButton();
       this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +54,7 @@
       this.CantAnios = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.IdEscalaAntiguedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.btnVerTodasLiquidaciones = new MetroFramework.Controls.MetroButton();
       ((System.ComponentModel.ISupportInitialize)(this.mgLiquidacion)).BeginInit();
       this.SuspendLayout();
       // 
@@ -164,20 +164,8 @@
       this.mgLiquidacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.mgLiquidacion.Size = new System.Drawing.Size(774, 425);
       this.mgLiquidacion.TabIndex = 8;
+      this.mgLiquidacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mgLiquidacion_CellClick);
       this.mgLiquidacion.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.mgLiquidacion_CellPainting);
-      // 
-      // btnVerTodasLiquidaciones
-      // 
-      this.btnVerTodasLiquidaciones.Location = new System.Drawing.Point(254, 66);
-      this.btnVerTodasLiquidaciones.Name = "btnVerTodasLiquidaciones";
-      this.btnVerTodasLiquidaciones.Size = new System.Drawing.Size(167, 25);
-      this.btnVerTodasLiquidaciones.Style = MetroFramework.MetroColorStyle.Blue;
-      this.btnVerTodasLiquidaciones.TabIndex = 10;
-      this.btnVerTodasLiquidaciones.Text = "Ver todas las Liquidaciones";
-      this.btnVerTodasLiquidaciones.Theme = MetroFramework.MetroThemeStyle.Light;
-      this.btnVerTodasLiquidaciones.UseSelectable = true;
-      this.btnVerTodasLiquidaciones.UseStyleColors = true;
-      this.btnVerTodasLiquidaciones.Click += new System.EventHandler(this.btnVerTodasLiquidaciones_Click);
       // 
       // Id
       // 
@@ -320,6 +308,19 @@
       this.Porcentaje.Name = "Porcentaje";
       this.Porcentaje.ReadOnly = true;
       this.Porcentaje.Visible = false;
+      // 
+      // btnVerTodasLiquidaciones
+      // 
+      this.btnVerTodasLiquidaciones.Location = new System.Drawing.Point(254, 66);
+      this.btnVerTodasLiquidaciones.Name = "btnVerTodasLiquidaciones";
+      this.btnVerTodasLiquidaciones.Size = new System.Drawing.Size(167, 25);
+      this.btnVerTodasLiquidaciones.Style = MetroFramework.MetroColorStyle.Blue;
+      this.btnVerTodasLiquidaciones.TabIndex = 10;
+      this.btnVerTodasLiquidaciones.Text = "Ver todas las Liquidaciones";
+      this.btnVerTodasLiquidaciones.Theme = MetroFramework.MetroThemeStyle.Light;
+      this.btnVerTodasLiquidaciones.UseSelectable = true;
+      this.btnVerTodasLiquidaciones.UseStyleColors = true;
+      this.btnVerTodasLiquidaciones.Click += new System.EventHandler(this.btnVerTodasLiquidaciones_Click);
       // 
       // ucLiquidacion
       // 

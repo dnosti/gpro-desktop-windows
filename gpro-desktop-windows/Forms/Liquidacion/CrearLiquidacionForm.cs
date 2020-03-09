@@ -76,7 +76,7 @@ namespace gpro_desktop_windows.Forms
       }
       else
       {
-        MessageBox.Show((string)responseMessage.message + ".", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show((string)responseMessage.message, "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Information);
       }
     }
   }

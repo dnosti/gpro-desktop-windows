@@ -69,5 +69,14 @@ namespace gpro_desktop_windows.Forms
         reporteOverbudgetForm.ShowDialog();
       }
     }
+
+    private void HorasOverbudgetForm_Load(object sender, EventArgs e)
+    {
+      if (!hayDatos) { 
+        DialogResult result = MessageBox.Show("No hay horas overbudget en este proyecto.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        if (result == DialogResult.OK)
+          this.Close();
+      }
+    }
   }
 }

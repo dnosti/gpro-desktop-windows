@@ -17,6 +17,7 @@ namespace gpro_desktop_windows.Forms
   public partial class HorasTrabajadasForm : MetroFramework.Forms.MetroForm
   {
     private string IdProyecto = "";
+    private bool hayDatos = false;
 
     public HorasTrabajadasForm(string IdProyecto)
     {
@@ -53,6 +54,9 @@ namespace gpro_desktop_windows.Forms
                                        select new { t.DescripcionPerfil, t.IdPerfil }).Distinct().ToList();
         ComboBoxPerfiles.ValueMember = "IdPerfil";
         ComboBoxPerfiles.DisplayMember = "DescripcionPerfil";
+
+        if (horasTrabajadas.SumaPorPerfil.Count > 0)
+          hayDatos = true;
       }
     }
 
@@ -110,6 +114,16 @@ namespace gpro_desktop_windows.Forms
         mgDetalle.DataSource = detalle;
 
         tbHorasAdeudadas.Text = detalle.Sum(x => x.EstadoHorasTrab == "Adeudadas" ? x.HorasTotales : 0).ToString();
+      }
+    }
+
+    private void HorasTrabajadasForm_Load(object sender, EventArgs e)
+    {
+      if (!hayDatos)
+      {
+        DialogResult result = MessageBox.Show("No hay horas trabajadas en este proyecto.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        if (result == DialogResult.OK)
+          this.Close();
       }
     }
   }

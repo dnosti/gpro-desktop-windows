@@ -124,6 +124,12 @@
     <Compile Include="Forms\Liquidacion\CrearLiquidacionForm.Designer.cs">
       <DependentUpon>CrearLiquidacionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Liquidacion\ReporteLiquidacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Liquidacion\ReporteLiquidacion.Designer.cs">
+      <DependentUpon>ReporteLiquidacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Proyecto\EditarProyectoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,9 @@
     <EmbeddedResource Include="Forms\Liquidacion\CrearLiquidacionForm.resx">
       <DependentUpon>CrearLiquidacionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Liquidacion\ReporteLiquidacion.resx">
+      <DependentUpon>ReporteLiquidacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Proyecto\EditarProyectoForm.resx">
       <DependentUpon>EditarProyectoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -330,7 +339,8 @@
     <EmbeddedResource Include="Forms\Proyecto\HorasTrabajadasForm.resx">
       <DependentUpon>HorasTrabajadasForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Proyecto\ReporteHorasOverbudget.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteLiquidacion.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteHorasOverbudget.rdlc" />
     <EmbeddedResource Include="Forms\Proyecto\VerProyectoForm.resx">
       <DependentUpon>VerProyectoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -401,6 +411,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\gpro_desktop_windows.Models.FechaReporteOverbudget.datasource" />
     <None Include="Properties\DataSources\gpro_desktop_windows.Models.HoraTrabajada.datasource" />
+    <None Include="Properties\DataSources\gpro_desktop_windows.Models.ReporteLiq.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -438,5 +449,6 @@
   <ItemGroup>
     <None Include="Resources\reporte.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

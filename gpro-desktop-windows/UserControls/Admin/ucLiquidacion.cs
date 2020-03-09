@@ -83,27 +83,32 @@ namespace gpro_desktop_windows.UsersControls
       }
     }
 
-      //private void mgClientes_CellClick(object sender, DataGridViewCellEventArgs e)
-      //{
-      //  if (e.ColumnIndex >= 0 && this.mgLiquidacion.Columns[e.ColumnIndex].Name == "Editar" && e.RowIndex >= 0)
-      //  {
-      //    string Id = mgLiquidacion.Rows[e.RowIndex].Cells["Id"].Value.ToString();
-      //    EditarClienteForm editarClienteForm = new EditarClienteForm(Id);
-      //    DataGridViewRow editarCliente = mgLiquidacion.Rows[e.RowIndex];
-      //    editarClienteForm.textBoxidCliente.Text = editarCliente.Cells["idCliente"].Value.ToString();
-      //    editarClienteForm.textBoxRSocial.Text = editarCliente.Cells["razonSocialCliente"].Value.ToString();
-      //    editarClienteForm.textBoxApellido.Text = editarCliente.Cells["apellidoCliente"].Value.ToString();
-      //    editarClienteForm.textBoxNombre.Text = editarCliente.Cells["nombreCliente"].Value.ToString();
-      //    editarClienteForm.textBoxDomicilio.Text = editarCliente.Cells["direccionCliente"].Value.ToString();
-      //    editarClienteForm.textBoxTelefono.Text = editarCliente.Cells["telefonoCliente"].Value.ToString();
-      //    editarClienteForm.textBoxEMail.Text = editarCliente.Cells["emailCliente"].Value.ToString();
-      //    editarClienteForm.ShowDialog();
-      //    string cuit = editarClienteForm.cuit;
-      //    if (!string.IsNullOrEmpty(cuit))
-      //      buscarCliente("/cliente/cuit/", cuit, true);
-      //  }
-      //}
+    private void mgLiquidacion_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+      if (e.ColumnIndex >= 0 && this.mgLiquidacion.Columns[e.ColumnIndex].Name == "Reporte" && e.RowIndex >= 0)
+      {
+        DataGridViewRow Liquidacion = mgLiquidacion.Rows[e.RowIndex];
+        List<Object> reporteLiq = new List<Object>();
+        reporteLiq.Add(new ReporteLiq() {
+          ApellidoEmpleado = Liquidacion.Cells["ApellidoEmpleado"].Value.ToString(),
+          NombreEmpleado = Liquidacion.Cells["NombreEmpleado"].Value.ToString(),
+          FechaDesde = DateTime.Parse(Liquidacion.Cells["FechaDesde"].Value.ToString()),
+          FechaHasta = DateTime.Parse(Liquidacion.Cells["FechaHasta"].Value.ToString()),
+          CantHorasTrab = int.Parse(Liquidacion.Cells["CantHorasTrab"].Value.ToString()),
+          PorcentajeHoras = int.Parse(Liquidacion.Cells["PorcentajeHoras"].Value.ToString()),
+          HorasOverBudget = int.Parse(Liquidacion.Cells["HorasOverBudget"].Value.ToString()),
+          CantPerfiles = int.Parse(Liquidacion.Cells["CantPerfiles"].Value.ToString()),
+          PorcentajePerfil = int.Parse(Liquidacion.Cells["PorcentajePerfil"].Value.ToString()),
+          CantAnios = int.Parse(Liquidacion.Cells["CantAnios"].Value.ToString()),
+          Porcentaje = int.Parse(Liquidacion.Cells["Porcentaje"].Value.ToString()),
+          Importe = float.Parse(Liquidacion.Cells["Importe"].Value.ToString()),
+        });
+
+        ReporteLiquidacionForm reporteLiquidacionForm = new ReporteLiquidacionForm(reporteLiq);
+        reporteLiquidacionForm.ShowDialog();
+      }
     }
+  }
 }
 
 

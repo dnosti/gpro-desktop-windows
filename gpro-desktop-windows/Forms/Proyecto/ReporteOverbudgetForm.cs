@@ -60,7 +60,7 @@ namespace gpro_desktop_windows.Forms
         reportDataSource2.Value = fechaReporte;
         this.reportViewerHorasOverbudget.LocalReport.DataSources.Add(reportDataSource1);
         this.reportViewerHorasOverbudget.LocalReport.DataSources.Add(reportDataSource2);
-        this.reportViewerHorasOverbudget.LocalReport.ReportEmbeddedResource = "gpro_desktop_windows.Forms.Proyecto.ReporteHorasOverbudget.rdlc";
+        this.reportViewerHorasOverbudget.LocalReport.ReportEmbeddedResource = "gpro_desktop_windows.Reportes.ReporteHorasOverbudget.rdlc";
         this.reportViewerHorasOverbudget.RefreshReport();
       }
     }
