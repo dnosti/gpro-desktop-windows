@@ -28,15 +28,11 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
       this.btnCerrar = new MetroFramework.Controls.MetroButton();
       this.mgHorasOverbudget = new MetroFramework.Controls.MetroGrid();
-      this.fechaDesde = new MetroFramework.Controls.MetroTextBox();
-      this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-      this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-      this.fechaHasta = new MetroFramework.Controls.MetroTextBox();
       this.IdPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.HorasPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +44,11 @@
       this.ValorHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.fechaDesde = new MetroFramework.Controls.MetroTextBox();
+      this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+      this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+      this.fechaHasta = new MetroFramework.Controls.MetroTextBox();
+      this.btnReporte = new MetroFramework.Controls.MetroButton();
       ((System.ComponentModel.ISupportInitialize)(this.mgHorasOverbudget)).BeginInit();
       this.SuspendLayout();
       // 
@@ -73,14 +74,14 @@
       this.mgHorasOverbudget.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.mgHorasOverbudget.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
       this.mgHorasOverbudget.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.mgHorasOverbudget.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+      dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.mgHorasOverbudget.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
       this.mgHorasOverbudget.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.mgHorasOverbudget.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdPerfil,
@@ -94,14 +95,14 @@
             this.ValorHora,
             this.Nombre,
             this.Apellido});
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-      this.mgHorasOverbudget.DefaultCellStyle = dataGridViewCellStyle2;
+      dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+      dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+      this.mgHorasOverbudget.DefaultCellStyle = dataGridViewCellStyle5;
       this.mgHorasOverbudget.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
       this.mgHorasOverbudget.EnableHeadersVisualStyles = false;
       this.mgHorasOverbudget.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -110,98 +111,18 @@
       this.mgHorasOverbudget.Name = "mgHorasOverbudget";
       this.mgHorasOverbudget.ReadOnly = true;
       this.mgHorasOverbudget.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-      dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.mgHorasOverbudget.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+      dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+      dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.mgHorasOverbudget.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
       this.mgHorasOverbudget.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
       this.mgHorasOverbudget.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.mgHorasOverbudget.Size = new System.Drawing.Size(737, 196);
       this.mgHorasOverbudget.TabIndex = 52;
-      // 
-      // fechaDesde
-      // 
-      // 
-      // 
-      // 
-      this.fechaDesde.CustomButton.Image = null;
-      this.fechaDesde.CustomButton.Location = new System.Drawing.Point(99, 1);
-      this.fechaDesde.CustomButton.Name = "";
-      this.fechaDesde.CustomButton.Size = new System.Drawing.Size(21, 21);
-      this.fechaDesde.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-      this.fechaDesde.CustomButton.TabIndex = 1;
-      this.fechaDesde.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-      this.fechaDesde.CustomButton.UseSelectable = true;
-      this.fechaDesde.CustomButton.Visible = false;
-      this.fechaDesde.Enabled = false;
-      this.fechaDesde.Lines = new string[0];
-      this.fechaDesde.Location = new System.Drawing.Point(81, 320);
-      this.fechaDesde.MaxLength = 32767;
-      this.fechaDesde.Name = "fechaDesde";
-      this.fechaDesde.PasswordChar = '\0';
-      this.fechaDesde.ScrollBars = System.Windows.Forms.ScrollBars.None;
-      this.fechaDesde.SelectedText = "";
-      this.fechaDesde.SelectionLength = 0;
-      this.fechaDesde.SelectionStart = 0;
-      this.fechaDesde.ShortcutsEnabled = true;
-      this.fechaDesde.Size = new System.Drawing.Size(121, 23);
-      this.fechaDesde.TabIndex = 53;
-      this.fechaDesde.UseSelectable = true;
-      this.fechaDesde.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-      this.fechaDesde.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-      // 
-      // metroLabel1
-      // 
-      this.metroLabel1.AutoSize = true;
-      this.metroLabel1.Location = new System.Drawing.Point(27, 320);
-      this.metroLabel1.Name = "metroLabel1";
-      this.metroLabel1.Size = new System.Drawing.Size(48, 19);
-      this.metroLabel1.TabIndex = 54;
-      this.metroLabel1.Text = "Desde:";
-      // 
-      // metroLabel2
-      // 
-      this.metroLabel2.AutoSize = true;
-      this.metroLabel2.Location = new System.Drawing.Point(231, 320);
-      this.metroLabel2.Name = "metroLabel2";
-      this.metroLabel2.Size = new System.Drawing.Size(44, 19);
-      this.metroLabel2.TabIndex = 56;
-      this.metroLabel2.Text = "Hasta:";
-      // 
-      // fechaHasta
-      // 
-      // 
-      // 
-      // 
-      this.fechaHasta.CustomButton.Image = null;
-      this.fechaHasta.CustomButton.Location = new System.Drawing.Point(99, 1);
-      this.fechaHasta.CustomButton.Name = "";
-      this.fechaHasta.CustomButton.Size = new System.Drawing.Size(21, 21);
-      this.fechaHasta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-      this.fechaHasta.CustomButton.TabIndex = 1;
-      this.fechaHasta.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-      this.fechaHasta.CustomButton.UseSelectable = true;
-      this.fechaHasta.CustomButton.Visible = false;
-      this.fechaHasta.Enabled = false;
-      this.fechaHasta.Lines = new string[0];
-      this.fechaHasta.Location = new System.Drawing.Point(285, 320);
-      this.fechaHasta.MaxLength = 32767;
-      this.fechaHasta.Name = "fechaHasta";
-      this.fechaHasta.PasswordChar = '\0';
-      this.fechaHasta.ScrollBars = System.Windows.Forms.ScrollBars.None;
-      this.fechaHasta.SelectedText = "";
-      this.fechaHasta.SelectionLength = 0;
-      this.fechaHasta.SelectionStart = 0;
-      this.fechaHasta.ShortcutsEnabled = true;
-      this.fechaHasta.Size = new System.Drawing.Size(121, 23);
-      this.fechaHasta.TabIndex = 55;
-      this.fechaHasta.UseSelectable = true;
-      this.fechaHasta.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-      this.fechaHasta.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
       // 
       // IdPerfil
       // 
@@ -285,11 +206,106 @@
       this.Apellido.ReadOnly = true;
       this.Apellido.Visible = false;
       // 
+      // fechaDesde
+      // 
+      // 
+      // 
+      // 
+      this.fechaDesde.CustomButton.Image = null;
+      this.fechaDesde.CustomButton.Location = new System.Drawing.Point(99, 1);
+      this.fechaDesde.CustomButton.Name = "";
+      this.fechaDesde.CustomButton.Size = new System.Drawing.Size(21, 21);
+      this.fechaDesde.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+      this.fechaDesde.CustomButton.TabIndex = 1;
+      this.fechaDesde.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+      this.fechaDesde.CustomButton.UseSelectable = true;
+      this.fechaDesde.CustomButton.Visible = false;
+      this.fechaDesde.Enabled = false;
+      this.fechaDesde.Lines = new string[0];
+      this.fechaDesde.Location = new System.Drawing.Point(81, 320);
+      this.fechaDesde.MaxLength = 32767;
+      this.fechaDesde.Name = "fechaDesde";
+      this.fechaDesde.PasswordChar = '\0';
+      this.fechaDesde.ScrollBars = System.Windows.Forms.ScrollBars.None;
+      this.fechaDesde.SelectedText = "";
+      this.fechaDesde.SelectionLength = 0;
+      this.fechaDesde.SelectionStart = 0;
+      this.fechaDesde.ShortcutsEnabled = true;
+      this.fechaDesde.Size = new System.Drawing.Size(121, 23);
+      this.fechaDesde.TabIndex = 53;
+      this.fechaDesde.UseSelectable = true;
+      this.fechaDesde.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+      this.fechaDesde.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+      // 
+      // metroLabel1
+      // 
+      this.metroLabel1.AutoSize = true;
+      this.metroLabel1.Location = new System.Drawing.Point(27, 320);
+      this.metroLabel1.Name = "metroLabel1";
+      this.metroLabel1.Size = new System.Drawing.Size(48, 19);
+      this.metroLabel1.TabIndex = 54;
+      this.metroLabel1.Text = "Desde:";
+      // 
+      // metroLabel2
+      // 
+      this.metroLabel2.AutoSize = true;
+      this.metroLabel2.Location = new System.Drawing.Point(231, 320);
+      this.metroLabel2.Name = "metroLabel2";
+      this.metroLabel2.Size = new System.Drawing.Size(44, 19);
+      this.metroLabel2.TabIndex = 56;
+      this.metroLabel2.Text = "Hasta:";
+      // 
+      // fechaHasta
+      // 
+      // 
+      // 
+      // 
+      this.fechaHasta.CustomButton.Image = null;
+      this.fechaHasta.CustomButton.Location = new System.Drawing.Point(99, 1);
+      this.fechaHasta.CustomButton.Name = "";
+      this.fechaHasta.CustomButton.Size = new System.Drawing.Size(21, 21);
+      this.fechaHasta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+      this.fechaHasta.CustomButton.TabIndex = 1;
+      this.fechaHasta.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+      this.fechaHasta.CustomButton.UseSelectable = true;
+      this.fechaHasta.CustomButton.Visible = false;
+      this.fechaHasta.Enabled = false;
+      this.fechaHasta.Lines = new string[0];
+      this.fechaHasta.Location = new System.Drawing.Point(285, 320);
+      this.fechaHasta.MaxLength = 32767;
+      this.fechaHasta.Name = "fechaHasta";
+      this.fechaHasta.PasswordChar = '\0';
+      this.fechaHasta.ScrollBars = System.Windows.Forms.ScrollBars.None;
+      this.fechaHasta.SelectedText = "";
+      this.fechaHasta.SelectionLength = 0;
+      this.fechaHasta.SelectionStart = 0;
+      this.fechaHasta.ShortcutsEnabled = true;
+      this.fechaHasta.Size = new System.Drawing.Size(121, 23);
+      this.fechaHasta.TabIndex = 55;
+      this.fechaHasta.UseSelectable = true;
+      this.fechaHasta.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+      this.fechaHasta.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+      // 
+      // btnReporte
+      // 
+      this.btnReporte.Cursor = System.Windows.Forms.Cursors.Default;
+      this.btnReporte.Location = new System.Drawing.Point(499, 309);
+      this.btnReporte.Name = "btnReporte";
+      this.btnReporte.Size = new System.Drawing.Size(124, 34);
+      this.btnReporte.Style = MetroFramework.MetroColorStyle.Blue;
+      this.btnReporte.TabIndex = 57;
+      this.btnReporte.Text = "Reporte";
+      this.btnReporte.Theme = MetroFramework.MetroThemeStyle.Light;
+      this.btnReporte.UseSelectable = true;
+      this.btnReporte.UseStyleColors = true;
+      this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+      // 
       // HorasOverbudgetForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(790, 368);
+      this.Controls.Add(this.btnReporte);
       this.Controls.Add(this.metroLabel2);
       this.Controls.Add(this.fechaHasta);
       this.Controls.Add(this.metroLabel1);
@@ -324,5 +340,6 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn ValorHora;
     private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+    private MetroFramework.Controls.MetroButton btnReporte;
   }
 }

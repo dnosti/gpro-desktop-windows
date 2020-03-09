@@ -57,5 +57,11 @@ namespace gpro_desktop_windows.Forms
         }
       }
     }
+
+    private void btnReporte_Click(object sender, EventArgs e)
+    {
+      ReporteOverbudgetForm reporteOverbudgetForm = new ReporteOverbudgetForm(IdProyecto);
+      reporteOverbudgetForm.ShowDialog();
+    }
   }
 }
