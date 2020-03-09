@@ -53,5 +53,17 @@ namespace gpro_desktop_windows.UsersControls
       MainForm.Instance.MetroContainer.Controls["ucUsuarios"].BringToFront();
       MainForm.Instance.MetroBack.Visible = true;
     }
+
+    private void mtLiquidacion_Click(object sender, EventArgs e)
+    {
+      if (!MainForm.Instance.MetroContainer.Controls.ContainsKey("ucLiquidacion"))
+      {
+        ucLiquidacion uc = new ucLiquidacion();
+        uc.Dock = DockStyle.Fill;
+        MainForm.Instance.MetroContainer.Controls.Add(uc);
+      }
+      MainForm.Instance.MetroContainer.Controls["ucLiquidacion"].BringToFront();
+      MainForm.Instance.MetroBack.Visible = true;
+    }
   }
 }

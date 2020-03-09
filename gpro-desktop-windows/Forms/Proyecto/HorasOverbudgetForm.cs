@@ -17,6 +17,7 @@ namespace gpro_desktop_windows.Forms
   public partial class HorasOverbudgetForm : MetroFramework.Forms.MetroForm
   {
     private string IdProyecto = "";
+    private bool hayDatos = false;
 
     public HorasOverbudgetForm(string IdProyecto)
     {
@@ -50,8 +51,10 @@ namespace gpro_desktop_windows.Forms
           i.HorasPerfil = i.HorasPerfil - 8;
 
         mgHorasOverbudget.DataSource = lista;
-        
-        if (horasTrabajadas.SumaPorPerfil.Count() > 0) { 
+
+        if (horasTrabajadas.SumaPorPerfil.Count() > 0)
+        {
+          hayDatos = true;
           fechaDesde.Text = DateTime.Today.AddDays(-7).ToString("dd-MM-yyyy");
           fechaHasta.Text = DateTime.Today.ToString("dd-MM-yyyy");
         }
@@ -60,8 +63,11 @@ namespace gpro_desktop_windows.Forms
 
     private void btnReporte_Click(object sender, EventArgs e)
     {
-      ReporteOverbudgetForm reporteOverbudgetForm = new ReporteOverbudgetForm(IdProyecto);
-      reporteOverbudgetForm.ShowDialog();
+      if (hayDatos)
+      {
+        ReporteOverbudgetForm reporteOverbudgetForm = new ReporteOverbudgetForm(IdProyecto);
+        reporteOverbudgetForm.ShowDialog();
+      }
     }
   }
 }

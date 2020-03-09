@@ -22,39 +22,11 @@ namespace gpro_desktop_windows.Forms
     {
       InitializeComponent();
       this.IdProyecto = IdProyecto;
-      getHorasOverbudget();
     }
 
     private void btnCerrar_Click(object sender, EventArgs e)
     {
       this.Close();
-    }
-
-    private void getHorasOverbudget()
-    {
-      HoraTrabajada horasTrabajadas = null;
-
-      string fechaInicio = DateTime.Today.AddDays(-7).ToString("yyyy-MM-ddTHH\\:mm\\:ss.fffffffzzz");
-      string fechaFin = DateTime.Today.ToString("yyyy-MM-ddTHH\\:mm\\:ss.fffffffzzz");
-
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getHorasTrabajadasFecha(client, "/horatrabajadas/overbudget/", this.IdProyecto, fechaInicio, fechaFin);
-
-      string stringCR = response.Content.ReadAsStringAsync().Result;
-      horasTrabajadas = JsonConvert.DeserializeObject<HoraTrabajada>(stringCR);
-
-      if (response.IsSuccessStatusCode)
-      {
-        var lista = horasTrabajadas.SumaPorPerfil;
-        foreach (SumaPerfiles i in lista)
-          i.HorasPerfil = i.HorasPerfil - 8;
-
-        //if (horasTrabajadas.SumaPorPerfil.Count() > 0)
-        //{
-        //  fechaDesde.Text = DateTime.Today.AddDays(-7).ToString("dd-MM-yyyy");
-        //  fechaHasta.Text = DateTime.Today.ToString("dd-MM-yyyy");
-        //}
-      }
     }
 
     private void InformeOverbudgetForm_Load(object sender, EventArgs e)
@@ -77,22 +49,19 @@ namespace gpro_desktop_windows.Forms
         foreach (SumaPerfiles i in lista)
           i.HorasPerfil = i.HorasPerfil - 8;
 
-        //mgHorasOverbudget.DataSource = lista;
-        //this.reportViewer1.RefreshReport();
-        //this.reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("lista", lista));
-        //var data = db.Students.ToList();
+        List<FechaReporteOverbudget> fechaReporte = new List<FechaReporteOverbudget>();
+        fechaReporte.Add(new FechaReporteOverbudget() { FechaInicio = DateTime.Today.AddDays(-7).ToString("dd-MM-yyyy"), FechaFin = DateTime.Today.ToString("dd-MM-yyyy") });
+
         var reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+        var reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
         reportDataSource1.Name = "DataSet1";
+        reportDataSource2.Name = "DataSet2";
         reportDataSource1.Value = lista;
+        reportDataSource2.Value = fechaReporte;
         this.reportViewerHorasOverbudget.LocalReport.DataSources.Add(reportDataSource1);
+        this.reportViewerHorasOverbudget.LocalReport.DataSources.Add(reportDataSource2);
         this.reportViewerHorasOverbudget.LocalReport.ReportEmbeddedResource = "gpro_desktop_windows.Forms.Proyecto.ReporteHorasOverbudget.rdlc";
         this.reportViewerHorasOverbudget.RefreshReport();
-
-        //if (horasTrabajadas.SumaPorPerfil.Count() > 0)
-        //{
-        //  fechaDesde.Text = DateTime.Today.AddDays(-7).ToString("dd-MM-yyyy");
-        //  fechaHasta.Text = DateTime.Today.ToString("dd-MM-yyyy");
-        //}
       }
     }
   }

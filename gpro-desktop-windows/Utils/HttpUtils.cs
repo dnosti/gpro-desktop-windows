@@ -248,5 +248,24 @@ namespace gpro_desktop_windows.Utils
 
       return response;
     }
+
+
+    /* Liquidaciones */
+
+    public static HttpResponseMessage getLiquidaciones(HttpClient client, string path)
+    {
+      HttpResponseMessage response = client.GetAsync(path).Result;
+      return response;
+    }
+
+    public static HttpResponseMessage postLiquidacion(HttpClient client, Liquidacion payload)
+    {
+      string stringData = JsonConvert.SerializeObject(payload);
+      var contentData = new StringContent(stringData, Encoding.UTF8, "application/json");
+
+      HttpResponseMessage response = client.PostAsync("/liquidacion/", contentData).Result;
+
+      return response;
+    }
   }
 }

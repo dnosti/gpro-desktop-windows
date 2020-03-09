@@ -32,6 +32,7 @@
       this.mtEmpleados = new MetroFramework.Controls.MetroTile();
       this.mtUsuarios = new MetroFramework.Controls.MetroTile();
       this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+      this.mtLiquidacion = new MetroFramework.Controls.MetroTile();
       this.SuspendLayout();
       // 
       // mtClientes
@@ -85,10 +86,23 @@
       this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
       this.metroPanel1.VerticalScrollbarSize = 10;
       // 
+      // mtLiquidacion
+      // 
+      this.mtLiquidacion.ActiveControl = null;
+      this.mtLiquidacion.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.mtLiquidacion.Location = new System.Drawing.Point(100, 484);
+      this.mtLiquidacion.Name = "mtLiquidacion";
+      this.mtLiquidacion.Size = new System.Drawing.Size(456, 75);
+      this.mtLiquidacion.TabIndex = 8;
+      this.mtLiquidacion.Text = "Liquidación";
+      this.mtLiquidacion.UseSelectable = true;
+      this.mtLiquidacion.Click += new System.EventHandler(this.mtLiquidacion_Click);
+      // 
       // ucAdmin
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Controls.Add(this.mtLiquidacion);
       this.Controls.Add(this.metroPanel1);
       this.Controls.Add(this.mtUsuarios);
       this.Controls.Add(this.mtEmpleados);
@@ -105,5 +119,6 @@
     private MetroFramework.Controls.MetroTile mtEmpleados;
     private MetroFramework.Controls.MetroTile mtUsuarios;
     private MetroFramework.Controls.MetroPanel metroPanel1;
+    private MetroFramework.Controls.MetroTile mtLiquidacion;
   }
 }

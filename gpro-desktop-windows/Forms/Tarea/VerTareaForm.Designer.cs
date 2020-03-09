@@ -196,6 +196,7 @@
       this.metroLabel5.Size = new System.Drawing.Size(121, 19);
       this.metroLabel5.TabIndex = 51;
       this.metroLabel5.Text = "Horas Overbudget:";
+      this.metroLabel5.Visible = false;
       // 
       // textBoxHorasOverbudget
       // 
@@ -226,6 +227,7 @@
       this.textBoxHorasOverbudget.Size = new System.Drawing.Size(151, 23);
       this.textBoxHorasOverbudget.TabIndex = 50;
       this.textBoxHorasOverbudget.UseSelectable = true;
+      this.textBoxHorasOverbudget.Visible = false;
       this.textBoxHorasOverbudget.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
       this.textBoxHorasOverbudget.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
       // 
