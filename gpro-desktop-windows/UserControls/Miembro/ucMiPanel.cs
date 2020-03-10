@@ -44,7 +44,7 @@ namespace gpro_desktop_windows.UsersControls
       mgTarea.Columns.Add(btnVerHoras);
       mgTarea.Columns[8].HeaderText = "";
 
-      getProyectos();
+      
     }
 
     private void mgProyectos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -168,6 +168,16 @@ namespace gpro_desktop_windows.UsersControls
         VerHorasForm verHorasForm = new VerHorasForm(IdPerfilEmpl, IdProyecto);
         verHorasForm.ShowDialog();
       }
+    }
+
+    private void ucMiPanel_Load(object sender, EventArgs e)
+    {
+      getProyectos();
+    }
+
+    private void btnActualizar_Click(object sender, EventArgs e)
+    {
+      getProyectos();
     }
   }
 }
