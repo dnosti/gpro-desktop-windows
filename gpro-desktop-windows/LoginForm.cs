@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using gpro_desktop_windows.Models;
 using gpro_desktop_windows.Properties;
+using gpro_desktop_windows.Utils;
 using MetroFramework;
 using Newtonsoft.Json;
 
@@ -26,11 +27,7 @@ namespace gpro_desktop_windows
 
     private void btnIniciar_Click(object sender, EventArgs e)
     {
-      string baseUrl = "http://localhost:60932";
-      HttpClient client = new HttpClient();
-      client.BaseAddress = new Uri(baseUrl);
-      var contentType = new MediaTypeWithQualityHeaderValue("application/json");
-      client.DefaultRequestHeaders.Accept.Add(contentType);
+      HttpClient client = HttpUtils.configHttpClient();
 
       UserRequest user = new UserRequest();
       user.Username = textBoxUser.Text;
