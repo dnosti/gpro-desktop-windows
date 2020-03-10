@@ -48,7 +48,7 @@ namespace gpro_desktop_windows.Forms
     {
       bool ok = true;
 
-      if (string.IsNullOrEmpty(textBoxidCliente.Text))
+      if (string.IsNullOrEmpty(textBoxidCliente.Text) || textBoxidCliente.Text.Length != 11)
       {
         ok = false;
         errorProvider1.SetError(textBoxidCliente, "Ingresar CUIT.");
@@ -65,11 +65,13 @@ namespace gpro_desktop_windows.Forms
         ok = false;
         errorProvider1.SetError(textBoxRSocial, "Ingresar Razón Social.");
       }
+
       if (string.IsNullOrEmpty(textBoxApellido.Text))
       {
         ok = false;
         errorProvider1.SetError(textBoxApellido, "Ingresar Apellido.");
       }
+
       if (string.IsNullOrEmpty(textBoxNombre.Text))
       {
         ok = false;
@@ -80,11 +82,19 @@ namespace gpro_desktop_windows.Forms
         ok = false;
         errorProvider1.SetError(textBoxDomicilio, "Ingresar Domicilio.");
       }
-      if (string.IsNullOrEmpty(textBoxTelefono.Text))
+
+      if (string.IsNullOrEmpty(textBoxTelefono.Text) || textBoxTelefono.Text.Length != 10)
       {
         ok = false;
         errorProvider1.SetError(textBoxTelefono, "Ingresar Teléfono.");
       }
+
+      if (!textBoxTelefono.Text.All(char.IsDigit))
+      {
+        ok = false;
+        errorProvider1.SetError(textBoxTelefono, "Ingrese solo números.");
+      }
+
       if (string.IsNullOrEmpty(textBoxEMail.Text))
       {
         ok = false;

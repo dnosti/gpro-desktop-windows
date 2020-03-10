@@ -42,7 +42,7 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxNombreEmpl, "Ingresar Nombre.");
       }
 
-      if (string.IsNullOrEmpty(textBoxDniEmpl.Text))
+      if (string.IsNullOrEmpty(textBoxDniEmpl.Text) || textBoxDniEmpl.Text.Length < 6 || textBoxDniEmpl.Text.Length > 8)
       {
         ok = false;
         errorProvider1.SetError(textBoxDniEmpl, "Ingresar DNI.");
@@ -54,10 +54,16 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxDniEmpl, "Ingresar solo números.");
       }
 
-      if (string.IsNullOrEmpty(textBoxTelefonoEmpl.Text))
+      if (string.IsNullOrEmpty(textBoxTelefonoEmpl.Text) || textBoxTelefonoEmpl.Text.Length != 10)
       {
         ok = false;
         errorProvider1.SetError(textBoxTelefonoEmpl, "Ingresar Teléfono.");
+      }
+
+      if (!textBoxTelefonoEmpl.Text.All(char.IsDigit))
+      {
+        ok = false;
+        errorProvider1.SetError(textBoxTelefonoEmpl, "Ingrese solo números.");
       }
 
       if (string.IsNullOrEmpty(textBoxDomicilioEmpl.Text))
@@ -83,6 +89,13 @@ namespace gpro_desktop_windows.Forms
         ok = false;
         errorProvider1.SetError(textBoxNacionalidadEmpl, "Ingresar Nacionalidad.");
       }
+
+      if (!textBoxNacionalidadEmpl.Text.All(char.IsLetter))
+      {
+        ok = false;
+        errorProvider1.SetError(textBoxNacionalidadEmpl, "Ingrese solo letras");
+      }
+
       return ok;
     }
 
