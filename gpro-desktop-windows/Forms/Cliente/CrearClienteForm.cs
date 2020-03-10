@@ -50,19 +50,19 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxidCliente, "Ingresar solo números.");
       }
 
-      if (string.IsNullOrEmpty(textBoxRSocial.Text))
+      if (string.IsNullOrEmpty(textBoxRSocial.Text) && string.IsNullOrEmpty(textBoxApellido.Text) && string.IsNullOrEmpty(textBoxNombre.Text))
       {
         ok = false;
         errorProvider1.SetError(textBoxRSocial, "Ingresar Razón Social.");
       }
 
-      if (string.IsNullOrEmpty(textBoxApellido.Text))
+      if (string.IsNullOrEmpty(textBoxApellido.Text) && string.IsNullOrEmpty(textBoxRSocial.Text))
       {
         ok = false;
         errorProvider1.SetError(textBoxApellido, "Ingresar Apellido.");
       }
 
-      if (string.IsNullOrEmpty(textBoxNombre.Text))
+      if (string.IsNullOrEmpty(textBoxNombre.Text) && string.IsNullOrEmpty(textBoxRSocial.Text))
       {
         ok = false;
         errorProvider1.SetError(textBoxNombre, "Ingresar Nombre.");
