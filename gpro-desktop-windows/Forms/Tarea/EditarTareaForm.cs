@@ -9,6 +9,7 @@ using MetroFramework;
 using MetroFramework.Controls;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using gpro_desktop_windows.Properties;
 
 namespace gpro_desktop_windows.Forms
 {
@@ -51,8 +52,7 @@ namespace gpro_desktop_windows.Forms
     private void getEmpleados()
     {
       List<Empleado> empleadoResponses = null;
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getEmpleados(client, "/empleado/");
+      HttpResponseMessage response = HttpUtils.getEmpleados(Settings.Default.Client, "/empleado/");
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 
@@ -69,8 +69,7 @@ namespace gpro_desktop_windows.Forms
     private void getProyectos()
     {
       List<ProyectoResponse> proyectoResponses = null;
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getProyectos(client, "/proyectos/");
+      HttpResponseMessage response = HttpUtils.getProyectos(Settings.Default.Client, "/proyectos/");
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 
@@ -87,8 +86,7 @@ namespace gpro_desktop_windows.Forms
     private void getPerfiles()
     {
       List<Perfil> perfilResponses = null;
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getPerfiles(client, "/perfiles/");
+      HttpResponseMessage response = HttpUtils.getPerfiles(Settings.Default.Client, "/perfiles/");
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 
@@ -132,8 +130,7 @@ namespace gpro_desktop_windows.Forms
         HorasEstimadasTarea = int.Parse(horasEstimadas.Value.ToString())
       };
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.putTarea(client, tareaRequest);
+      HttpResponseMessage response = HttpUtils.putTarea(Settings.Default.Client, tareaRequest);
 
       string stringTR = response.Content.ReadAsStringAsync().Result;
       var responseMessage = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(stringTR);

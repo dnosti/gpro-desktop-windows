@@ -1,4 +1,5 @@
 ﻿using gpro_desktop_windows.Models;
+using gpro_desktop_windows.Properties;
 using gpro_desktop_windows.Utils;
 using MetroFramework.Controls;
 using System;
@@ -143,8 +144,7 @@ namespace gpro_desktop_windows.Forms
         Nacionalidad = textBoxNacionalidadEmpl.Text
       };
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.putEmpleado(client, empleadoRequest);
+      HttpResponseMessage response = HttpUtils.putEmpleado(Settings.Default.Client, empleadoRequest);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
       var responseMessage = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(stringCR);

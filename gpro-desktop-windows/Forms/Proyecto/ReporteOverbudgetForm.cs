@@ -1,4 +1,5 @@
 ﻿using gpro_desktop_windows.Models;
+using gpro_desktop_windows.Properties;
 using gpro_desktop_windows.Utils;
 using Newtonsoft.Json;
 using System;
@@ -37,8 +38,7 @@ namespace gpro_desktop_windows.Forms
       string fechaInicio = DateTime.Today.AddDays(-7).ToString("yyyy-MM-ddTHH\\:mm\\:ss.fffffffzzz");
       string fechaFin = DateTime.Today.ToString("yyyy-MM-ddTHH\\:mm\\:ss.fffffffzzz");
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getHorasTrabajadasFecha(client, "/horatrabajadas/overbudget/", this.IdProyecto, fechaInicio, fechaFin);
+      HttpResponseMessage response = HttpUtils.getHorasTrabajadasFecha(Settings.Default.Client, "/horatrabajadas/overbudget/", this.IdProyecto, fechaInicio, fechaFin);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
       horasTrabajadas = JsonConvert.DeserializeObject<HoraTrabajada>(stringCR);

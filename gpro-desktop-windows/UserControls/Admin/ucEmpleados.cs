@@ -13,7 +13,7 @@ using gpro_desktop_windows.Utils;
 using Newtonsoft.Json;
 using MetroFramework;
 using gpro_desktop_windows.Forms;
-
+using gpro_desktop_windows.Properties;
 
 namespace gpro_desktop_windows.UsersControls
 {
@@ -164,8 +164,7 @@ namespace gpro_desktop_windows.UsersControls
       Empleado empleadoResponse = null;
       List<Empleado> empleadoResponses = null;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getEmpleado(client, path, payload);
+      HttpResponseMessage response = HttpUtils.getEmpleado(Settings.Default.Client, path, payload);
 
       string stringER = response.Content.ReadAsStringAsync().Result;
 
@@ -202,8 +201,7 @@ namespace gpro_desktop_windows.UsersControls
     {
       List<Empleado> empleadoResponses = null;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getEmpleados(client, "/empleado/");
+      HttpResponseMessage response = HttpUtils.getEmpleados(Settings.Default.Client, "/empleado/");
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 

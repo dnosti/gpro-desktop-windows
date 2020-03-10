@@ -92,11 +92,10 @@ namespace gpro_desktop_windows.UsersControls
       List<Perfil> perfilResponses = null;
       List<Empleado> empleadoResponses = null;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage responseTarea = HttpUtils.getTareas(client, "/tarea/");
-      HttpResponseMessage responseProyecto = HttpUtils.getProyectos(client, "/proyectos/");
-      HttpResponseMessage responsePerfil = HttpUtils.getPerfiles(client, "/perfiles/");
-      HttpResponseMessage responseEmpleado = HttpUtils.getEmpleados(client, "/empleado/");
+      HttpResponseMessage responseTarea = HttpUtils.getTareas(Settings.Default.Client, "/tarea/");
+      HttpResponseMessage responseProyecto = HttpUtils.getProyectos(Settings.Default.Client, "/proyectos/");
+      HttpResponseMessage responsePerfil = HttpUtils.getPerfiles(Settings.Default.Client, "/perfiles/");
+      HttpResponseMessage responseEmpleado = HttpUtils.getEmpleados(Settings.Default.Client, "/empleado/");
 
       string stringTR = responseTarea.Content.ReadAsStringAsync().Result;
       string stringPR = responseProyecto.Content.ReadAsStringAsync().Result;
@@ -189,11 +188,10 @@ namespace gpro_desktop_windows.UsersControls
         List<Perfil> perfilResponses = null;
         List<Empleado> empleadoResponses = null;
 
-        HttpClient client = HttpUtils.configHttpClient();
-        HttpResponseMessage responseTarea = HttpUtils.getTareas(client, "/tarea/");
-        HttpResponseMessage responseProyecto = HttpUtils.getProyectos(client, "/proyectos/");
-        HttpResponseMessage responsePerfil = HttpUtils.getPerfiles(client, "/perfiles/");
-        HttpResponseMessage responseEmpleado = HttpUtils.getEmpleados(client, "/empleado/");
+        HttpResponseMessage responseTarea = HttpUtils.getTareas(Settings.Default.Client, "/tarea/");
+        HttpResponseMessage responseProyecto = HttpUtils.getProyectos(Settings.Default.Client, "/proyectos/");
+        HttpResponseMessage responsePerfil = HttpUtils.getPerfiles(Settings.Default.Client, "/perfiles/");
+        HttpResponseMessage responseEmpleado = HttpUtils.getEmpleados(Settings.Default.Client, "/empleado/");
 
         string stringTR = responseTarea.Content.ReadAsStringAsync().Result;
         string stringPR = responseProyecto.Content.ReadAsStringAsync().Result;
@@ -240,11 +238,10 @@ namespace gpro_desktop_windows.UsersControls
         List<Perfil> perfilResponses = null;
         List<Empleado> empleadoResponses = null;
 
-        HttpClient client = HttpUtils.configHttpClient();
-        HttpResponseMessage responseTarea = HttpUtils.getTareas(client, "/tarea/");
-        HttpResponseMessage responseProyecto = HttpUtils.getProyectos(client, "/proyectos/");
-        HttpResponseMessage responsePerfil = HttpUtils.getPerfiles(client, "/perfiles/");
-        HttpResponseMessage responseEmpleado = HttpUtils.getEmpleados(client, "/empleado/");
+        HttpResponseMessage responseTarea = HttpUtils.getTareas(Settings.Default.Client, "/tarea/");
+        HttpResponseMessage responseProyecto = HttpUtils.getProyectos(Settings.Default.Client, "/proyectos/");
+        HttpResponseMessage responsePerfil = HttpUtils.getPerfiles(Settings.Default.Client, "/perfiles/");
+        HttpResponseMessage responseEmpleado = HttpUtils.getEmpleados(Settings.Default.Client, "/empleado/");
 
         string stringTR = responseTarea.Content.ReadAsStringAsync().Result;
         string stringPR = responseProyecto.Content.ReadAsStringAsync().Result;
@@ -294,11 +291,10 @@ namespace gpro_desktop_windows.UsersControls
       List<Perfil> perfilResponses = null;
       List<Empleado> empleadoResponses = null;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage responseTarea = HttpUtils.getTarea(client, path, payload);
-      HttpResponseMessage responseProyecto = HttpUtils.getProyectos(client, "/proyectos/");
-      HttpResponseMessage responsePerfil = HttpUtils.getPerfiles(client, "/perfiles/");
-      HttpResponseMessage responseEmpleado = HttpUtils.getEmpleados(client, "/empleado/");
+      HttpResponseMessage responseTarea = HttpUtils.getTarea(Settings.Default.Client, path, payload);
+      HttpResponseMessage responseProyecto = HttpUtils.getProyectos(Settings.Default.Client, "/proyectos/");
+      HttpResponseMessage responsePerfil = HttpUtils.getPerfiles(Settings.Default.Client, "/perfiles/");
+      HttpResponseMessage responseEmpleado = HttpUtils.getEmpleados(Settings.Default.Client, "/empleado/");
 
       string stringTR = responseTarea.Content.ReadAsStringAsync().Result;
       string stringPR = responseProyecto.Content.ReadAsStringAsync().Result;
@@ -342,8 +338,7 @@ namespace gpro_desktop_windows.UsersControls
     private void getEmpleados()
     {
       List<Empleado> empleadoResponses = null;
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getEmpleados(client, "/empleado/");
+      HttpResponseMessage response = HttpUtils.getEmpleados(Settings.Default.Client, "/empleado/");
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 
@@ -360,8 +355,7 @@ namespace gpro_desktop_windows.UsersControls
     private void getProyectos()
     {
       List<ProyectoResponse> proyectoResponses = null;
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getProyectos(client, "/proyectos/");
+      HttpResponseMessage response = HttpUtils.getProyectos(Settings.Default.Client, "/proyectos/");
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 

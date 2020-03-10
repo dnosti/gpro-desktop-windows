@@ -13,19 +13,6 @@ namespace gpro_desktop_windows.Utils
 {
   class HttpUtils
   {
-    public static HttpClient configHttpClient()
-    {
-      string baseUrl = "http://localhost:60932";
-      HttpClient client = new HttpClient();
-      client.BaseAddress = new Uri(baseUrl);
-      var contentType = new MediaTypeWithQualityHeaderValue("application/json");
-      client.DefaultRequestHeaders.Accept.Add(contentType);
-      client.DefaultRequestHeaders.Add("Authorization", "Bearer " + Settings.Default.Token);
-
-      return client;
-    }
-
-
     /* Clientes */
 
     public static HttpResponseMessage getCliente(HttpClient client, string path, string payload)

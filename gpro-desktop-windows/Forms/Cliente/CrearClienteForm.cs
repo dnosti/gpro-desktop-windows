@@ -7,6 +7,7 @@ using gpro_desktop_windows.Utils;
 using System.Text.RegularExpressions;
 using MetroFramework;
 using MetroFramework.Controls;
+using gpro_desktop_windows.Properties;
 
 namespace gpro_desktop_windows.Forms
 {
@@ -74,7 +75,7 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxDomicilio, "Ingresar Domicilio.");
       }
 
-      if (string.IsNullOrEmpty(textBoxTelefono.Text) || textBoxTelefono.Text.Length != 10)
+      if (string.IsNullOrEmpty(textBoxTelefono.Text))
       {
         ok = false;
         errorProvider1.SetError(textBoxTelefono, "Ingresar Teléfono.");
@@ -128,8 +129,7 @@ namespace gpro_desktop_windows.Forms
         EmailCliente = textBoxEMail.Text
       };
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.postCliente(client, clienteRequest);
+      HttpResponseMessage response = HttpUtils.postCliente(Settings.Default.Client, clienteRequest);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
       var responseMessage = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(stringCR);

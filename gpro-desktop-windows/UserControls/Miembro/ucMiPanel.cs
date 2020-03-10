@@ -71,8 +71,7 @@ namespace gpro_desktop_windows.UsersControls
     {
       List<EmpleadoProyecto> empleadoProyectos = null;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getProyecto(client, "/empleado/proyectos/", Settings.Default.IdEmpleado.ToString());
+      HttpResponseMessage response = HttpUtils.getProyecto(Settings.Default.Client, "/empleado/proyectos/", Settings.Default.IdEmpleado.ToString());
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 
@@ -136,8 +135,7 @@ namespace gpro_desktop_windows.UsersControls
 
       string payload = IdEmpleado + "/" + IdProyecto;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getTarea(client, "/empleado/tareas/", payload);
+      HttpResponseMessage response = HttpUtils.getTarea(Settings.Default.Client, "/empleado/tareas/", payload);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 

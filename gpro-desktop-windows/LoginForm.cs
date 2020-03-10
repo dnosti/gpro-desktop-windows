@@ -27,8 +27,6 @@ namespace gpro_desktop_windows
 
     private void btnIniciar_Click(object sender, EventArgs e)
     {
-      HttpClient client = HttpUtils.configHttpClient();
-
       UserRequest user = new UserRequest();
       user.Username = textBoxUser.Text;
       user.Password = textBoxPass.Text;
@@ -37,7 +35,7 @@ namespace gpro_desktop_windows
       var contentData = new StringContent(stringData, Encoding.UTF8, "application/json");
       try
       {
-        HttpResponseMessage response = client.PostAsync("/usuarios/authenticate", contentData).Result;
+        HttpResponseMessage response = Settings.Default.Client.PostAsync("/usuarios/authenticate", contentData).Result;
 
         string stringUR = response.Content.ReadAsStringAsync().Result;
         UserResponse userResponse = JsonConvert.DeserializeObject<UserResponse>(stringUR);
@@ -48,6 +46,7 @@ namespace gpro_desktop_windows
           Settings.Default.Username = userResponse.Username;
           Settings.Default.Role = userResponse.Rol;
           Settings.Default.IdEmpleado = userResponse.IdEmpleado;
+          Settings.Default.Client.DefaultRequestHeaders.Add("Authorization", "Bearer " + Settings.Default.Token);
 
           LoginForm.ActiveForm.Hide();
 
@@ -72,6 +71,15 @@ namespace gpro_desktop_windows
     private void lfclosing(object sender, FormClosingEventArgs e)
     {
       Application.Exit();
+    }
+
+    private void LoginForm_Load(object sender, EventArgs e)
+    {
+      Settings.Default.Client = new HttpClient();
+      string baseUrl = "http://localhost:60932";
+      Settings.Default.Client.BaseAddress = new Uri(baseUrl);
+      var contentType = new MediaTypeWithQualityHeaderValue("application/json");
+      Settings.Default.Client.DefaultRequestHeaders.Accept.Add(contentType);
     }
   }
 }

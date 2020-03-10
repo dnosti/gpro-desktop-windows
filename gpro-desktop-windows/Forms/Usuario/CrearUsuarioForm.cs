@@ -9,6 +9,7 @@ using MetroFramework;
 using MetroFramework.Controls;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using gpro_desktop_windows.Properties;
 
 namespace gpro_desktop_windows.Forms
 {
@@ -63,8 +64,7 @@ namespace gpro_desktop_windows.Forms
     private void getRoles()
     {
       List<Role> roleResponses = null;
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getRoles(client, "/rols/");
+      HttpResponseMessage response = HttpUtils.getRoles(Settings.Default.Client, "/rols/");
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 
@@ -80,8 +80,7 @@ namespace gpro_desktop_windows.Forms
     private void getEmpleados()
     {
       List<Empleado> empleadoResponses = null;
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getEmpleados(client, "/empleado/");
+      HttpResponseMessage response = HttpUtils.getEmpleados(Settings.Default.Client, "/empleado/");
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 
@@ -104,8 +103,7 @@ namespace gpro_desktop_windows.Forms
         Password = textBoxPassword.Text
       };
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.postUsuario(client, usuarioRequest);
+      HttpResponseMessage response = HttpUtils.postUsuario(Settings.Default.Client, usuarioRequest);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
       var responseMessage = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(stringCR);

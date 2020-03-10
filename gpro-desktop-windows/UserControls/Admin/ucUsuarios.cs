@@ -13,7 +13,7 @@ using gpro_desktop_windows.Utils;
 using Newtonsoft.Json;
 using MetroFramework;
 using gpro_desktop_windows.Forms;
-
+using gpro_desktop_windows.Properties;
 
 namespace gpro_desktop_windows.UsersControls
 {
@@ -184,8 +184,7 @@ namespace gpro_desktop_windows.UsersControls
     {
       List<UsuarioResponse> usuarioResponses = null;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getUsuario(client, path, payload);
+      HttpResponseMessage response = HttpUtils.getUsuario(Settings.Default.Client, path, payload);
 
       string stringER = response.Content.ReadAsStringAsync().Result;
 
@@ -206,8 +205,7 @@ namespace gpro_desktop_windows.UsersControls
     private bool deleteUsuario(int id)
     {
       string path = "/usuarios/";
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.deleteUsuario(client, path, id);
+      HttpResponseMessage response = HttpUtils.deleteUsuario(Settings.Default.Client, path, id);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 
@@ -232,8 +230,7 @@ namespace gpro_desktop_windows.UsersControls
     {
       List<UsuarioResponse> usuarioResponses = null;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getUsuarios(client, "/usuarios/");
+      HttpResponseMessage response = HttpUtils.getUsuarios(Settings.Default.Client, "/usuarios/");
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 

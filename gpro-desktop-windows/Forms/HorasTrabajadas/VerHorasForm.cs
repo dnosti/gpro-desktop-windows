@@ -40,8 +40,7 @@ namespace gpro_desktop_windows.Forms
 
       string payload = IdPerfilEmpl + "/" + IdProyecto;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getHorasTrabajadas(client, "/horatrabajadas/empleado/", payload);
+      HttpResponseMessage response = HttpUtils.getHorasTrabajadas(Settings.Default.Client, "/horatrabajadas/empleado/", payload);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 

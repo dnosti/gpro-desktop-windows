@@ -209,8 +209,7 @@ namespace gpro_desktop_windows.UsersControls
     {
       List<ProyectoResponse> proyectoResponses = null;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getProyecto(client, path, payload);
+      HttpResponseMessage response = HttpUtils.getProyecto(Settings.Default.Client, path, payload);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 
@@ -233,8 +232,7 @@ namespace gpro_desktop_windows.UsersControls
     {
       List<ProyectoResponse> proyectoResponses = null;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getProyectos(client, "/proyectos/");
+      HttpResponseMessage response = HttpUtils.getProyectos(Settings.Default.Client, "/proyectos/");
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 

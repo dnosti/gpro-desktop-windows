@@ -68,8 +68,7 @@ namespace gpro_desktop_windows.Forms
     private void getClientes()
     {
       List<Cliente> clienteResponses = null;
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getClientes(client, "/cliente/");
+      HttpResponseMessage response = HttpUtils.getClientes(Settings.Default.Client, "/cliente/");
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 
@@ -95,8 +94,7 @@ namespace gpro_desktop_windows.Forms
         IdEmpleadoPm = Settings.Default.IdEmpleado
       };
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.putProyecto(client, int.Parse(idProyecto), proyectoRequest);
+      HttpResponseMessage response = HttpUtils.putProyecto(Settings.Default.Client, int.Parse(idProyecto), proyectoRequest);
 
       string stringPR = response.Content.ReadAsStringAsync().Result;
       var responseMessage = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(stringPR);

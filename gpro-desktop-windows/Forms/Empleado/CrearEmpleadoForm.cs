@@ -1,4 +1,5 @@
 ﻿using gpro_desktop_windows.Models;
+using gpro_desktop_windows.Properties;
 using gpro_desktop_windows.Utils;
 using MetroFramework.Controls;
 using System;
@@ -50,7 +51,7 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxDniEmpl, "Ingrese solo números.");
       }
 
-      if (string.IsNullOrEmpty(textBoxTelefonoEmpl.Text) || textBoxTelefonoEmpl.Text.Length != 10)
+      if (string.IsNullOrEmpty(textBoxTelefonoEmpl.Text))
       {
         ok = false;
         errorProvider1.SetError(textBoxTelefonoEmpl, "Ingresar Teléfono.");
@@ -138,8 +139,7 @@ namespace gpro_desktop_windows.Forms
         Nacionalidad = textBoxNacionalidadEmpl.Text
       };
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.postEmpleado(client, empleadoRequest);
+      HttpResponseMessage response = HttpUtils.postEmpleado(Settings.Default.Client, empleadoRequest);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
       var responseMessage = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(stringCR);

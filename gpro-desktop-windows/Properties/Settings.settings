@@ -14,5 +14,8 @@
     <Setting Name="IdEmpleado" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="Client" Type="System.Net.Http.HttpClient" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

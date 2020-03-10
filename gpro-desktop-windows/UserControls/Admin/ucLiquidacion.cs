@@ -13,7 +13,7 @@ using gpro_desktop_windows.Utils;
 using Newtonsoft.Json;
 using MetroFramework;
 using gpro_desktop_windows.Forms;
-
+using gpro_desktop_windows.Properties;
 
 namespace gpro_desktop_windows.UsersControls
 {
@@ -46,8 +46,7 @@ namespace gpro_desktop_windows.UsersControls
     {
       List<ReporteLiq> reporteLiquidacion = null;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getLiquidaciones(client, "/liquidacion/");
+      HttpResponseMessage response = HttpUtils.getLiquidaciones(Settings.Default.Client, "/liquidacion/");
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 

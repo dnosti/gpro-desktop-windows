@@ -62,8 +62,7 @@ namespace gpro_desktop_windows.Forms
         EstadoHorasTrab = "Adeudadas",
       };
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.postHorasTrabajadas(client, horaTrab);
+      HttpResponseMessage response = HttpUtils.postHorasTrabajadas(Settings.Default.Client, horaTrab);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
       var responseMessage = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(stringCR);

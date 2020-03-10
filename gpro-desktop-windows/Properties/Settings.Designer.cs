@@ -70,5 +70,16 @@ namespace gpro_desktop_windows.Properties {
                 this["IdEmpleado"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Net.Http.HttpClient Client {
+            get {
+                return ((global::System.Net.Http.HttpClient)(this["Client"]));
+            }
+            set {
+                this["Client"] = value;
+            }
+        }
     }
 }

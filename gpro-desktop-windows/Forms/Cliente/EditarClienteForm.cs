@@ -1,4 +1,5 @@
 ﻿using gpro_desktop_windows.Models;
+using gpro_desktop_windows.Properties;
 using gpro_desktop_windows.UsersControls;
 using gpro_desktop_windows.Utils;
 using MetroFramework;
@@ -137,8 +138,7 @@ namespace gpro_desktop_windows.Forms
         EmailCliente = textBoxEMail.Text
       };
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.putCliente(client, clienteRequest);
+      HttpResponseMessage response = HttpUtils.putCliente(Settings.Default.Client, clienteRequest);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
       var responseMessage = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(stringCR);

@@ -1,4 +1,5 @@
 ﻿using gpro_desktop_windows.Models;
+using gpro_desktop_windows.Properties;
 using gpro_desktop_windows.Utils;
 using Newtonsoft.Json;
 using System;
@@ -39,8 +40,7 @@ namespace gpro_desktop_windows.Forms
     {
       HoraTrabajada horasTrabajadas = null;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getHorasTrabajadas(client, "/horatrabajadas/porProy/", IdProyecto);
+      HttpResponseMessage response = HttpUtils.getHorasTrabajadas(Settings.Default.Client, "/horatrabajadas/porProy/", IdProyecto);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 
@@ -64,8 +64,7 @@ namespace gpro_desktop_windows.Forms
     {
       HtrabPorRecDto horasTrabajadas = null;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getHorasTrabajadasFecha(client, "/horatrabajadas/porfecha/", ComboBoxPerfiles.SelectedValue.ToString(), fechaInicio.Value.Date.ToString(("yyyy-MM-ddTHH\\:mm\\:ss.fffffffzzz")), fechaFin.Value.Date.ToString(("yyyy-MM-ddTHH\\:mm\\:ss.fffffffzzz")));
+      HttpResponseMessage response = HttpUtils.getHorasTrabajadasFecha(Settings.Default.Client, "/horatrabajadas/porfecha/", ComboBoxPerfiles.SelectedValue.ToString(), fechaInicio.Value.Date.ToString(("yyyy-MM-ddTHH\\:mm\\:ss.fffffffzzz")), fechaFin.Value.Date.ToString(("yyyy-MM-ddTHH\\:mm\\:ss.fffffffzzz")));
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
       horasTrabajadas = JsonConvert.DeserializeObject<HtrabPorRecDto>(stringCR);
@@ -90,8 +89,7 @@ namespace gpro_desktop_windows.Forms
     {
       HoraTrabajada horasTrabajadas = null;
 
-      HttpClient client = HttpUtils.configHttpClient();
-      HttpResponseMessage response = HttpUtils.getHorasTrabajadas(client, "/horatrabajadas/porProy/", IdProyecto);
+      HttpResponseMessage response = HttpUtils.getHorasTrabajadas(Settings.Default.Client, "/horatrabajadas/porProy/", IdProyecto);
 
       string stringCR = response.Content.ReadAsStringAsync().Result;
 

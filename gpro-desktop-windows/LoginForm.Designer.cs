@@ -243,6 +243,7 @@
       this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
       this.Text = "Bienvenid@ a GPRO";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.lfclosing);
+      this.Load += new System.EventHandler(this.LoginForm_Load);
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
       this.ResumeLayout(false);
