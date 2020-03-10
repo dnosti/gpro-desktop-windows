@@ -38,27 +38,35 @@ namespace gpro_desktop_windows
 
       string stringData = JsonConvert.SerializeObject(user);
       var contentData = new StringContent(stringData, Encoding.UTF8, "application/json");
-
-      HttpResponseMessage response = client.PostAsync("/usuarios/authenticate", contentData).Result;
-
-      string stringUR = response.Content.ReadAsStringAsync().Result;
-      UserResponse userResponse = JsonConvert.DeserializeObject<UserResponse>(stringUR);
-
-      if (response.IsSuccessStatusCode)
+      try
       {
-        Settings.Default.Token = userResponse.Token;
-        Settings.Default.Username = userResponse.Username;
-        Settings.Default.Role = userResponse.Rol;
-        Settings.Default.IdEmpleado = userResponse.IdEmpleado;
+        HttpResponseMessage response = client.PostAsync("/usuarios/authenticate", contentData).Result;
 
-        LoginForm.ActiveForm.Hide();
+        string stringUR = response.Content.ReadAsStringAsync().Result;
+        UserResponse userResponse = JsonConvert.DeserializeObject<UserResponse>(stringUR);
 
-        MainForm mainForm = new MainForm();
-        mainForm.Show();
+        if (response.IsSuccessStatusCode)
+        {
+          Settings.Default.Token = userResponse.Token;
+          Settings.Default.Username = userResponse.Username;
+          Settings.Default.Role = userResponse.Rol;
+          Settings.Default.IdEmpleado = userResponse.IdEmpleado;
+
+          LoginForm.ActiveForm.Hide();
+
+          MainForm mainForm = new MainForm();
+          mainForm.Show();
+        }
+        else
+        {
+          MetroMessageBox.Show(this, "Usuario o contraseña incorrectos.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          textBoxUser.Clear();
+          textBoxPass.Clear();
+        }
       }
-      else
+      catch (Exception)
       {
-        MetroMessageBox.Show(this,"Usuario o contraseña incorrectos.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MetroMessageBox.Show(this, "Sin conexión.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         textBoxUser.Clear();
         textBoxPass.Clear();
       }
