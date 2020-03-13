@@ -38,7 +38,7 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxApellidoEmpl, "Ingresar Apellido.");
       }
 
-      if (!textBoxApellidoEmpl.Text.All(char.IsLetter))
+      if (!textBoxApellidoEmpl.Text.All(c => char.IsWhiteSpace(c) || char.IsLetter(c)))
       {
         ok = false;
         errorProvider1.SetError(textBoxApellidoEmpl, "Ingresar solo letras.");
@@ -50,7 +50,7 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxNombreEmpl, "Ingresar Nombre.");
       }
 
-      if (!textBoxNombreEmpl.Text.All(char.IsLetter))
+      if (!textBoxNombreEmpl.Text.All(c => char.IsWhiteSpace(c) || char.IsLetter(c)))
       {
         ok = false;
         errorProvider1.SetError(textBoxNombreEmpl, "Ingresar solo letras.");
@@ -92,7 +92,7 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxLocalidadEmpl, "Ingresar Localidad.");
       }
 
-      if (!textBoxLocalidadEmpl.Text.All(char.IsLetter))
+      if (!textBoxLocalidadEmpl.Text.All(c => char.IsWhiteSpace(c) || char.IsLetter(c)))
       {
         ok = false;
         errorProvider1.SetError(textBoxLocalidadEmpl, "Ingresar solo letras.");
@@ -104,7 +104,7 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxProvinciaEmpl, "Ingresar Provincia.");
       }
 
-      if (!textBoxProvinciaEmpl.Text.All(char.IsLetter))
+      if(!textBoxProvinciaEmpl.Text.All(c => char.IsWhiteSpace(c) || char.IsLetter(c)))
       {
         ok = false;
         errorProvider1.SetError(textBoxProvinciaEmpl, "Ingresar solo letras.");
@@ -116,7 +116,7 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxNacionalidadEmpl, "Ingresar Nacionalidad.");
       }
 
-      if (!textBoxNacionalidadEmpl.Text.All(char.IsLetter))
+      if (!textBoxNacionalidadEmpl.Text.All(c => char.IsWhiteSpace(c) || char.IsLetter(c)))
       {
         ok = false;
         errorProvider1.SetError(textBoxNacionalidadEmpl, "Ingresar solo letras.");

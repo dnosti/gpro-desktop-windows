@@ -188,10 +188,9 @@ namespace gpro_desktop_windows.UsersControls
 
       string stringER = response.Content.ReadAsStringAsync().Result;
 
-      usuarioResponses = JsonConvert.DeserializeObject<List<UsuarioResponse>>(stringER);
-
       if (response.IsSuccessStatusCode)
       {
+        usuarioResponses = JsonConvert.DeserializeObject<List<UsuarioResponse>>(stringER);
         mgUsuarios.Visible = true;
         mgUsuarios.DataSource = usuarioResponses;
       }

@@ -67,19 +67,13 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxRSocial, "Ingresar Razón Social.");
       }
 
-      if (!textBoxRSocial.Text.All(char.IsLetter))
-      {
-        ok = false;
-        errorProvider1.SetError(textBoxRSocial, "Ingresar solo letras.");
-      }
-
       if (string.IsNullOrEmpty(textBoxApellido.Text) && string.IsNullOrEmpty(textBoxRSocial.Text))
       {
         ok = false;
         errorProvider1.SetError(textBoxApellido, "Ingresar Apellido.");
       }
 
-      if (!textBoxApellido.Text.All(char.IsLetter))
+      if (!textBoxApellido.Text.All(c => char.IsWhiteSpace(c) || char.IsLetter(c)))
       {
         ok = false;
         errorProvider1.SetError(textBoxApellido, "Ingresar solo letras.");
@@ -91,7 +85,7 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxNombre, "Ingresar Nombre.");
       }
 
-      if (!textBoxNombre.Text.All(char.IsLetter))
+      if (!textBoxNombre.Text.All(c => char.IsWhiteSpace(c) || char.IsLetter(c)))
       {
         ok = false;
         errorProvider1.SetError(textBoxNombre, "Ingresar solo letras.");
@@ -103,7 +97,7 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxDomicilio, "Ingresar Domicilio.");
       }
 
-      if (string.IsNullOrEmpty(textBoxTelefono.Text) || textBoxTelefono.Text.Length != 10)
+      if (string.IsNullOrEmpty(textBoxTelefono.Text))
       {
         ok = false;
         errorProvider1.SetError(textBoxTelefono, "Ingresar Teléfono.");
@@ -120,6 +114,7 @@ namespace gpro_desktop_windows.Forms
         ok = false;
         errorProvider1.SetError(textBoxEMail, "Ingresar E-Mail.");
       }
+
       else
       {
         Regex reg = new Regex(@"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");

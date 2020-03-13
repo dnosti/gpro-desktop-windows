@@ -49,6 +49,7 @@ namespace gpro_desktop_windows.Forms
       if (response.IsSuccessStatusCode)
       {
         mgPorPerfil.DataSource = horasTrabajadas.SumaPorPerfil;
+        this.mgPorPerfil.Columns["ValorHora"].DefaultCellStyle.Format = "c";
 
         ComboBoxPerfiles.DataSource = (from t in horasTrabajadas.SumaPorPerfil
                                        select new { t.DescripcionPerfil, t.IdPerfil }).Distinct().ToList();
@@ -109,7 +110,9 @@ namespace gpro_desktop_windows.Forms
                          t.EstadoHorasTrab
                        }).Distinct().ToList();
 
+        this.mgDetalle.Columns["ValorH"].DefaultCellStyle.Format = "c";
         mgDetalle.DataSource = detalle;
+        
 
         tbHorasAdeudadas.Text = detalle.Sum(x => x.EstadoHorasTrab == "Adeudadas" ? x.HorasTotales : 0).ToString();
       }

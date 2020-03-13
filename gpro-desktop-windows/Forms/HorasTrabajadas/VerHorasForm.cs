@@ -49,6 +49,7 @@ namespace gpro_desktop_windows.Forms
       if (response.IsSuccessStatusCode)
       {
         mgHorasTrab.DataSource = horasTrabajadas.SumaPorPerfil;
+        this.mgHorasTrab.Columns["ValorHora"].DefaultCellStyle.Format = "c";
       }
     }
   }
