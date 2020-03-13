@@ -219,6 +219,7 @@
       this.MaximizeBox = false;
       this.Name = "VerHorasForm";
       this.Text = "Ver Horas Trabajadas";
+      this.Load += new System.EventHandler(this.VerHorasForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.mgHorasTrab)).EndInit();
       this.ResumeLayout(false);

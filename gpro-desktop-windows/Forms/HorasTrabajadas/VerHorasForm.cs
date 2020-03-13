@@ -20,7 +20,8 @@ namespace gpro_desktop_windows.Forms
   {
     private int IdPerfilEmpl;
     private int IdProyecto;
-    
+    private bool hayDatos = false;
+
     public VerHorasForm(int IdPerfilEmpl, int IdProyecto)
     {
       InitializeComponent();
@@ -50,6 +51,19 @@ namespace gpro_desktop_windows.Forms
       {
         mgHorasTrab.DataSource = horasTrabajadas.SumaPorPerfil;
         this.mgHorasTrab.Columns["ValorHora"].DefaultCellStyle.Format = "c";
+
+        if (horasTrabajadas.SumaPorPerfil.Count > 0)
+          hayDatos = true;
+      }
+    }
+
+    private void VerHorasForm_Load(object sender, EventArgs e)
+    {
+      if (!hayDatos)
+      {
+        DialogResult result = MessageBox.Show("No hay horas trabajadas en este proyecto.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        if (result == DialogResult.OK)
+          this.Close();
       }
     }
   }
