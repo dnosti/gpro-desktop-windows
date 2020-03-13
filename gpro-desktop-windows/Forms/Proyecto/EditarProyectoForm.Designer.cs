@@ -105,6 +105,7 @@
       // 
       // ComboBoxCliente
       // 
+      this.ComboBoxCliente.Enabled = false;
       this.ComboBoxCliente.FormattingEnabled = true;
       this.ComboBoxCliente.ItemHeight = 23;
       this.ComboBoxCliente.Location = new System.Drawing.Point(27, 94);
