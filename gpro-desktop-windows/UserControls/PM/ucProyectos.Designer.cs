@@ -129,7 +129,7 @@
       this.textBoxProyecto.CustomButton.Visible = false;
       this.textBoxProyecto.Lines = new string[0];
       this.textBoxProyecto.Location = new System.Drawing.Point(100, 128);
-      this.textBoxProyecto.MaxLength = 32767;
+      this.textBoxProyecto.MaxLength = 50;
       this.textBoxProyecto.Name = "textBoxProyecto";
       this.textBoxProyecto.PasswordChar = '\0';
       this.textBoxProyecto.ScrollBars = System.Windows.Forms.ScrollBars.None;

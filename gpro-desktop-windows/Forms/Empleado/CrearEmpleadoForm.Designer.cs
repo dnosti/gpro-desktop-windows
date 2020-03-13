@@ -132,7 +132,7 @@
       this.textBoxProvinciaEmpl.CustomButton.Visible = false;
       this.textBoxProvinciaEmpl.Lines = new string[0];
       this.textBoxProvinciaEmpl.Location = new System.Drawing.Point(415, 235);
-      this.textBoxProvinciaEmpl.MaxLength = 32767;
+      this.textBoxProvinciaEmpl.MaxLength = 50;
       this.textBoxProvinciaEmpl.Name = "textBoxProvinciaEmpl";
       this.textBoxProvinciaEmpl.PasswordChar = '\0';
       this.textBoxProvinciaEmpl.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -162,7 +162,7 @@
       this.textBoxLocalidadEmpl.CustomButton.Visible = false;
       this.textBoxLocalidadEmpl.Lines = new string[0];
       this.textBoxLocalidadEmpl.Location = new System.Drawing.Point(415, 166);
-      this.textBoxLocalidadEmpl.MaxLength = 32767;
+      this.textBoxLocalidadEmpl.MaxLength = 50;
       this.textBoxLocalidadEmpl.Name = "textBoxLocalidadEmpl";
       this.textBoxLocalidadEmpl.PasswordChar = '\0';
       this.textBoxLocalidadEmpl.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -192,7 +192,7 @@
       this.textBoxDomicilioEmpl.CustomButton.Visible = false;
       this.textBoxDomicilioEmpl.Lines = new string[0];
       this.textBoxDomicilioEmpl.Location = new System.Drawing.Point(415, 97);
-      this.textBoxDomicilioEmpl.MaxLength = 32767;
+      this.textBoxDomicilioEmpl.MaxLength = 50;
       this.textBoxDomicilioEmpl.Name = "textBoxDomicilioEmpl";
       this.textBoxDomicilioEmpl.PasswordChar = '\0';
       this.textBoxDomicilioEmpl.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -222,7 +222,7 @@
       this.textBoxDniEmpl.CustomButton.Visible = false;
       this.textBoxDniEmpl.Lines = new string[0];
       this.textBoxDniEmpl.Location = new System.Drawing.Point(28, 302);
-      this.textBoxDniEmpl.MaxLength = 32767;
+      this.textBoxDniEmpl.MaxLength = 50;
       this.textBoxDniEmpl.Name = "textBoxDniEmpl";
       this.textBoxDniEmpl.PasswordChar = '\0';
       this.textBoxDniEmpl.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -252,7 +252,7 @@
       this.textBoxNombreEmpl.CustomButton.Visible = false;
       this.textBoxNombreEmpl.Lines = new string[0];
       this.textBoxNombreEmpl.Location = new System.Drawing.Point(28, 166);
-      this.textBoxNombreEmpl.MaxLength = 32767;
+      this.textBoxNombreEmpl.MaxLength = 50;
       this.textBoxNombreEmpl.Name = "textBoxNombreEmpl";
       this.textBoxNombreEmpl.PasswordChar = '\0';
       this.textBoxNombreEmpl.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -282,7 +282,7 @@
       this.textBoxApellidoEmpl.CustomButton.Visible = false;
       this.textBoxApellidoEmpl.Lines = new string[0];
       this.textBoxApellidoEmpl.Location = new System.Drawing.Point(28, 97);
-      this.textBoxApellidoEmpl.MaxLength = 32767;
+      this.textBoxApellidoEmpl.MaxLength = 50;
       this.textBoxApellidoEmpl.Name = "textBoxApellidoEmpl";
       this.textBoxApellidoEmpl.PasswordChar = '\0';
       this.textBoxApellidoEmpl.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -322,7 +322,7 @@
       this.textBoxTelefonoEmpl.CustomButton.Visible = false;
       this.textBoxTelefonoEmpl.Lines = new string[0];
       this.textBoxTelefonoEmpl.Location = new System.Drawing.Point(28, 368);
-      this.textBoxTelefonoEmpl.MaxLength = 32767;
+      this.textBoxTelefonoEmpl.MaxLength = 50;
       this.textBoxTelefonoEmpl.Name = "textBoxTelefonoEmpl";
       this.textBoxTelefonoEmpl.PasswordChar = '\0';
       this.textBoxTelefonoEmpl.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -361,7 +361,7 @@
       this.textBoxNacionalidadEmpl.CustomButton.Visible = false;
       this.textBoxNacionalidadEmpl.Lines = new string[0];
       this.textBoxNacionalidadEmpl.Location = new System.Drawing.Point(415, 303);
-      this.textBoxNacionalidadEmpl.MaxLength = 32767;
+      this.textBoxNacionalidadEmpl.MaxLength = 50;
       this.textBoxNacionalidadEmpl.Name = "textBoxNacionalidadEmpl";
       this.textBoxNacionalidadEmpl.PasswordChar = '\0';
       this.textBoxNacionalidadEmpl.ScrollBars = System.Windows.Forms.ScrollBars.None;

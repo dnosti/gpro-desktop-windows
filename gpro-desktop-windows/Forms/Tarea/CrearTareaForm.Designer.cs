@@ -127,7 +127,7 @@
       this.textBoxDescTarea.CustomButton.Visible = false;
       this.textBoxDescTarea.Lines = new string[0];
       this.textBoxDescTarea.Location = new System.Drawing.Point(27, 234);
-      this.textBoxDescTarea.MaxLength = 32767;
+      this.textBoxDescTarea.MaxLength = 250;
       this.textBoxDescTarea.Multiline = true;
       this.textBoxDescTarea.Name = "textBoxDescTarea";
       this.textBoxDescTarea.PasswordChar = '\0';

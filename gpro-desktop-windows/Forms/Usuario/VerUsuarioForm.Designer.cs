@@ -103,7 +103,7 @@
       this.textBoxRole.Enabled = false;
       this.textBoxRole.Lines = new string[0];
       this.textBoxRole.Location = new System.Drawing.Point(415, 166);
-      this.textBoxRole.MaxLength = 32767;
+      this.textBoxRole.MaxLength = 50;
       this.textBoxRole.Name = "textBoxRole";
       this.textBoxRole.PasswordChar = '\0';
       this.textBoxRole.ReadOnly = true;
@@ -135,7 +135,7 @@
       this.textBoxUsername.Enabled = false;
       this.textBoxUsername.Lines = new string[0];
       this.textBoxUsername.Location = new System.Drawing.Point(415, 97);
-      this.textBoxUsername.MaxLength = 32767;
+      this.textBoxUsername.MaxLength = 50;
       this.textBoxUsername.Name = "textBoxUsername";
       this.textBoxUsername.PasswordChar = '\0';
       this.textBoxUsername.ReadOnly = true;
@@ -167,7 +167,7 @@
       this.textBoxDni.Enabled = false;
       this.textBoxDni.Lines = new string[0];
       this.textBoxDni.Location = new System.Drawing.Point(28, 235);
-      this.textBoxDni.MaxLength = 32767;
+      this.textBoxDni.MaxLength = 50;
       this.textBoxDni.Name = "textBoxDni";
       this.textBoxDni.PasswordChar = '\0';
       this.textBoxDni.ReadOnly = true;
@@ -199,7 +199,7 @@
       this.textBoxNombre.Enabled = false;
       this.textBoxNombre.Lines = new string[0];
       this.textBoxNombre.Location = new System.Drawing.Point(28, 166);
-      this.textBoxNombre.MaxLength = 32767;
+      this.textBoxNombre.MaxLength = 50;
       this.textBoxNombre.Name = "textBoxNombre";
       this.textBoxNombre.PasswordChar = '\0';
       this.textBoxNombre.ReadOnly = true;
@@ -231,7 +231,7 @@
       this.textBoxApellido.Enabled = false;
       this.textBoxApellido.Lines = new string[0];
       this.textBoxApellido.Location = new System.Drawing.Point(28, 97);
-      this.textBoxApellido.MaxLength = 32767;
+      this.textBoxApellido.MaxLength = 50;
       this.textBoxApellido.Name = "textBoxApellido";
       this.textBoxApellido.PasswordChar = '\0';
       this.textBoxApellido.ReadOnly = true;

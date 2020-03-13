@@ -64,7 +64,7 @@
       this.textBoxUsuario.CustomButton.Visible = false;
       this.textBoxUsuario.Lines = new string[0];
       this.textBoxUsuario.Location = new System.Drawing.Point(415, 94);
-      this.textBoxUsuario.MaxLength = 32767;
+      this.textBoxUsuario.MaxLength = 50;
       this.textBoxUsuario.Name = "textBoxUsuario";
       this.textBoxUsuario.PasswordChar = '\0';
       this.textBoxUsuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -97,7 +97,7 @@
       this.textBoxPassword.CustomButton.Visible = false;
       this.textBoxPassword.Lines = new string[0];
       this.textBoxPassword.Location = new System.Drawing.Point(415, 166);
-      this.textBoxPassword.MaxLength = 32767;
+      this.textBoxPassword.MaxLength = 50;
       this.textBoxPassword.Name = "textBoxPassword";
       this.textBoxPassword.PasswordChar = '●';
       this.textBoxPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;

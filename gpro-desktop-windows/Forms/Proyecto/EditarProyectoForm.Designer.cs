@@ -130,7 +130,7 @@
       this.textBoxDescProyecto.CustomButton.Visible = false;
       this.textBoxDescProyecto.Lines = new string[0];
       this.textBoxDescProyecto.Location = new System.Drawing.Point(415, 94);
-      this.textBoxDescProyecto.MaxLength = 32767;
+      this.textBoxDescProyecto.MaxLength = 250;
       this.textBoxDescProyecto.Multiline = true;
       this.textBoxDescProyecto.Name = "textBoxDescProyecto";
       this.textBoxDescProyecto.PasswordChar = '\0';
@@ -161,7 +161,7 @@
       this.textBoxTitulo.CustomButton.Visible = false;
       this.textBoxTitulo.Lines = new string[0];
       this.textBoxTitulo.Location = new System.Drawing.Point(27, 165);
-      this.textBoxTitulo.MaxLength = 32767;
+      this.textBoxTitulo.MaxLength = 50;
       this.textBoxTitulo.Name = "textBoxTitulo";
       this.textBoxTitulo.PasswordChar = '\0';
       this.textBoxTitulo.ScrollBars = System.Windows.Forms.ScrollBars.None;

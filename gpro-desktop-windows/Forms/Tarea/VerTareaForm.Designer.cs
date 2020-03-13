@@ -94,7 +94,7 @@
       this.textBoxHorasEstimadas.Enabled = false;
       this.textBoxHorasEstimadas.Lines = new string[0];
       this.textBoxHorasEstimadas.Location = new System.Drawing.Point(28, 235);
-      this.textBoxHorasEstimadas.MaxLength = 32767;
+      this.textBoxHorasEstimadas.MaxLength = 50;
       this.textBoxHorasEstimadas.Name = "textBoxHorasEstimadas";
       this.textBoxHorasEstimadas.PasswordChar = '\0';
       this.textBoxHorasEstimadas.ReadOnly = true;
@@ -126,7 +126,7 @@
       this.textBoxEmpleado.Enabled = false;
       this.textBoxEmpleado.Lines = new string[0];
       this.textBoxEmpleado.Location = new System.Drawing.Point(28, 166);
-      this.textBoxEmpleado.MaxLength = 32767;
+      this.textBoxEmpleado.MaxLength = 50;
       this.textBoxEmpleado.Name = "textBoxEmpleado";
       this.textBoxEmpleado.PasswordChar = '\0';
       this.textBoxEmpleado.ReadOnly = true;
@@ -158,7 +158,7 @@
       this.textBoxProyecto.Enabled = false;
       this.textBoxProyecto.Lines = new string[0];
       this.textBoxProyecto.Location = new System.Drawing.Point(28, 97);
-      this.textBoxProyecto.MaxLength = 32767;
+      this.textBoxProyecto.MaxLength = 50;
       this.textBoxProyecto.Name = "textBoxProyecto";
       this.textBoxProyecto.PasswordChar = '\0';
       this.textBoxProyecto.ReadOnly = true;
@@ -215,7 +215,7 @@
       this.textBoxHorasOverbudget.Enabled = false;
       this.textBoxHorasOverbudget.Lines = new string[0];
       this.textBoxHorasOverbudget.Location = new System.Drawing.Point(218, 235);
-      this.textBoxHorasOverbudget.MaxLength = 32767;
+      this.textBoxHorasOverbudget.MaxLength = 50;
       this.textBoxHorasOverbudget.Name = "textBoxHorasOverbudget";
       this.textBoxHorasOverbudget.PasswordChar = '\0';
       this.textBoxHorasOverbudget.ReadOnly = true;
@@ -248,7 +248,7 @@
       this.textBoxTarea.Enabled = false;
       this.textBoxTarea.Lines = new string[0];
       this.textBoxTarea.Location = new System.Drawing.Point(415, 97);
-      this.textBoxTarea.MaxLength = 32767;
+      this.textBoxTarea.MaxLength = 250;
       this.textBoxTarea.Multiline = true;
       this.textBoxTarea.Name = "textBoxTarea";
       this.textBoxTarea.PasswordChar = '\0';

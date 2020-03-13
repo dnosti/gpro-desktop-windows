@@ -85,7 +85,7 @@
       this.textBoxProyecto.Enabled = false;
       this.textBoxProyecto.Lines = new string[0];
       this.textBoxProyecto.Location = new System.Drawing.Point(28, 97);
-      this.textBoxProyecto.MaxLength = 32767;
+      this.textBoxProyecto.MaxLength = 50;
       this.textBoxProyecto.Name = "textBoxProyecto";
       this.textBoxProyecto.PasswordChar = '\0';
       this.textBoxProyecto.ReadOnly = true;
@@ -132,7 +132,7 @@
       this.textBoxDescripcion.Enabled = false;
       this.textBoxDescripcion.Lines = new string[0];
       this.textBoxDescripcion.Location = new System.Drawing.Point(28, 166);
-      this.textBoxDescripcion.MaxLength = 32767;
+      this.textBoxDescripcion.MaxLength = 250;
       this.textBoxDescripcion.Multiline = true;
       this.textBoxDescripcion.Name = "textBoxDescripcion";
       this.textBoxDescripcion.PasswordChar = '\0';
@@ -165,7 +165,7 @@
       this.textBoxEstado.Enabled = false;
       this.textBoxEstado.Lines = new string[0];
       this.textBoxEstado.Location = new System.Drawing.Point(28, 293);
-      this.textBoxEstado.MaxLength = 32767;
+      this.textBoxEstado.MaxLength = 50;
       this.textBoxEstado.Name = "textBoxEstado";
       this.textBoxEstado.PasswordChar = '\0';
       this.textBoxEstado.ReadOnly = true;

@@ -125,7 +125,7 @@
       this.textBoxEMail.Enabled = false;
       this.textBoxEMail.Lines = new string[0];
       this.textBoxEMail.Location = new System.Drawing.Point(415, 235);
-      this.textBoxEMail.MaxLength = 32767;
+      this.textBoxEMail.MaxLength = 50;
       this.textBoxEMail.Name = "textBoxEMail";
       this.textBoxEMail.PasswordChar = '\0';
       this.textBoxEMail.ReadOnly = true;
@@ -157,7 +157,7 @@
       this.textBoxTelefono.Enabled = false;
       this.textBoxTelefono.Lines = new string[0];
       this.textBoxTelefono.Location = new System.Drawing.Point(415, 166);
-      this.textBoxTelefono.MaxLength = 32767;
+      this.textBoxTelefono.MaxLength = 50;
       this.textBoxTelefono.Name = "textBoxTelefono";
       this.textBoxTelefono.PasswordChar = '\0';
       this.textBoxTelefono.ReadOnly = true;
@@ -189,7 +189,7 @@
       this.textBoxDomicilio.Enabled = false;
       this.textBoxDomicilio.Lines = new string[0];
       this.textBoxDomicilio.Location = new System.Drawing.Point(415, 97);
-      this.textBoxDomicilio.MaxLength = 32767;
+      this.textBoxDomicilio.MaxLength = 50;
       this.textBoxDomicilio.Name = "textBoxDomicilio";
       this.textBoxDomicilio.PasswordChar = '\0';
       this.textBoxDomicilio.ReadOnly = true;
@@ -221,7 +221,7 @@
       this.textBoxNombre.Enabled = false;
       this.textBoxNombre.Lines = new string[0];
       this.textBoxNombre.Location = new System.Drawing.Point(28, 302);
-      this.textBoxNombre.MaxLength = 32767;
+      this.textBoxNombre.MaxLength = 50;
       this.textBoxNombre.Name = "textBoxNombre";
       this.textBoxNombre.PasswordChar = '\0';
       this.textBoxNombre.ReadOnly = true;
@@ -253,7 +253,7 @@
       this.textBoxApellido.Enabled = false;
       this.textBoxApellido.Lines = new string[0];
       this.textBoxApellido.Location = new System.Drawing.Point(28, 235);
-      this.textBoxApellido.MaxLength = 32767;
+      this.textBoxApellido.MaxLength = 50;
       this.textBoxApellido.Name = "textBoxApellido";
       this.textBoxApellido.PasswordChar = '\0';
       this.textBoxApellido.ReadOnly = true;
@@ -285,7 +285,7 @@
       this.textBoxRSocial.Enabled = false;
       this.textBoxRSocial.Lines = new string[0];
       this.textBoxRSocial.Location = new System.Drawing.Point(28, 166);
-      this.textBoxRSocial.MaxLength = 32767;
+      this.textBoxRSocial.MaxLength = 50;
       this.textBoxRSocial.Name = "textBoxRSocial";
       this.textBoxRSocial.PasswordChar = '\0';
       this.textBoxRSocial.ReadOnly = true;
@@ -317,7 +317,7 @@
       this.textBoxidCliente.Enabled = false;
       this.textBoxidCliente.Lines = new string[0];
       this.textBoxidCliente.Location = new System.Drawing.Point(28, 97);
-      this.textBoxidCliente.MaxLength = 32767;
+      this.textBoxidCliente.MaxLength = 50;
       this.textBoxidCliente.Name = "textBoxidCliente";
       this.textBoxidCliente.PasswordChar = '\0';
       this.textBoxidCliente.ReadOnly = true;
