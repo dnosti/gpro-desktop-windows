@@ -186,7 +186,7 @@
       this.textBoxTelefono.CustomButton.Visible = false;
       this.textBoxTelefono.Lines = new string[0];
       this.textBoxTelefono.Location = new System.Drawing.Point(415, 166);
-      this.textBoxTelefono.MaxLength = 50;
+      this.textBoxTelefono.MaxLength = 30;
       this.textBoxTelefono.Name = "textBoxTelefono";
       this.textBoxTelefono.PasswordChar = '\0';
       this.textBoxTelefono.ScrollBars = System.Windows.Forms.ScrollBars.None;

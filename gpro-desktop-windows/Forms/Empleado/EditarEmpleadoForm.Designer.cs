@@ -322,7 +322,7 @@
       this.textBoxTelefonoEmpl.CustomButton.Visible = false;
       this.textBoxTelefonoEmpl.Lines = new string[0];
       this.textBoxTelefonoEmpl.Location = new System.Drawing.Point(28, 368);
-      this.textBoxTelefonoEmpl.MaxLength = 50;
+      this.textBoxTelefonoEmpl.MaxLength = 30;
       this.textBoxTelefonoEmpl.Name = "textBoxTelefonoEmpl";
       this.textBoxTelefonoEmpl.PasswordChar = '\0';
       this.textBoxTelefonoEmpl.ScrollBars = System.Windows.Forms.ScrollBars.None;
