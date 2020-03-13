@@ -19,8 +19,6 @@ namespace gpro_desktop_windows
 {
   public partial class LoginForm : MetroFramework.Forms.MetroForm
   {
-    private bool isConnect = false;
-
     public LoginForm()
     {
       InitializeComponent();
@@ -49,7 +47,6 @@ namespace gpro_desktop_windows
           Settings.Default.Role = userResponse.Rol;
           Settings.Default.IdEmpleado = userResponse.IdEmpleado;
           Settings.Default.Client.DefaultRequestHeaders.Add("Authorization", "Bearer " + Settings.Default.Token);
-          isConnect = true;
 
           LoginForm.ActiveForm.Hide();
 
@@ -78,13 +75,11 @@ namespace gpro_desktop_windows
 
     private void LoginForm_Load(object sender, EventArgs e)
     {
-      if(!isConnect) { 
-        Settings.Default.Client = new HttpClient();
-        string baseUrl = "http://localhost:60932";
-        Settings.Default.Client.BaseAddress = new Uri(baseUrl);
-        var contentType = new MediaTypeWithQualityHeaderValue("application/json");
-        Settings.Default.Client.DefaultRequestHeaders.Accept.Add(contentType);
-      }
+      Settings.Default.Client = new HttpClient();
+      string baseUrl = "http://localhost:60932";
+      Settings.Default.Client.BaseAddress = new Uri(baseUrl);
+      var contentType = new MediaTypeWithQualityHeaderValue("application/json");
+      Settings.Default.Client.DefaultRequestHeaders.Accept.Add(contentType);
     }
   }
 }

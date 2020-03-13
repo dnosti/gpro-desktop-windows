@@ -57,16 +57,34 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxRSocial, "Ingresar Razón Social.");
       }
 
+      if (!textBoxRSocial.Text.All(char.IsLetter))
+      {
+        ok = false;
+        errorProvider1.SetError(textBoxRSocial, "Ingresar solo letras.");
+      }
+
       if (string.IsNullOrEmpty(textBoxApellido.Text) && string.IsNullOrEmpty(textBoxRSocial.Text))
       {
         ok = false;
         errorProvider1.SetError(textBoxApellido, "Ingresar Apellido.");
       }
 
+      if (!textBoxApellido.Text.All(char.IsLetter))
+      {
+        ok = false;
+        errorProvider1.SetError(textBoxApellido, "Ingresar solo letras.");
+      }
+
       if (string.IsNullOrEmpty(textBoxNombre.Text) && string.IsNullOrEmpty(textBoxRSocial.Text))
       {
         ok = false;
         errorProvider1.SetError(textBoxNombre, "Ingresar Nombre.");
+      }
+
+      if (!textBoxNombre.Text.All(char.IsLetter))
+      {
+        ok = false;
+        errorProvider1.SetError(textBoxNombre, "Ingresar solo letras.");
       }
 
       if (string.IsNullOrEmpty(textBoxDomicilio.Text))

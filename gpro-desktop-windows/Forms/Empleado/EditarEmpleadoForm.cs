@@ -25,6 +25,7 @@ namespace gpro_desktop_windows.Forms
     {
       InitializeComponent();
       this.idEmpleado = idEmpleado;
+      textBoxFechaIngEmpl.MaxDate = DateTime.Today;
     }
 
     private bool ValidarCampos()
@@ -37,10 +38,22 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxApellidoEmpl, "Ingresar Apellido.");
       }
 
+      if (!textBoxApellidoEmpl.Text.All(char.IsLetter))
+      {
+        ok = false;
+        errorProvider1.SetError(textBoxApellidoEmpl, "Ingresar solo letras.");
+      }
+
       if (string.IsNullOrEmpty(textBoxNombreEmpl.Text))
       {
         ok = false;
         errorProvider1.SetError(textBoxNombreEmpl, "Ingresar Nombre.");
+      }
+
+      if (!textBoxNombreEmpl.Text.All(char.IsLetter))
+      {
+        ok = false;
+        errorProvider1.SetError(textBoxNombreEmpl, "Ingresar solo letras.");
       }
 
       if (string.IsNullOrEmpty(textBoxDniEmpl.Text) || textBoxDniEmpl.Text.Length < 6 || textBoxDniEmpl.Text.Length > 8)
@@ -52,10 +65,10 @@ namespace gpro_desktop_windows.Forms
       if (!textBoxDniEmpl.Text.All(char.IsDigit))
       {
         ok = false;
-        errorProvider1.SetError(textBoxDniEmpl, "Ingresar solo números.");
+        errorProvider1.SetError(textBoxDniEmpl, "Ingrese solo números.");
       }
 
-      if (string.IsNullOrEmpty(textBoxTelefonoEmpl.Text) || textBoxTelefonoEmpl.Text.Length != 10)
+      if (string.IsNullOrEmpty(textBoxTelefonoEmpl.Text))
       {
         ok = false;
         errorProvider1.SetError(textBoxTelefonoEmpl, "Ingresar Teléfono.");
@@ -79,10 +92,22 @@ namespace gpro_desktop_windows.Forms
         errorProvider1.SetError(textBoxLocalidadEmpl, "Ingresar Localidad.");
       }
 
+      if (!textBoxLocalidadEmpl.Text.All(char.IsLetter))
+      {
+        ok = false;
+        errorProvider1.SetError(textBoxLocalidadEmpl, "Ingresar solo letras.");
+      }
+
       if (string.IsNullOrEmpty(textBoxProvinciaEmpl.Text))
       {
         ok = false;
         errorProvider1.SetError(textBoxProvinciaEmpl, "Ingresar Provincia.");
+      }
+
+      if (!textBoxProvinciaEmpl.Text.All(char.IsLetter))
+      {
+        ok = false;
+        errorProvider1.SetError(textBoxProvinciaEmpl, "Ingresar solo letras.");
       }
 
       if (string.IsNullOrEmpty(textBoxNacionalidadEmpl.Text))
@@ -94,9 +119,8 @@ namespace gpro_desktop_windows.Forms
       if (!textBoxNacionalidadEmpl.Text.All(char.IsLetter))
       {
         ok = false;
-        errorProvider1.SetError(textBoxNacionalidadEmpl, "Ingrese solo letras");
+        errorProvider1.SetError(textBoxNacionalidadEmpl, "Ingresar solo letras.");
       }
-
       return ok;
     }
 

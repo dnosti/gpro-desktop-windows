@@ -129,7 +129,8 @@ namespace gpro_desktop_windows.UsersControls
             t.HorasEstimadasTarea,
             t.HorasOverbudgetTarea
           };
-
+      
+        
         mgTareas.DataSource = listaTareas.Where(x => x.IdEmpleadoPm == Settings.Default.IdEmpleado).ToList();
       }
       else
@@ -345,6 +346,7 @@ namespace gpro_desktop_windows.UsersControls
       if (response.IsSuccessStatusCode)
       {
         empleadoResponses = JsonConvert.DeserializeObject<List<Empleado>>(stringCR);
+
         ComboBoxEmpleado.DataSource = empleadoResponses.OrderBy(x => x.FullName).ToList();
         ComboBoxEmpleado.DisplayMember = "FullName";
         ComboBoxEmpleado.ValueMember = "IdEmpleado";

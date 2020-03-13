@@ -428,17 +428,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>$ </Value>
+                              <Value>=Fields!ValorHora.Value + Fields!ValorHora.Value*50/100</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>8pt</FontSize>
-                              </Style>
-                            </TextRun>
-                            <TextRun>
-                              <Value>=Fields!ValorHora.Value</Value>
-                              <Style>
-                                <FontFamily>Segoe UI</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <Format>'$'0.00;('$'0.00)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -457,8 +451,10 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -489,7 +485,7 @@
         <Top>3.83328cm</Top>
         <Left>0.63295cm</Left>
         <Height>1.2cm</Height>
-        <Width>15.40098cm</Width>
+        <Width>15.40099cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

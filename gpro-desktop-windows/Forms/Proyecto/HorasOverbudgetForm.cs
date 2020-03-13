@@ -49,8 +49,11 @@ namespace gpro_desktop_windows.Forms
         var lista = horasTrabajadas.SumaPorPerfil;
         foreach (SumaPerfiles i in lista)
           i.HorasPerfil = i.HorasPerfil - 8;
+        foreach (SumaPerfiles v in lista)
+          v.ValorHora = v.ValorHora + (v.ValorHora * 50 / 100);
 
         mgHorasOverbudget.DataSource = lista;
+        this.mgHorasOverbudget.Columns["ValorHora"].DefaultCellStyle.Format = "c";
 
         if (horasTrabajadas.SumaPorPerfil.Count() > 0)
         {
@@ -72,11 +75,14 @@ namespace gpro_desktop_windows.Forms
 
     private void HorasOverbudgetForm_Load(object sender, EventArgs e)
     {
-      if (!hayDatos) { 
+      if (!hayDatos)
+      {
         DialogResult result = MessageBox.Show("No hay horas overbudget en este proyecto.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         if (result == DialogResult.OK)
           this.Close();
       }
+
+      
     }
   }
 }
